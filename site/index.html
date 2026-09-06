@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free-LLM - Daily Free LLM API Offers</title>
+<style>
+:root { --bg:#0f1117; --card:#171a23; --txt:#e6e8ee; --dim:#8b90a0; --accent:#4f8cff; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--bg); color:var(--txt); font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; padding:24px; }
+header { max-width:1100px; margin:0 auto 18px; }
+h1 { font-size:26px; } h1 span { color:var(--accent); }
+.sub { color:var(--dim); margin:6px 0 14px; }
+input#q { width:100%; max-width:420px; padding:10px 14px; border-radius:8px; border:1px solid #2a2f3d;
+  background:var(--card); color:var(--txt); font-size:15px; }
+.grid { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:14px; }
+.card { background:var(--card); border:1px solid #232838; border-radius:12px; padding:16px; }
+.card-top { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
+h3 { font-size:16px; margin-bottom:8px; }
+.badges { display:flex; gap:6px; flex-wrap:wrap; }
+.badge { font-size:11px; padding:2px 8px; border-radius:99px; white-space:nowrap; }
+.pi-native { background:#163a24; color:#4ade80; }
+.pi-openai-compatible { background:#14304a; color:#60a5fa; }
+.pi-limited { background:#3a2f14; color:#facc15; }
+.trust-high { background:#1c2a3a; color:#7dd3fc; }
+.trust-medium { background:#2a2414; color:#fbbf24; }
+.trust-low { background:#3a1414; color:#f87171; }
+.status.ok { background:#163a24; color:#4ade80; }
+.status.bad { background:#3a1414; color:#f87171; }
+.models { color:var(--txt); margin:6px 0; }
+.limits { color:var(--dim); font-size:13.5px; margin:6px 0; }
+.meta { color:var(--dim); font-size:13px; margin:6px 0; }
+.note { color:var(--dim); font-size:12.5px; font-style:italic; margin-top:8px; }
+.btn { display:inline-block; background:#232838; color:var(--txt); text-decoration:none;
+  font-size:12.5px; padding:4px 12px; border-radius:6px; margin:6px 4px 0 0; }
+.btn:hover { background:#2f3547; }
+.btn.dead { background:#3a1414; color:#f87171; }
+section { max-width:1100px; margin:26px auto; }
+h2 { font-size:19px; margin-bottom:10px; }
+ul { margin-left:20px; } .dim { color:var(--dim); font-size:13px; }
+footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Free-LLM <span>· daily free LLM API offers</span></h1>
+  <p class="sub">Auto-researched daily by a GitHub Actions bot. Last run: <strong>2026-09-06T16:14:30Z</strong> ·
+     22 providers OK · 3 flagged · 17 pi-native ·
+     zero credit cards, email/Google/GitHub signups only (unless marked CC)</p>
+  <input id="q" type="search" placeholder="Filter providers, models, limits..." autofocus>
+</header>
+<div class="grid" id="grid">
+
+<div class="card">
+  <div class="card-top">
+    <h3>Google AI Studio (Gemini)</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Gemini 3.1 Pro; Gemini 3.1 Flash; Gemini 3.0 Flash; Gemini 3.0 Flash-Lite</p>
+  <p class="limits"><strong>Limits:</strong> Free tier: 5-30 RPM depending on model; ~9,000 requests/day on Flash; 25 RPD on Pro; 1M token context available</p>
+  <p class="meta"><strong>Signup:</strong> google (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://aistudio.google.com/" target="_blank" rel="noopener">site</a><a class="btn" href="https://ai.google.dev/gemini-api/docs/rate-limits" target="_blank" rel="noopener">free</a><a class="btn" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">keys</a><a class="btn" href="https://ai.google.dev/gemini-api/docs" target="_blank" rel="noopener">docs</a>
+  <p class="note">Prompts may be used for training outside EU/UK/EEA</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Groq</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Llama 3.3 70B Versatile; Llama 3.1 8B; Qwen 2.5 Coder 32B; Whisper Large v3</p>
+  <p class="limits"><strong>Limits:</strong> Free tier: 30 RPM, 14,400 requests/day. Very high token throughput (~320 tok/s on 70B)</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://groq.com/" target="_blank" rel="noopener">site</a><a class="btn" href="https://console.groq.com/" target="_blank" rel="noopener">free</a><a class="btn" href="https://console.groq.com/keys" target="_blank" rel="noopener">keys</a><a class="btn" href="https://console.groq.com/docs" target="_blank" rel="noopener">docs</a>
+  <p class="note">No-training policy; ideal default for pi</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>OpenRouter</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">100+ free models with &#x27;:free&#x27; suffix; DeepSeek V3/R1; Qwen; Llama; Gemini 2.5 Flash</p>
+  <p class="limits"><strong>Limits:</strong> Free models: 20 RPM, 50 requests/day (1,000/day after $10 top-up). One key routes across many providers</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://openrouter.ai/" target="_blank" rel="noopener">site</a><a class="btn" href="https://openrouter.ai/models?max_price=0" target="_blank" rel="noopener">free</a><a class="btn" href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener">keys</a><a class="btn" href="https://openrouter.ai/docs" target="_blank" rel="noopener">docs</a>
+  <p class="note">Great for pi: single key, failover across providers</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Cloudflare Workers AI</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Llama 3.1 8B Instruct; Llama 3.2 3B Instruct; Mistral 7B Instruct; Qwen 1.5 7B Chat; DeepSeek Coder</p>
+  <p class="limits"><strong>Limits:</strong> Free plan: 10,000 neurons/day (~300,000 neurons/month)</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://developers.cloudflare.com/workers-ai/" target="_blank" rel="noopener">site</a><a class="btn" href="https://developers.cloudflare.com/workers-ai/platform/pricing/" target="_blank" rel="noopener">free</a><a class="btn" href="https://developers.cloudflare.com/workers-ai/" target="_blank" rel="noopener">docs</a>
+  <p class="note">Smaller context windows than most</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Mistral (La Plateforme)</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Mistral Small 3; Mistral Nemo; Mistral 7B; Codestral (Experiment tier)</p>
+  <p class="limits"><strong>Limits:</strong> Experiment free tier: ~1B tokens/month on Codestral; ~1 request/second; requires opt-in to training</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://mistral.ai/" target="_blank" rel="noopener">site</a><a class="btn" href="https://console.mistral.ai/" target="_blank" rel="noopener">free</a><a class="btn" href="https://console.mistral.ai/api-keys" target="_blank" rel="noopener">keys</a><a class="btn" href="https://docs.mistral.ai/" target="_blank" rel="noopener">docs</a>
+  <p class="note">Phone verification at signup; free tier requires training opt-in</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Cerebras</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Llama 3.3 70B; Llama 3.1 8B; DeepSeek R1 Distill</p>
+  <p class="limits"><strong>Limits:</strong> Free tier: ~1M tokens/day, ~30 RPM. Extremely fast inference</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://www.cerebras.ai/" target="_blank" rel="noopener">site</a><a class="btn" href="https://www.cerebras.ai/pricing" target="_blank" rel="noopener">free</a><a class="btn" href="https://cloud.cerebras.ai/" target="_blank" rel="noopener">keys</a><a class="btn" href="https://inference-docs.cerebras.ai/" target="_blank" rel="noopener">docs</a>
+  <p class="note">No-training policy</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>NVIDIA NIM</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">120+ open-weight models; DeepSeek R1; Llama 3.3 70B; Qwen 2.5 Coder; Kimi K2</p>
+  <p class="limits"><strong>Limits:</strong> Free API credits for developers; ~40 RPM; OpenAI-compatible endpoint</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://build.nvidia.com/" target="_blank" rel="noopener">site</a><a class="btn" href="https://build.nvidia.com/" target="_blank" rel="noopener">free</a><a class="btn" href="https://org.ngc.nvidia.com/setup/api-key" target="_blank" rel="noopener">keys</a><a class="btn" href="https://docs.api.nvidia.com/nim/reference/getting-started" target="_blank" rel="noopener">docs</a>
+  <p class="note">Phone verification at signup</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Hugging Face Inference Providers</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status bad">DEAD (404) · 404</span>
+    </div>
+  </div>
+  <p class="models">Llama 3.2 11B Vision; Llama 3.1 8B Instruct; Qwen 2.5 72B Instruct; Gemma 2 9B; DeepSeek R1</p>
+  <p class="limits"><strong>Limits:</strong> Free routing credits ~$0.10/month; 300 requests/hour cap</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener">keys</a><a class="btn" href="https://huggingface.co/docs/inference-providers/index" target="_blank" rel="noopener">docs</a>
+  <p class="note">Routes to multiple backends (Together, Fireworks, Groq, Cerebras, etc.)</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Cohere</h3>
+    <div class="badges">
+      <span class="badge pi pi-limited">LIMITED</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Command R+; Command R; Command A (111B)</p>
+  <p class="limits"><strong>Limits:</strong> Trial key: ~20 RPM, 1,000 requests/month; non-commercial use</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://cohere.com/" target="_blank" rel="noopener">site</a><a class="btn" href="https://docs.cohere.com/docs/rate-limits" target="_blank" rel="noopener">free</a><a class="btn" href="https://dashboard.cohere.com/api-keys" target="_blank" rel="noopener">keys</a><a class="btn" href="https://docs.cohere.com/" target="_blank" rel="noopener">docs</a>
+  <p class="note">Best for RAG; no training on trial tier</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Z.AI (Zhipu GLM)</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">GLM-4.5-Flash; GLM-4.7-Flash; GLM-4.5 Air</p>
+  <p class="limits"><strong>Limits:</strong> Free Flash tier: ~1 request/second, ~1,000 requests/day</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://z.ai/" target="_blank" rel="noopener">site</a><a class="btn" href="https://open.bigmodel.cn/" target="_blank" rel="noopener">free</a><a class="btn" href="https://open.bigmodel.cn/usercenter/apikeys" target="_blank" rel="noopener">keys</a><a class="btn" href="https://docs.z.ai/" target="_blank" rel="noopener">docs</a>
+  <p class="note">Chinese provider; global z.ai and China bigmodel.cn consoles</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>GitHub Models</h3>
+    <div class="badges">
+      <span class="badge pi pi-openai-compatible">OPENAI-COMPAT</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">GPT-4o; GPT-4.1; Claude 3.5/3.7 Sonnet; Llama 3.3; Phi-4; DeepSeek</p>
+  <p class="limits"><strong>Limits:</strong> Free tier: 15 RPM, 150-1,000 requests/day depending on model; Azure OpenAI-compatible endpoint</p>
+  <p class="meta"><strong>Signup:</strong> github (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://github.com/marketplace/models" target="_blank" rel="noopener">site</a><a class="btn" href="https://github.com/marketplace/models" target="_blank" rel="noopener">free</a><a class="btn" href="https://github.com/settings/tokens" target="_blank" rel="noopener">keys</a><a class="btn" href="https://docs.github.com/en/github-models" target="_blank" rel="noopener">docs</a>
+  <p class="note">Rate limits apply to ALL GitHub models, not per model</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>DeepSeek</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status bad">DEAD (403) · 403</span>
+    </div>
+  </div>
+  <p class="models">DeepSeek-V3.2; DeepSeek-R1</p>
+  <p class="limits"><strong>Limits:</strong> ~10M token trial for new accounts; thereafter extremely low pay-as-you-go pricing</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> trial</p>
+  <a class="btn" href="https://api-docs.deepseek.com/" target="_blank" rel="noopener">docs</a>
+  <p class="note">Excellent reasoning models at low cost</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>xAI (Grok)</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status bad">DEAD (403) · 403</span>
+    </div>
+  </div>
+  <p class="models">Grok 3; Grok 3 Fast; Grok 4</p>
+  <p class="limits"><strong>Limits:</strong> Free tier for new accounts: ~5M tokens on signup (valid ~30 days); generous rate limits while it lasts</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> trial</p>
+  <a class="btn" href="https://docs.x.ai/" target="_blank" rel="noopener">docs</a>
+  <p class="note">Free credit amounts change; check docs</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Fireworks AI</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Llama 3.3 70B; Mixtral 8x7B; Qwen 2.5; DeepSeek R1</p>
+  <p class="limits"><strong>Limits:</strong> $1 free credit for new accounts; some models free tier</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> trial</p>
+  <a class="btn" href="https://fireworks.ai/" target="_blank" rel="noopener">site</a><a class="btn" href="https://fireworks.ai/pricing" target="_blank" rel="noopener">free</a><a class="btn" href="https://docs.fireworks.ai/" target="_blank" rel="noopener">docs</a>
+  <p class="note">Small credit; fine for benchmarking</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Together AI</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Llama 3.3 70B; DeepSeek R1; Qwen 2.5 Coder; GLM-4</p>
+  <p class="limits"><strong>Limits:</strong> Free signup credit (reported $1-$25 depending on period); pay-as-you-go after</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> trial</p>
+  <a class="btn" href="https://www.together.ai/" target="_blank" rel="noopener">site</a><a class="btn" href="https://www.together.ai/pricing" target="_blank" rel="noopener">free</a><a class="btn" href="https://api.together.ai/settings/api-keys" target="_blank" rel="noopener">keys</a><a class="btn" href="https://docs.together.ai/" target="_blank" rel="noopener">docs</a>
+  <p class="note">Reported credit varies by source; verify on signup</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Baseten</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Llama 3.1; Mixtral; Qwen 2.5</p>
+  <p class="limits"><strong>Limits:</strong> $30 free credit; card required once credit exhausted</p>
+  <p class="meta"><strong>Signup:</strong> email (CC required) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> trial</p>
+  <a class="btn" href="https://www.baseten.co/" target="_blank" rel="noopener">site</a><a class="btn" href="https://www.baseten.co/pricing/" target="_blank" rel="noopener">free</a><a class="btn" href="https://app.baseten.co/" target="_blank" rel="noopener">keys</a><a class="btn" href="https://docs.baseten.co/" target="_blank" rel="noopener">docs</a>
+  <p class="note">Most generous trial; card needed later</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>SambaNova Cloud</h3>
+    <div class="badges">
+      <span class="badge pi pi-openai-compatible">OPENAI-COMPAT</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Llama 3.1 405B; Llama 3.3 70B; DeepSeek R1</p>
+  <p class="limits"><strong>Limits:</strong> $5 free credit; credit card required at signup</p>
+  <p class="meta"><strong>Signup:</strong> email (CC required) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> trial</p>
+  <a class="btn" href="https://cloud.sambanova.ai/" target="_blank" rel="noopener">site</a><a class="btn" href="https://cloud.sambanova.ai/" target="_blank" rel="noopener">free</a><a class="btn" href="https://cloud.sambanova.ai/apis" target="_blank" rel="noopener">keys</a><a class="btn" href="https://docs.sambanova.ai/" target="_blank" rel="noopener">docs</a>
+  <p class="note">Only 405B-class free access, but card required</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Coze (ByteDance)</h3>
+    <div class="badges">
+      <span class="badge pi pi-limited">LIMITED</span>
+      <span class="badge trust trust-medium">medium</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">GPT-4o (via Coze); Gemini 1.5 Pro (via Coze); Doubao; Kimi</p>
+  <p class="limits"><strong>Limits:</strong> Token-based daily quotas, reset daily; no card</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://www.coze.com/" target="_blank" rel="noopener">site</a><a class="btn" href="https://www.coze.com/home" target="_blank" rel="noopener">free</a><a class="btn" href="https://www.coze.com/home" target="_blank" rel="noopener">keys</a><a class="btn" href="https://www.coze.com/docs" target="_blank" rel="noopener">docs</a>
+  <p class="note">Chat-bot platform; API needs its own auth flow</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Nebius AI Studio</h3>
+    <div class="badges">
+      <span class="badge pi pi-openai-compatible">OPENAI-COMPAT</span>
+      <span class="badge trust trust-medium">medium</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Llama 3.3 70B; Qwen 2.5 Coder 32B; DeepSeek R1</p>
+  <p class="limits"><strong>Limits:</strong> $1 free credit</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> trial</p>
+  <a class="btn" href="https://studio.nebius.ai/" target="_blank" rel="noopener">site</a><a class="btn" href="https://studio.nebius.ai/" target="_blank" rel="noopener">free</a><a class="btn" href="https://studio.nebius.ai/settings/api-keys" target="_blank" rel="noopener">keys</a><a class="btn" href="https://docs.nebius.com/" target="_blank" rel="noopener">docs</a>
+  <p class="note">Small credit</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>AI21 (Jamba)</h3>
+    <div class="badges">
+      <span class="badge pi pi-openai-compatible">OPENAI-COMPAT</span>
+      <span class="badge trust trust-medium">medium</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Jamba 1.5; Jamba 1.5 Mini; Jamba 1.5 Large</p>
+  <p class="limits"><strong>Limits:</strong> $10 trial credit</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> trial</p>
+  <a class="btn" href="https://www.ai21.com/" target="_blank" rel="noopener">site</a><a class="btn" href="https://www.ai21.com/studio" target="_blank" rel="noopener">free</a><a class="btn" href="https://studio.ai21.com/" target="_blank" rel="noopener">keys</a><a class="btn" href="https://docs.ai21.com/" target="_blank" rel="noopener">docs</a>
+  <p class="note">Hybrid SSM-Transformer architecture</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Moonshot AI (Kimi)</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Kimi K2; Kimi K2.5; moonshot-v1-32k</p>
+  <p class="limits"><strong>Limits:</strong> Free tier with limited daily tokens for new accounts (China phone required for full quota)</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> trial</p>
+  <a class="btn" href="https://platform.moonshot.ai/" target="_blank" rel="noopener">site</a><a class="btn" href="https://platform.moonshot.ai/" target="_blank" rel="noopener">free</a><a class="btn" href="https://platform.moonshot.ai/docs" target="_blank" rel="noopener">docs</a>
+  <p class="note">Kimi K2 series popular for coding</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>MiniMax</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">MiniMax M2; MiniMax M1; MiniMax Text-01</p>
+  <p class="limits"><strong>Limits:</strong> Free tier for new accounts with daily token quota</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> trial</p>
+  <a class="btn" href="https://www.minimax.io/" target="_blank" rel="noopener">site</a><a class="btn" href="https://platform.minimaxi.com/" target="_blank" rel="noopener">free</a><a class="btn" href="https://platform.minimaxi.com/user-center/basic-information/interface-key" target="_blank" rel="noopener">keys</a>
+  <p class="note">MiniMax M2.7 also served on Groq free tier</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>Alibaba Cloud Model Studio (Qwen)</h3>
+    <div class="badges">
+      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge trust trust-high">high</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Qwen2.5-Max; Qwen2.5-Coder-32B; Qwen3</p>
+  <p class="limits"><strong>Limits:</strong> New users get free quota (tokens) for Qwen models; China/Global dashboards differ</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> trial</p>
+  <a class="btn" href="https://www.alibabacloud.com/en/product/modelstudio" target="_blank" rel="noopener">site</a><a class="btn" href="https://dashscope.console.aliyun.com/" target="_blank" rel="noopener">free</a><a class="btn" href="https://dashscope.console.aliyun.com/apiKey" target="_blank" rel="noopener">keys</a><a class="btn" href="https://www.alibabacloud.com/help/en/model-studio/" target="_blank" rel="noopener">docs</a>
+  <p class="note">pi supports Qwen Token Plan (existing catalog / individual / China)</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>BazaarLink (free gateway)</h3>
+    <div class="badges">
+      <span class="badge pi pi-openai-compatible">OPENAI-COMPAT</span>
+      <span class="badge trust trust-low">low</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">Various via gateway (OpenAI-compatible)</p>
+  <p class="limits"><strong>Limits:</strong> Free OpenAI-compatible API key; model access varies</p>
+  <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> unknown</p>
+  <a class="btn" href="https://bazaarlink.ai/free" target="_blank" rel="noopener">site</a><a class="btn" href="https://bazaarlink.ai/free" target="_blank" rel="noopener">free</a><a class="btn" href="https://bazaarlink.ai/free" target="_blank" rel="noopener">keys</a>
+  <p class="note">Unofficial gateway - use at your own risk; do NOT send sensitive data</p>
+</div>
+<div class="card">
+  <div class="card-top">
+    <h3>LLM7.io</h3>
+    <div class="badges">
+      <span class="badge pi pi-openai-compatible">OPENAI-COMPAT</span>
+      <span class="badge trust trust-medium">medium</span>
+      <span class="badge status ok">OK · 200</span>
+    </div>
+  </div>
+  <p class="models">DeepSeek-R1; Qwen 2.5</p>
+  <p class="limits"><strong>Limits:</strong> 30 RPM without signup; up to 5M tokens/day with free email token</p>
+  <p class="meta"><strong>Signup:</strong> none (No credit card) &nbsp;·&nbsp;
+     <strong>Expiry:</strong> ongoing</p>
+  <a class="btn" href="https://llm7.io/" target="_blank" rel="noopener">site</a><a class="btn" href="https://llm7.io/" target="_blank" rel="noopener">free</a>
+  <p class="note">New provider; verify reliability before heavy use</p>
+</div>
+</div>
+<h2>New leads (unverified)</h2><ul><li><a href="https://www.llmonestop.com" target="_blank" rel="noopener">Show HN: LLM Onestop – Access ChatGPT, Claude, Gemini, and more in one interface</a> <span class="dim">(llmonestop.com, via hn)</span></li><li><a href="https://www.dataherald.com/news/introducing-dhai" target="_blank" rel="noopener">Show HN: Natural Language to SQL &quot;Text-to-SQL&quot; API</a> <span class="dim">(dataherald.com, via hn)</span></li><li><a href="https://news.ycombinator.com/item?id=48477708" target="_blank" rel="noopener">Show HN: Papermill Press – An AI-friendly markup language for PDF generation</a> <span class="dim">(news.ycombinator.com, via hn)</span></li><li><a href="https://www.steadwing.com/" target="_blank" rel="noopener">Show HN: Steadwing – Your Autonomous On-Call Engineer</a> <span class="dim">(steadwing.com, via hn)</span></li><li><a href="https://incidentary.com/" target="_blank" rel="noopener">Show HN: An OTel exporter that posts the cause to your incident channel</a> <span class="dim">(incidentary.com, via hn)</span></li><li><a href="https://www.paperpod.dev" target="_blank" rel="noopener">Show HN: PaperPod – Fast, no-setup sandboxes for AI agents</a> <span class="dim">(paperpod.dev, via hn)</span></li><li><a href="https://snapapi.pics/" target="_blank" rel="noopener">Show HN: SnapAPI – Screenshot/PDF/Extract API Built with Fastify and Playwright</a> <span class="dim">(snapapi.pics, via hn)</span></li><li><a href="https://souko.ai/" target="_blank" rel="noopener">Show HN: Souko.ai – Web scraping, search and extraction APIs for AI workflows</a> <span class="dim">(souko.ai, via hn)</span></li><li><a href="https://sysmodeler.ai/" target="_blank" rel="noopener">Show HN: Sysmodeler.ai cuts safety-critical modeling from weeks → minutes (Beta)</a> <span class="dim">(sysmodeler.ai, via hn)</span></li><li><a href="https://www.apimatic.io/product/context-plugins/showcase" target="_blank" rel="noopener">Show HN: AI agents are bad at API integrations – we fixed it</a> <span class="dim">(apimatic.io, via hn)</span></li><li><a href="https://twigg.ai" target="_blank" rel="noopener">Show HN: Git for LLMs – A context management interface</a> <span class="dim">(twigg.ai, via hn)</span></li><li><a href="https://michaelai.io" target="_blank" rel="noopener">Show HN: MichaelAI – An artificially intelligent investment analyst</a> <span class="dim">(michaelai.io, via hn)</span></li><li><a href="https://flowtest.ai/" target="_blank" rel="noopener">Show HN: Flowtest.ai – AI agent that performs E2E testing in your website</a> <span class="dim">(flowtest.ai, via hn)</span></li><li><a href="https://www.dyad.sh/" target="_blank" rel="noopener">Show HN: Dyad – free, local, open-source AI app builder (v0/lovable alternative)</a> <span class="dim">(dyad.sh, via hn)</span></li><li><a href="https://chromewebstore.google.com/detail/ask-on-youtube-using-chat/gdcabhbeojofokajoomgoclohimfnfjb" target="_blank" rel="noopener">Show HN: Ask on YouTube – An Chrome extension for gathering YouTube insights</a> <span class="dim">(chromewebstore.google.com, via hn)</span></li></ul>
+<section>
+  <h2>Search source status</h2>
+  <ul><li>duckduckgo: 0/10 queries returned results</li><li>hackernews: 8/8 queries returned results</li><li>reddit: 0/3 queries returned results</li><li>github: 3/3 queries returned results</li></ul>
+</section>
+<footer>Generated by <a href="https://github.com/airdropia/Free-LLM">Free-LLM</a> research bot.
+  Free tiers change frequently; always verify links before relying on an offer.
+  Data is community-curated, not a guarantee.</footer>
+<script>
+const q = document.getElementById('q');
+q.addEventListener('input', () => {
+  const t = q.value.toLowerCase();
+  document.querySelectorAll('.card').forEach(c => {
+    c.style.display = c.textContent.toLowerCase().includes(t) ? '' : 'none';
+  });
+});
+</script>
+</body>
+</html>
