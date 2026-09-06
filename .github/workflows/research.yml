@@ -38,6 +38,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python bot/research.py
 
+      - name: Clean workspace (keep repo tidy)
+        run: |
+          rm -rf bot/__pycache__ __pycache__ .pytest_cache
+          find . -name '*.pyc' -delete
+          find . -type d -name '.venv' -prune -exec rm -rf {} +
+
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"

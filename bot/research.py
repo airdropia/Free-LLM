@@ -59,17 +59,16 @@ MAX_GITHUB_QUERIES = 3
 MAX_NEW_LEADS = 15    # new candidate links surfaced in the report
 GH_TOKEN = os.environ.get("GH_TOKEN", "")  # provided by GitHub Actions
 
-# pi natively supports these providers (from pi docs providers.md env table)
-PI_NATIVE = {
-    "anthropic", "ant-ling", "azure-openai-responses", "openai", "deepseek",
-    "nvidia", "google", "amazon-bedrock", "mistral", "groq", "cerebras",
-    "cloudflare-ai-gateway", "cloudflare-workers-ai", "xai", "openrouter",
-    "vercel-ai-gateway", "zai", "zai-coding-cn", "opencode", "opencode-go",
-    "radius", "huggingface", "fireworks", "together", "baseten", "kimi-coding",
-    "minimax", "minimax-cn", "qwen-token-plan", "qwen-token-plan-individual",
-    "qwen-token-plan-cn", "xiaomi", "xiaomi-token-plan-cn",
-    "xiaomi-token-plan-ams", "xiaomi-token-plan-sgp",
+# API compatibility labels - what an OpenAI-format client can talk to
+API_LABELS = {
+    "openai-completions": "OPENAI-COMPAT",
+    "openai-responses": "OPENAI-COMPAT",
+    "google-generative-ai": "GOOGLE API",
+    "anthropic-messages": "ANTHROPIC",
+    "cohere": "COHERE",
+    "other": "OTHER",
 }
+CLIENT_READY = {"openai-completions", "openai-responses", "google-generative-ai", "anthropic-messages"}
 
 # --------------------------------------------------------------------------
 # HTTP helpers
@@ -117,23 +116,35 @@ def extract_title(html_text):
     return html_mod.unescape(re.sub(r"\s+", " ", m.group(1))).strip()
 
 
+def classify_status(status):
+    """Map an HTTP status to a link state: ok / blocked / dead / down."""
+    if 200 <= status < 400:
+        return "ok"
+    if status == 403:
+        return "blocked"   # bot detection; likely fine in a browser
+    if 400 <= status < 500:
+        return "dead"
+    return "down"
+
+
 def verify_url(url):
-    """Check a URL is live. Returns dict(status, ok, final_url, latency, title)."""
+    """Check a URL is live. Returns dict with status, state, ok, final_url..."""
     t0 = time.time()
     try:
         status, final, body, _ = http_get(url, timeout=10, retries=1)
-        ok = status < 400
+        state = classify_status(status)
         return {
             "url": url,
             "status": status,
-            "ok": ok,
+            "state": state,
+            "ok": state == "ok",
             "final_url": final,
             "latency": round(time.time() - t0, 1),
             "title": extract_title(body.decode("utf-8", errors="replace"))[:120] if body else "",
         }
     except Exception as e:  # noqa: BLE001
         return {
-            "url": url, "status": 0, "ok": False, "final_url": url,
+            "url": url, "status": 0, "state": "down", "ok": False, "final_url": url,
             "latency": round(time.time() - t0, 1), "title": f"unreachable ({type(e).__name__})",
         }
 
@@ -151,7 +162,14 @@ def search_ddg(query, max_results=8):
             timeout=15, retries=1,
         )
         if status >= 400:
-            return []
+            # fall back to the lite endpoint (less bot protection)
+            status, final, body, _ = http_get(
+                f"https://lite.duckduckgo.com/lite/?q={q}",
+                headers={"Accept": "text/html"},
+                timeout=15, retries=1,
+            )
+            if status >= 400:
+                return []
         text = body.decode("utf-8", errors="replace")
         out = []
         blocks = re.split(r'<div class="result', text)[1:]
@@ -175,6 +193,17 @@ def search_ddg(query, max_results=8):
             out.append({"title": title, "url": url, "snippet": snippet[:220]})
             if len(out) >= max_results:
                 break
+        if not out:
+            # generic fallback: any uddg-redirect anchors (lite endpoint etc.)
+            for m in re.finditer(r'<a[^>]+href="([^"]*uddg=[^"]*)"[^>]*>(.*?)</a>', text, re.S | re.I):
+                raw = html_mod.unescape(m.group(1))
+                uddg = urllib.parse.parse_qs(urllib.parse.urlparse(raw).query).get("uddg", [None])[0]
+                if not uddg:
+                    continue
+                title = html_mod.unescape(re.sub(r"<[^>]+>", "", m.group(2))).strip()
+                out.append({"title": title, "url": uddg, "snippet": ""})
+                if len(out) >= max_results:
+                    break
         return out
     except Exception:
         return []
@@ -280,14 +309,23 @@ def extract_leads(all_results, known_domains):
 # Rendering
 # --------------------------------------------------------------------------
 def status_badge(v):
-    if v.get("ok"):
+    state = v.get("state", "down" if not v.get("ok") else "ok")
+    if state == "ok":
         return "OK"
-    return f"DEAD ({v.get('status', 'err')})"
+    if state == "blocked":
+        return f"BLOCKED ({v.get('status', 'err')})"
+    if state == "dead":
+        return f"DEAD ({v.get('status', 'err')})"
+    return f"DOWN ({v.get('status', 'err')})"
 
 
-def pi_badge(p):
-    status = p.get("pi", {}).get("status", "unknown")
-    return {"native": "NATIVE", "openai-compatible": "OPENAI-COMPAT", "limited": "LIMITED"}.get(status, "?")
+def compat_badge(p):
+    api = p.get("compat", {}).get("api", "other")
+    return API_LABELS.get(api, "OTHER")
+
+
+def api_slug(p):
+    return p.get("compat", {}).get("api", "other").replace("_", "-")
 
 
 def trust_label(p):
@@ -297,11 +335,11 @@ def trust_label(p):
 def render_markdown(providers, meta, leads, source_status):
     now = meta["last_updated"]
     lines = []
-    lines.append(f"\n<!-- OFFERS-START (generated by bot/research.py - do not edit) -->\n")
+    lines.append(f"\n<!-- OFFERS-START -->\n")
     lines.append(f"## Latest Offers - {now}\n")
     lines.append(f"> {meta['ok_count']} providers verified OK | {meta['dead_count']} flagged | "
-                 f"{meta['native_count']} pi-native | last full run: {now}\n")
-    lines.append("| Provider | pi | Models | Limits | Signup | Expiry | Links |")
+                 f"{meta['compatible_count']} client-ready (OpenAI-compatible or native API) | last full run: {now}\n")
+    lines.append("| Provider | Client API | Models | Limits | Signup | Expiry | Links |")
     lines.append("|---|---|---|---|---|---|---|")
     for p in providers:
         links = []
@@ -313,12 +351,12 @@ def render_markdown(providers, meta, leads, source_status):
             links.append(f"[keys]({p['key_url']})")
         if p["v_docs"] and p["v_docs"]["ok"]:
             links.append(f"[docs]({p['docs_url']})")
-        link_str = " ".join(links) if links else f"**DEAD** ({status_badge(p['v_website'])})"
+        link_str = " ".join(links) if links else f"**{status_badge(p['v_website'])}**"
         models = "; ".join(p["models"][:4]) + (" …" if len(p["models"]) > 4 else "")
         signup = "no-CC " + p["signup"] if not p["credit_card_required"] else "**CC** " + p["signup"]
         expiry = p["expiry"]
         lines.append(
-            f"| **{p['name']}** ({p['trust']}) | {pi_badge(p)} | {models} | "
+            f"| **{p['name']}** ({p['trust']}) | {compat_badge(p)} | {models} | "
             f"{p['limits']} | {signup} | {expiry} | {link_str} |"
         )
     if leads:
@@ -339,7 +377,7 @@ def render_html(providers, meta, leads, source_status):
     for p in providers:
         v = p["v_website"]
         status = status_badge(v)
-        status_cls = "ok" if v["ok"] else "bad"
+        status_cls = v.get("state", "down")
         links = []
         for label, key, url in (("site", "v_website", p["website"]),
                                 ("free", "v_free", p["free_url"]),
@@ -355,7 +393,7 @@ def render_html(providers, meta, leads, source_status):
   <div class="card-top">
     <h3>{html_escape(p['name'])}</h3>
     <div class="badges">
-      <span class="badge pi pi-{p['pi']['status']}">{pi_badge(p)}</span>
+      <span class="badge api api-{api_slug(p)}">{compat_badge(p)}</span>
       <span class="badge trust trust-{p['trust']}">{p['trust']}</span>
       <span class="badge status {status_cls}">{status} · {p['v_website'].get('status', '-')}</span>
     </div>
@@ -399,14 +437,16 @@ input#q {{ width:100%; max-width:420px; padding:10px 14px; border-radius:8px; bo
 h3 {{ font-size:16px; margin-bottom:8px; }}
 .badges {{ display:flex; gap:6px; flex-wrap:wrap; }}
 .badge {{ font-size:11px; padding:2px 8px; border-radius:99px; white-space:nowrap; }}
-.pi-native {{ background:#163a24; color:#4ade80; }}
-.pi-openai-compatible {{ background:#14304a; color:#60a5fa; }}
-.pi-limited {{ background:#3a2f14; color:#facc15; }}
+.api-openai-completions, .api-openai-responses {{ background:#14304a; color:#60a5fa; }}
+.api-google-generative-ai {{ background:#163a24; color:#4ade80; }}
+.api-anthropic-messages {{ background:#3a1414; color:#f87171; }}
+.api-cohere, .api-other {{ background:#2a2414; color:#fbbf24; }}
 .trust-high {{ background:#1c2a3a; color:#7dd3fc; }}
 .trust-medium {{ background:#2a2414; color:#fbbf24; }}
 .trust-low {{ background:#3a1414; color:#f87171; }}
 .status.ok {{ background:#163a24; color:#4ade80; }}
-.status.bad {{ background:#3a1414; color:#f87171; }}
+.status.blocked {{ background:#3a2f14; color:#facc15; }}
+.status.dead, .status.down {{ background:#3a1414; color:#f87171; }}
 .models {{ color:var(--txt); margin:6px 0; }}
 .limits {{ color:var(--dim); font-size:13.5px; margin:6px 0; }}
 .meta {{ color:var(--dim); font-size:13px; margin:6px 0; }}
@@ -425,7 +465,7 @@ footer {{ max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px
 <header>
   <h1>Free-LLM <span>· daily free LLM API offers</span></h1>
   <p class="sub">Auto-researched daily by a GitHub Actions bot. Last run: <strong>{now}</strong> ·
-     {meta['ok_count']} providers OK · {meta['dead_count']} flagged · {meta['native_count']} pi-native ·
+     {meta['ok_count']} providers OK · {meta['dead_count']} flagged · {meta['compatible_count']} client-ready ·
      zero credit cards, email/Google/GitHub signups only (unless marked CC)</p>
   <input id="q" type="search" placeholder="Filter providers, models, limits..." autofocus>
 </header>
@@ -461,6 +501,13 @@ def html_escape(s):
 # Main
 # --------------------------------------------------------------------------
 def main():
+    # This bot is meant to run only inside GitHub Actions (keeps the local
+    # machine clean). Refuse local execution unless explicitly forced.
+    if os.environ.get("GITHUB_ACTIONS") != "true" and "--force-local" not in sys.argv:
+        print("Refusing to run outside GitHub Actions (local machine stays clean).")
+        print("Run in CI, or pass --force-local to override.")
+        return
+
     now = datetime.now(timezone.utc)
     now_iso = now.strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -553,7 +600,7 @@ def main():
 
     ok_count = sum(1 for p in providers if p["v_website"]["ok"])
     dead_count = len(providers) - ok_count
-    native_count = sum(1 for p in providers if p.get("pi", {}).get("status") == "native")
+    compatible_count = sum(1 for p in providers if p.get("compat", {}).get("api") in CLIENT_READY)
 
     # 5. New leads (candidates outside the KB)
     known_domains = {domain_of(p.get("website", "")) for p in providers}
@@ -565,7 +612,7 @@ def main():
         "providers_count": len(providers),
         "ok_count": ok_count,
         "dead_count": dead_count,
-        "native_count": native_count,
+        "compatible_count": compatible_count,
         "leads_count": len(leads),
         "sources": source_status,
     }
@@ -576,7 +623,7 @@ def main():
 
     offers_payload = {
         "last_updated": now_iso,
-        "summary": {k: meta[k] for k in ("ok_count", "dead_count", "native_count", "leads_count")},
+        "summary": {k: meta[k] for k in ("ok_count", "dead_count", "compatible_count", "leads_count")},
         "sources": source_status,
         "offers": [
             {
@@ -592,7 +639,7 @@ def main():
                 "limits": p["limits"],
                 "expiry": p["expiry"],
                 "expiry_note": p.get("expiry_note", ""),
-                "pi": p.get("pi", {}),
+                "compat": p.get("compat", {}),
                 "trust": p.get("trust", "unknown"),
                 "notes": p.get("notes", ""),
                 "verified_at": now_iso,
@@ -601,6 +648,12 @@ def main():
                     "free": p["v_free"]["ok"],
                     "keys": p["v_keys"]["ok"],
                     "docs": p["v_docs"]["ok"],
+                },
+                "link_states": {
+                    "website": p["v_website"].get("state"),
+                    "free": p["v_free"].get("state"),
+                    "keys": p["v_keys"].get("state"),
+                    "docs": p["v_docs"].get("state"),
                 },
                 "website_status": p["v_website"].get("status"),
             }
@@ -612,7 +665,7 @@ def main():
     print(f"[{now_iso}] wrote {OFFERS_JSON}")
 
     # History log (keep latest first, cap at 90 entries)
-    history_line = f"- {now_iso} | providers={len(providers)} | ok={ok_count} | dead={dead_count} | pi-native={native_count} | leads={len(leads)}\n"
+    history_line = f"- {now_iso} | providers={len(providers)} | ok={ok_count} | dead={dead_count} | client-ready={compatible_count} | leads={len(leads)}\n"
     prev_history = HISTORY_MD.read_text(encoding="utf-8") if HISTORY_MD.exists() else ""
     prev_lines = prev_history.splitlines()[:90]
     HISTORY_MD.write_text(history_line + "\n".join(prev_lines) + ("\n" if prev_lines else ""), encoding="utf-8")
@@ -637,7 +690,7 @@ def main():
     print(f"[{now_iso}] wrote {SITE_HTML}")
 
     print(f"[{now_iso}] DONE - summary: "
-          f"{json.dumps({k: meta[k] for k in ('ok_count', 'dead_count', 'native_count', 'leads_count')})}")
+          f"{json.dumps({k: meta[k] for k in ('ok_count', 'dead_count', 'compatible_count', 'leads_count')})}")
 
 
 if __name__ == "__main__":

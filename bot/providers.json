@@ -1,5 +1,5 @@
 {
-  "_comment": "Curated knowledge base of providers offering free LLM API access. The bot verifies all URLs daily, cross-references web search results, and flags dead links. signup values: google | email | github | email+phone | email+cc | cc | none | unknown. expiry values: ongoing | trial | limited | unknown. pi.status values: native (pi built-in provider) | openai-compatible (works via models.json with openai-completions) | limited | unknown.",
+  "_comment": "Curated knowledge base of providers offering free LLM API access. The bot verifies all URLs daily, cross-references web search results, and flags dead links. signup values: google | email | github | email+phone | email+cc | cc | none | unknown. expiry values: ongoing | trial | limited | unknown. compat.api values: openai-completions (works with any OpenAI-format client) | google-generative-ai | anthropic-messages | cohere | other.",
   "providers": [
     {
       "name": "Google AI Studio (Gemini)",
@@ -14,7 +14,7 @@
       "limits": "Free tier: 5-30 RPM depending on model; ~9,000 requests/day on Flash; 25 RPD on Pro; 1M token context available",
       "expiry": "ongoing",
       "expiry_note": "Permanent free tier; quotas reduced late 2025 but still free",
-      "pi": { "status": "native", "provider_id": "google", "api": "google-generative-ai", "notes": "GEMINI_API_KEY env var or /login google" },
+      "compat": { "api": "google-generative-ai", "notes": "OpenAI-compatible endpoint available (generativelanguage.googleapis.com/v1beta/openai); also native Google API" },
       "trust": "high",
       "notes": "Prompts may be used for training outside EU/UK/EEA"
     },
@@ -31,9 +31,9 @@
       "limits": "Free tier: 30 RPM, 14,400 requests/day. Very high token throughput (~320 tok/s on 70B)",
       "expiry": "ongoing",
       "expiry_note": "Free tier is 'free forever'",
-      "pi": { "status": "native", "provider_id": "groq", "api": "openai-completions", "notes": "GROQ_API_KEY env var or /login groq" },
+      "compat": { "api": "openai-completions", "notes": "Drop-in OpenAI-compatible: base URL https://api.groq.com/openai/v1" },
       "trust": "high",
-      "notes": "No-training policy; ideal default for pi"
+      "notes": "No-training policy"
     },
     {
       "name": "OpenRouter",
@@ -48,9 +48,9 @@
       "limits": "Free models: 20 RPM, 50 requests/day (1,000/day after $10 top-up). One key routes across many providers",
       "expiry": "ongoing",
       "expiry_note": "Free model list changes; availability per-model",
-      "pi": { "status": "native", "provider_id": "openrouter", "api": "openai-completions", "notes": "OPENROUTER_API_KEY or /login openrouter (OAuth). Use model IDs like deepseek/deepseek-chat:free" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible; free model IDs use ':free' suffix (e.g. deepseek/deepseek-chat:free)" },
       "trust": "high",
-      "notes": "Great for pi: single key, failover across providers"
+      "notes": "Single key, failover across many providers"
     },
     {
       "name": "Cloudflare Workers AI",
@@ -65,7 +65,7 @@
       "limits": "Free plan: 10,000 neurons/day (~300,000 neurons/month)",
       "expiry": "ongoing",
       "expiry_note": "Ongoing free daily quota",
-      "pi": { "status": "native", "provider_id": "cloudflare-workers-ai", "api": "openai-completions", "notes": "CLOUDFLARE_API_KEY + account/gateway ID" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible unified endpoint (/compat) plus native Workers AI API" },
       "trust": "high",
       "notes": "Smaller context windows than most"
     },
@@ -82,7 +82,7 @@
       "limits": "Experiment free tier: ~1B tokens/month on Codestral; ~1 request/second; requires opt-in to training",
       "expiry": "ongoing",
       "expiry_note": "Free Experiment tier ongoing, subject to change",
-      "pi": { "status": "native", "provider_id": "mistral", "api": "openai-completions", "notes": "MISTRAL_API_KEY env var or /login mistral" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint available" },
       "trust": "high",
       "notes": "Phone verification at signup; free tier requires training opt-in"
     },
@@ -99,7 +99,7 @@
       "limits": "Free tier: ~1M tokens/day, ~30 RPM. Extremely fast inference",
       "expiry": "ongoing",
       "expiry_note": "Free tier ongoing",
-      "pi": { "status": "native", "provider_id": "cerebras", "api": "openai-completions", "notes": "CEREBRAS_API_KEY env var or /login cerebras" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "high",
       "notes": "No-training policy"
     },
@@ -116,7 +116,7 @@
       "limits": "Free API credits for developers; ~40 RPM; OpenAI-compatible endpoint",
       "expiry": "ongoing",
       "expiry_note": "Free credits renew; generous for personal use",
-      "pi": { "status": "native", "provider_id": "nvidia", "api": "openai-completions", "notes": "NVIDIA_API_KEY env var or /login nvidia" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "high",
       "notes": "Phone verification at signup"
     },
@@ -133,7 +133,7 @@
       "limits": "Free routing credits ~$0.10/month; 300 requests/hour cap",
       "expiry": "ongoing",
       "expiry_note": "Monthly free credit resets; community rate limits",
-      "pi": { "status": "native", "provider_id": "huggingface", "api": "openai-completions", "notes": "HF_TOKEN env var or /login huggingface" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint (/v1) plus native HF API" },
       "trust": "high",
       "notes": "Routes to multiple backends (Together, Fireworks, Groq, Cerebras, etc.)"
     },
@@ -150,7 +150,7 @@
       "limits": "Trial key: ~20 RPM, 1,000 requests/month; non-commercial use",
       "expiry": "ongoing",
       "expiry_note": "Trial tier ongoing",
-      "pi": { "status": "limited", "provider_id": null, "api": "cohere-native", "notes": "Not OpenAI-compatible natively; needs a translation proxy for pi" },
+      "compat": { "api": "cohere", "notes": "Native Cohere API (not OpenAI-compatible); needs an adapter/proxy for OpenAI-format clients" },
       "trust": "high",
       "notes": "Best for RAG; no training on trial tier"
     },
@@ -167,7 +167,7 @@
       "limits": "Free Flash tier: ~1 request/second, ~1,000 requests/day",
       "expiry": "ongoing",
       "expiry_note": "Free tier ongoing, subject to change",
-      "pi": { "status": "native", "provider_id": "zai", "api": "openai-completions", "notes": "ZAI_API_KEY env var or /login zai" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "high",
       "notes": "Chinese provider; global z.ai and China bigmodel.cn consoles"
     },
@@ -184,7 +184,7 @@
       "limits": "Free tier: 15 RPM, 150-1,000 requests/day depending on model; Azure OpenAI-compatible endpoint",
       "expiry": "ongoing",
       "expiry_note": "Free tier ongoing for public GitHub accounts",
-      "pi": { "status": "openai-compatible", "provider_id": null, "api": "openai-completions", "notes": "Works via models.json with OpenAI-compatible base URL; GitHub Copilot auth also supported natively" },
+      "compat": { "api": "openai-completions", "notes": "Azure OpenAI-compatible endpoint (models.github.ai)" },
       "trust": "high",
       "notes": "Rate limits apply to ALL GitHub models, not per model"
     },
@@ -201,7 +201,7 @@
       "limits": "~10M token trial for new accounts; thereafter extremely low pay-as-you-go pricing",
       "expiry": "trial",
       "expiry_note": "Trial credits; signup offers change frequently",
-      "pi": { "status": "native", "provider_id": "deepseek", "api": "openai-completions", "notes": "DEEPSEEK_API_KEY env var or /login deepseek" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "high",
       "notes": "Excellent reasoning models at low cost"
     },
@@ -218,7 +218,7 @@
       "limits": "Free tier for new accounts: ~5M tokens on signup (valid ~30 days); generous rate limits while it lasts",
       "expiry": "trial",
       "expiry_note": "Limited-time signup offer; verify current status",
-      "pi": { "status": "native", "provider_id": "xai", "api": "openai-completions", "notes": "XAI_API_KEY env var or /login xai" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "high",
       "notes": "Free credit amounts change; check docs"
     },
@@ -235,7 +235,7 @@
       "limits": "$1 free credit for new accounts; some models free tier",
       "expiry": "trial",
       "expiry_note": "Trial credit; evaluation budget only",
-      "pi": { "status": "native", "provider_id": "fireworks", "api": "openai-completions", "notes": "FIREWORKS_API_KEY env var or /login fireworks" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "high",
       "notes": "Small credit; fine for benchmarking"
     },
@@ -252,7 +252,7 @@
       "limits": "Free signup credit (reported $1-$25 depending on period); pay-as-you-go after",
       "expiry": "trial",
       "expiry_note": "Trial credit; amounts vary over time",
-      "pi": { "status": "native", "provider_id": "together", "api": "openai-completions", "notes": "TOGETHER_API_KEY env var or /login together" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "high",
       "notes": "Reported credit varies by source; verify on signup"
     },
@@ -269,7 +269,7 @@
       "limits": "$30 free credit; card required once credit exhausted",
       "expiry": "trial",
       "expiry_note": "Trial credit",
-      "pi": { "status": "native", "provider_id": "baseten", "api": "openai-completions", "notes": "BASETEN_API_KEY env var or /login baseten" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "high",
       "notes": "Most generous trial; card needed later"
     },
@@ -286,7 +286,7 @@
       "limits": "$5 free credit; credit card required at signup",
       "expiry": "trial",
       "expiry_note": "Trial credit",
-      "pi": { "status": "openai-compatible", "provider_id": null, "api": "openai-completions", "notes": "OpenAI-compatible; add via models.json" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "high",
       "notes": "Only 405B-class free access, but card required"
     },
@@ -303,7 +303,7 @@
       "limits": "Token-based daily quotas, reset daily; no card",
       "expiry": "ongoing",
       "expiry_note": "Daily free tokens ongoing",
-      "pi": { "status": "limited", "provider_id": null, "api": "other", "notes": "Bot/agent platform, not a plain OpenAI-compatible API; limited pi usability" },
+      "compat": { "api": "other", "notes": "Bot/agent platform, not a plain OpenAI-compatible API; limited usability with OpenAI-format clients" },
       "trust": "medium",
       "notes": "Chat-bot platform; API needs its own auth flow"
     },
@@ -320,7 +320,7 @@
       "limits": "$1 free credit",
       "expiry": "trial",
       "expiry_note": "Trial credit",
-      "pi": { "status": "openai-compatible", "provider_id": null, "api": "openai-completions", "notes": "OpenAI-compatible; add via models.json" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "medium",
       "notes": "Small credit"
     },
@@ -337,7 +337,7 @@
       "limits": "$10 trial credit",
       "expiry": "trial",
       "expiry_note": "Trial credit",
-      "pi": { "status": "openai-compatible", "provider_id": null, "api": "openai-completions", "notes": "OpenAI-compatible API; add via models.json" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible API" },
       "trust": "medium",
       "notes": "Hybrid SSM-Transformer architecture"
     },
@@ -354,7 +354,7 @@
       "limits": "Free tier with limited daily tokens for new accounts (China phone required for full quota)",
       "expiry": "trial",
       "expiry_note": "New-account free quota",
-      "pi": { "status": "native", "provider_id": "kimi-coding", "api": "openai-completions", "notes": "KIMI_API_KEY env var or /login kimi-coding" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "high",
       "notes": "Kimi K2 series popular for coding"
     },
@@ -371,7 +371,7 @@
       "limits": "Free tier for new accounts with daily token quota",
       "expiry": "trial",
       "expiry_note": "New-account free quota",
-      "pi": { "status": "native", "provider_id": "minimax", "api": "openai-completions", "notes": "MINIMAX_API_KEY env var or /login minimax" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "high",
       "notes": "MiniMax M2.7 also served on Groq free tier"
     },
@@ -387,10 +387,10 @@
       "models": ["Qwen2.5-Max", "Qwen2.5-Coder-32B", "Qwen3"],
       "limits": "New users get free quota (tokens) for Qwen models; China/Global dashboards differ",
       "expiry": "trial",
-      "expiry_note": "New-user free quota; also paid Qwen Token Plans exist (pi supports natively)",
-      "pi": { "status": "native", "provider_id": "qwen-token-plan", "api": "openai-completions", "notes": "QWEN_TOKEN_PLAN_API_KEY for paid token plans; free quota via dashscope" },
+      "expiry_note": "New-user free quota",
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint on DashScope" },
       "trust": "high",
-      "notes": "pi supports Qwen Token Plan (existing catalog / individual / China)"
+      "notes": "Alibaba Cloud account; free quota for new users"
     },
     {
       "name": "BazaarLink (free gateway)",
@@ -405,7 +405,7 @@
       "limits": "Free OpenAI-compatible API key; model access varies",
       "expiry": "unknown",
       "expiry_note": "Community gateway; availability not guaranteed",
-      "pi": { "status": "openai-compatible", "provider_id": null, "api": "openai-completions", "notes": "OpenAI-compatible; add via models.json" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible gateway" },
       "trust": "low",
       "notes": "Unofficial gateway - use at your own risk; do NOT send sensitive data"
     },
@@ -422,7 +422,7 @@
       "limits": "30 RPM without signup; up to 5M tokens/day with free email token",
       "expiry": "ongoing",
       "expiry_note": "Free, no billing; new provider",
-      "pi": { "status": "openai-compatible", "provider_id": null, "api": "openai-completions", "notes": "OpenAI-compatible; add via models.json" },
+      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
       "trust": "medium",
       "notes": "New provider; verify reliability before heavy use"
     }
