@@ -636,7 +636,8 @@ def main():
     SITE_HTML.write_text(render_html(providers, meta, leads, source_status), encoding="utf-8")
     print(f"[{now_iso}] wrote {SITE_HTML}")
 
-    print(f"[{now_iso}] DONE - summary: {json.dumps(meta['summary'])}")
+    print(f"[{now_iso}] DONE - summary: "
+          f"{json.dumps({k: meta[k] for k in ('ok_count', 'dead_count', 'native_count', 'leads_count')})}")
 
 
 if __name__ == "__main__":
