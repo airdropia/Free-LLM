@@ -68,11 +68,12 @@ are unofficial gateways — use at your own risk, never send sensitive data.
 ## 📊 Latest Offers
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Offers - 2026-09-06T17:32:45Z
+## Latest Offers - 2026-09-06T19:10:59Z
 
-> 22 providers verified OK | 3 flagged | 23 client-ready (OpenAI-compatible or native API) | last full run: 2026-09-06T17:32:45Z
+> 22 providers verified OK | 3 flagged | 23 client-ready (OpenAI-compatible or native API) | last full run: 2026-09-06T19:10:59Z
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
 |---|---|---|---|---|---|---|
@@ -104,30 +105,57 @@ are unofficial gateways — use at your own risk, never send sensitive data.
 
 ### New leads (unverified, found in today's search)
 
-- [Show HN: LLM Onestop – Access ChatGPT, Claude, Gemini, and more in one interface](https://www.llmonestop.com) (llmonestop.com, via hn)
-- [Show HN: Natural Language to SQL "Text-to-SQL" API](https://www.dataherald.com/news/introducing-dhai) (dataherald.com, via hn)
-- [Show HN: Papermill Press – An AI-friendly markup language for PDF generation](https://news.ycombinator.com/item?id=48477708) (news.ycombinator.com, via hn)
-- [Show HN: Steadwing – Your Autonomous On-Call Engineer](https://www.steadwing.com/) (steadwing.com, via hn)
-- [Show HN: An OTel exporter that posts the cause to your incident channel](https://incidentary.com/) (incidentary.com, via hn)
-- [Show HN: PaperPod – Fast, no-setup sandboxes for AI agents](https://www.paperpod.dev) (paperpod.dev, via hn)
-- [Show HN: SnapAPI – Screenshot/PDF/Extract API Built with Fastify and Playwright](https://snapapi.pics/) (snapapi.pics, via hn)
-- [Show HN: Souko.ai – Web scraping, search and extraction APIs for AI workflows](https://souko.ai/) (souko.ai, via hn)
-- [Show HN: Sysmodeler.ai cuts safety-critical modeling from weeks → minutes (Beta)](https://sysmodeler.ai/) (sysmodeler.ai, via hn)
-- [Show HN: AI agents are bad at API integrations – we fixed it](https://www.apimatic.io/product/context-plugins/showcase) (apimatic.io, via hn)
-- [Show HN: Git for LLMs – A context management interface](https://twigg.ai) (twigg.ai, via hn)
-- [Show HN: MichaelAI – An artificially intelligent investment analyst](https://michaelai.io) (michaelai.io, via hn)
-- [Show HN: Flowtest.ai – AI agent that performs E2E testing in your website](https://flowtest.ai/) (flowtest.ai, via hn)
-- [Show HN: Dyad – free, local, open-source AI app builder (v0/lovable alternative)](https://www.dyad.sh/) (dyad.sh, via hn)
-- [Show HN: Ask on YouTube – An Chrome extension for gathering YouTube insights](https://chromewebstore.google.com/detail/ask-on-youtube-using-chat/gdcabhbeojofokajoomgoclohimfnfjb) (chromewebstore.google.com, via hn)
+- [A free web-based AI chat tool leveraging Puter](https://news.ycombinator.com/item?id=45710013) (news.ycombinator.com, via hackernews, score 8: free, gpt, claude, gemini, qwen, deepseek, new, deal)
+- [Show HN: One API for GPT-5, Claude-Sonnet-4, DeepSeek, Gemini](https://wisdom-gate.juheapi.com/studio/chat) (wisdom-gate.juheapi.com, via hackernews, score 6: gpt, claude, gemini, deepseek, sonnet, access)
+- [Show HN: An unmetered LLM API–$6/month, no token tracking, no limits](https://yolo-auto.com/) (yolo-auto.com, via hackernews, score 6: credits, credit, frontier, gpt, claude, month)
+- [X offers free API credits for its Grok Bot - Social Media Today](https://news.google.com/rss/articles/CBMikgFBVV95cUxPZTlRU0pPb2czSEprX0lKNFM5S1N3Ujl4bVRPT0s2LTdGTkhFZlBwYUNndXliQU9FSWFJZHhFcjJuM2pvcUZVOXdWNURodlRQX2dOUjJ1MEw3dkxjclMxNVFRX1l6X0MwZUFfYU9ZY29VTDdQX0xUNWlWSEp5MlhVSUQ2RmZTekE1WlFGREJiSkloQQ?oc=5) (news.google.com, via google-news, score 6: free, credits, credit, offer, grok, new)
+- [Show HN: Chat with Orion – a visual agent that sees, reasons and acts](https://chat.vlm.run/) (chat.vlm.run, via hackernews, score 5: frontier, gpt, claude, gemini, new)
+- [Show HN: Generous free tier for SERP and AI web scraping](https://cloro.dev/) (cloro.dev, via hackernews, score 5: free, gpt, gemini, grok, new)
+- [Show HN: LLM Onestop – Access ChatGPT, Claude, Gemini, and more in one interface](https://www.llmonestop.com) (llmonestop.com, via hackernews, score 4: gpt, claude, gemini, access)
+- [Show HN: AudioWorkletProcessor Generator Powered by AI](https://angular-audio.com/worklet-generator) (angular-audio.com, via hackernews, score 4: free, credits, credit, signup)
+- [Show HN: Dereference.dev – Prompt-First IDE for Parallel Claude Code Sessions](https://www.dereference.dev/) (dereference.dev, via hackernews, score 4: claude, access, new, month)
+- [Show HN: Get GPT-5.2, Grok-4.1-fast, KimiK2.5 and more LLMs at half the cost](https://frogapi.app) (frogapi.app, via hackernews, score 4: gpt, grok, kimi, gateway)
+- [Show HN: Onera – end-to-end encrypted AI chat](https://onera.chat) (onera.chat, via hackernews, score 3: api key, api keys, access)
+- [Show HN: LibreThinker, free AI assistant for LibreOffice Writer, 10k installs](https://librethinker.com/) (librethinker.com, via hackernews, score 3: free, new, month)
+- [Show HN: I Built Zero-Knowledge .env Sharing](https://secretdrop.dev/) (secretdrop.dev, via hackernews, score 3: api key, api keys, week)
+- [Show HN: Vlm Run, Extract JSON from images, videos and documents in a simple API](https://vlm.run/) (vlm.run, via hackernews, score 3: gpt, gemini, month)
+- [A developer exploited an API flaw to provide free access to GPT-4](https://techcrunch.com/2023/04/25/a-developer-exploited-an-api-flaw-to-provide-free-access-to-gpt-4/) (techcrunch.com, via hackernews, score 3: free, gpt, access)
+- [Show HN: GPT UI similar to ChatGPT but with sudo access](https://chat.lit.codes/) (chat.lit.codes, via hackernews, score 3: api key, gpt, access)
+- [Show HN: Llmswap v3.0 – CLI and SDK for OpenAI, Claude, Gemini, Watsonx](https://pypi.org/project/llmswap/) (pypi.org, via hackernews, score 3: claude, gemini, llama)
+- [Launch HN: Speko (YC S26) – OpenRouter for Voice AI](https://speko.ai/) (speko.ai, via hackernews, score 3: openrouter, router, launch)
+- [Show HN: Pomo – Manage your Stripe promo codes without code](https://usecopi.com/69fb5996) (usecopi.com, via hackernews, score 3: free, promo, launch)
+- [Show HN: Ctxsync – Chat with your codebase that stays in sync](https://ctxsync.com) (ctxsync.com, via hackernews, score 2: gpt, week)
+- [Show HN: NCompass Technologies – yet another AI Inference API, but hear us out](https://www.ncompass.tech/about) (ncompass.tech, via hackernews, score 2: access, new)
+- [Show HN: Stateful AI API with OS Models](https://ark-labs.com/) (ark-labs.com, via hackernews, score 2: tokens, launch)
+- [Show HN: Handelsregister.ai – Dev-friendly API for the German business registry](https://handelsregister.ai/de) (handelsregister.ai, via hackernews, score 2: access, register)
+- [Show HN: Vxpix – $50 Lifetime Screenshot API, Free Tier with No Signup](https://tool.vxpix.com/) (tool.vxpix.com, via hackernews, score 2: free, signup)
+- [Show HN: JSONBin – Free JSON storage API (no signup required)](https://jsonbin-zeta.vercel.app) (jsonbin-zeta.vercel.app, via hackernews, score 2: free, signup)
+- [Show HN: RouterLab – open-source AI API with Swiss hosting](https://routerlab.ch) (routerlab.ch, via hackernews, score 2: router, access)
+- [Show HN: Command-G – Copilot for Xcode made possible using Mac Accessibility API](https://www.commandg.app/) (commandg.app, via hackernews, score 2: gpt, access)
+- [Show HN: AI Image Describer – GPT-4o Vision for alt text and SEO descriptions](https://ai-image-describer.online/) (ai-image-describer.online, via hackernews, score 2: gpt, access)
+- [Show HN: Jobbi – Free AI resume tailoring with unlimited PDF exports](https://jobbi.app) (jobbi.app, via hackernews, score 2: free, limited)
+- [Show HN: OPC Skills – 9 AI agent skills for solopreneurs (Claude Code, Cursor)](https://opc.dev/) (opc.dev, via hackernews, score 2: promo, claude)
+- [Free LLM API – every free model behind one key](https://freellmapi.co/) (freellmapi.co, via hackernews, score 1: free)
+- [Show HN: SkillScan – Free API to detect malicious AI agent skill files](https://skillscan.chitacloud.dev) (skillscan.chitacloud.dev, via hackernews, score 1: free)
+- [Show HN: LobsterLair – OpenClaw hosting with AI included ($19/mo)](https://lobsterlair.xyz) (lobsterlair.xyz, via hackernews, score 1: api key)
+- [Show HN: Finqual – Free SEC-based API for fundamentals, insider and 13F data](https://finqual.app/) (finqual.app, via hackernews, score 1: free)
+- [Show HN: Zodii – a developer-first astrology, numerology and tarot API platform](https://www.zodiiapp.com/) (zodiiapp.com, via hackernews, score 1: free)
+- [Show HN: SharpAPI – Real-time sports odds API with +EV and arbitrage detection](https://sharpapi.io) (sharpapi.io, via hackernews, score 1: free)
+- [Show HN: Free API mock server from your OpenAPI spec (no sign-up)](https://apinotes.io/mock-server) (apinotes.io, via hackernews, score 1: free)
 
 ### Source status
 
-- duckduckgo: 0/10 queries returned results
-- hackernews: 8/8 queries returned results
-- reddit: 0/3 queries returned results
-- github: 3/3 queries returned results
+- duckduckgo: 0/16 queries returned results
+- hackernews: 13/14 queries returned results
+- reddit: 0/4 queries returned results
+- github: 5/5 queries returned results
+- google-news: 8/8 queries returned results
+- bluesky: 0/8 queries returned results
+- x-twitter: 0/2 queries returned results
+- lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-06T17:32:45Z. Free tiers change often - check links before relying on them._
+_Last verified: 2026-09-06T19:10:59Z. Free tiers change often - check links before relying on them._
 
 <!-- OFFERS-END -->
+
 
