@@ -52,11 +52,14 @@ USER_AGENT = (
 TIMEOUT = 12          # seconds per HTTP request
 RETRIES = 2           # extra attempts per request
 VERIFY_WORKERS = 6    # parallel link checkers
-MAX_DDG_QUERIES = 10  # DuckDuckGo queries per run
-MAX_HN_QUERIES = 8    # Hacker News queries per run
-MAX_REDDIT_QUERIES = 3
-MAX_GITHUB_QUERIES = 3
-MAX_NEW_LEADS = 15    # new candidate links surfaced in the report
+MAX_DDG_QUERIES = 16   # DuckDuckGo queries per run
+MAX_HN_QUERIES = 14    # Hacker News queries per run
+MAX_REDDIT_QUERIES = 4
+MAX_GITHUB_QUERIES = 5
+MAX_NEWS_QUERIES = 8   # Google News RSS queries
+MAX_BSKY_QUERIES = 8   # Bluesky public API queries
+MAX_NITTER_QUERIES = 2 # X/Twitter via Nitter queries
+MAX_NEW_LEADS = 40     # new candidate links surfaced in the report
 GH_TOKEN = os.environ.get("GH_TOKEN", "")  # provided by GitHub Actions
 
 # API compatibility labels - what an OpenAI-format client can talk to
@@ -69,6 +72,29 @@ API_LABELS = {
     "other": "OTHER",
 }
 CLIENT_READY = {"openai-completions", "openai-responses", "google-generative-ai", "anthropic-messages"}
+
+# Lead relevance keywords - aggressive discovery of new offers
+SCORE_KEYWORDS = [
+    "free", "api key", "api keys", "credits", "credit", "tokens", "trial",
+    "offer", "promo", "promotion", "coupon", "giveaway", "frontier", "gpt",
+    "claude", "gemini", "grok", "llama", "qwen", "deepseek", "kimi", "mistral",
+    "codestral", "codex", "sonnet", "opus", "glm", "minimax", "moonshot",
+    "openrouter", "groq", "cerebras", "nvidia", "huggingface", "router",
+    "gateway", "proxy", "access", "signup", "register", "new", "launch",
+    "discount", "deal", "week", "month", "limited",
+]
+# A lead must contain at least one strong signal to be surfaced
+STRONG_SIGNALS = ("free", "credit", "trial", "offer", "promo", "coupon", "giveaway", "api key")
+
+# X/Twitter access via public Nitter instances (best effort, first working wins)
+NITTER_INSTANCES = [
+    "https://nitter.net",
+    "https://nitter.poast.org",
+    "https://nitter.privacyredirect.com",
+    "https://nitter.space",
+    "https://lightbrd.com",
+    "https://nitter.1d4.us",
+]
 
 # --------------------------------------------------------------------------
 # HTTP helpers
@@ -272,6 +298,113 @@ def search_github(query, max_results=8):
     return out
 
 
+def search_google_news(query, max_results=8):
+    """Google News RSS (no key, datacenter-friendly)."""
+    q = urllib.parse.quote(query)
+    try:
+        status, final, body, _ = http_get(
+            f"https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en",
+            headers={"Accept": "application/rss+xml"},
+            timeout=15, retries=1,
+        )
+        if status >= 400:
+            return []
+        text = body.decode("utf-8", errors="replace")
+        out = []
+        for m in re.finditer(r"<item>(.*?)</item>", text, re.S):
+            tm = re.search(r"<title>(.*?)</title>", m.group(1), re.S)
+            lm = re.search(r"<link>(.*?)</link>", m.group(1), re.S)
+            sm = re.search(r"<description>(.*?)</description>", m.group(1), re.S)
+            if not lm:
+                continue
+            out.append({
+                "title": html_mod.unescape(tm.group(1)) if tm else "",
+                "url": html_mod.unescape(lm.group(1)),
+                "snippet": html_mod.unescape(re.sub(r"<[^>]+>", "", sm.group(1)))[:220] if sm else "",
+            })
+            if len(out) >= max_results:
+                break
+        return out
+    except Exception:
+        return []
+
+
+def search_bluesky(query, max_results=15):
+    """Bluesky public search API (no key, real-time chatter)."""
+    q = urllib.parse.quote(query)
+    data = fetch_json(
+        f"https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q={q}&limit={max_results}"
+    )
+    out = []
+    if data and data.get("posts"):
+        for p in data["posts"]:
+            txt = (p.get("record", {}) or {}).get("text", "") or ""
+            author = ((p.get("author", {}) or {}).get("handle", "")) or ""
+            uri = p.get("uri", "")
+            m = re.search(r"https?://[^\s)]+", txt)
+            url = m.group(0) if m else f"https://bsky.app/profile/{author}"
+            out.append({
+                "title": f"@{author}: {txt[:120]}",
+                "url": url,
+                "snippet": txt[:220],
+                "date": p.get("indexedAt", ""),
+            })
+    return out
+
+
+def search_lobsters(max_results=40):
+    """Lobste.rs newest stories JSON (no key); filtered by keywords later."""
+    data = fetch_json("https://lobste.rs/newest.json")
+    out = []
+    if data:
+        for it in data:
+            out.append({
+                "title": it.get("title", ""),
+                "url": it.get("url") or f"https://lobste.rs/{it.get('short_id', '')}",
+                "snippet": "",
+                "date": it.get("created_at", ""),
+            })
+            if len(out) >= max_results:
+                break
+    return out
+
+
+def search_nitter_x(query, max_results=10):
+    """X/Twitter search via public Nitter instances (best effort)."""
+    q = urllib.parse.quote(query)
+    results = []
+    for inst in NITTER_INSTANCES:
+        try:
+            status, final, body, _ = http_get(
+                f"{inst}/search?f=tweets&q={q}",
+                headers={"Accept": "text/html"},
+                timeout=12, retries=1,
+            )
+            if status >= 400:
+                continue
+            text = body.decode("utf-8", errors="replace")
+            links = re.findall(r'<a class="tweet-link" href="([^"]+)"', text)
+            contents = re.findall(r'<div class="tweet-content[^>]*>(.*?)</div>', text, re.S)
+            if not contents:
+                continue
+            for i, c in enumerate(contents[:max_results]):
+                txt = html_mod.unescape(re.sub(r"<[^>]+>", "", c)).strip()
+                if not txt:
+                    continue
+                href = links[i] if i < len(links) else ""
+                if href:
+                    url = href if href.startswith("http") else f"{inst}{href}"
+                else:
+                    m = re.search(r"https?://[^\s)]+", txt)
+                    url = m.group(0) if m else f"{inst}/search?q={q}"
+                results.append({"title": txt[:140], "url": url, "snippet": txt[:220]})
+            if results:
+                break  # first working instance wins
+        except Exception:
+            continue
+    return results
+
+
 # --------------------------------------------------------------------------
 # Lead extraction
 # --------------------------------------------------------------------------
@@ -282,26 +415,41 @@ def domain_of(url):
         return ""
 
 
+def score_lead(text):
+    """Score a lead by keyword hits. Returns (score, matched_keywords)."""
+    text = text.lower()
+    hits = [k for k in SCORE_KEYWORDS if k in text]
+    return len(hits), hits[:8]
+
+
 def extract_leads(all_results, known_domains):
-    """Collect candidate URLs from search results not already in the KB."""
-    leads, seen = [], set()
+    """Collect candidate URLs from search results not already in the KB.
+    Keeps the best-scoring item per domain, sorted by relevance."""
+    best_by_domain = {}
     for item in all_results:
         url = item.get("url", "")
         dom = domain_of(url)
-        if not url.startswith(("http://", "https://")):
+        if not url.startswith(("http://", "https://")) or not dom:
             continue
-        if dom in known_domains or dom in seen:
+        if dom in known_domains:
             continue
-        seen.add(dom)
-        leads.append({
+        text = f"{item.get('title', '')} {item.get('snippet', '')} {dom}".lower()
+        score, hits = score_lead(text)
+        has_strong = any(s in text for s in STRONG_SIGNALS)
+        if not (has_strong and "api" in text) and score < 2:
+            continue
+        rec = {
             "title": item.get("title", "")[:140],
             "url": url,
             "domain": dom,
             "snippet": item.get("snippet", "")[:180],
             "source": item.get("_source", ""),
-        })
-        if len(leads) >= MAX_NEW_LEADS:
-            break
+            "score": score,
+            "hits": hits,
+        }
+        if dom not in best_by_domain or score > best_by_domain[dom]["score"]:
+            best_by_domain[dom] = rec
+    leads = sorted(best_by_domain.values(), key=lambda x: -x["score"])[:MAX_NEW_LEADS]
     return leads
 
 
@@ -362,7 +510,10 @@ def render_markdown(providers, meta, leads, source_status):
     if leads:
         lines.append("\n### New leads (unverified, found in today's search)\n")
         for l in leads:
-            lines.append(f"- [{l['title']}]({l['url']}) ({l['domain']}, via {l['source']})")
+            lines.append(
+                f"- [{l['title']}]({l['url']}) ({l['domain']}, via {l['source']}, "
+                f"score {l['score']}: {', '.join(l['hits'])})"
+            )
     lines.append("\n### Source status\n")
     for k, v in source_status.items():
         lines.append(f"- {k}: {v}")
@@ -410,7 +561,8 @@ def render_html(providers, meta, leads, source_status):
     if leads:
         lead_html = '<h2>New leads (unverified)</h2><ul>' + "".join(
             f'<li><a href="{html_escape(l["url"])}" target="_blank" rel="noopener">{html_escape(l["title"])}</a> '
-            f'<span class="dim">({html_escape(l["domain"])}, via {html_escape(l["source"])})</span></li>'
+            f'<span class="dim">({html_escape(l["domain"])}, via {html_escape(l["source"])}, '
+            f'score {l["score"]}: {html_escape(", ".join(l["hits"]))})</span></li>'
             for l in leads
         ) + "</ul>"
 
@@ -526,46 +678,32 @@ def main():
     source_status = {}
     all_results = []
 
-    ddg_qs = queries[:MAX_DDG_QUERIES]
-    ddg_ok = 0
-    for i, q in enumerate(ddg_qs):
-        r = search_ddg(q)
-        for item in r:
-            item["_source"] = "ddg"
-        all_results.extend(r)
-        ddg_ok += 1 if r else 0
-        time.sleep(random.uniform(1.0, 2.0))
-    source_status["duckduckgo"] = f"{ddg_ok}/{len(ddg_qs)} queries returned results"
+    def run_source(name, func, qs, max_n):
+        ok = 0
+        for q in qs[:max_n]:
+            r = func(q)
+            for item in r:
+                item["_source"] = name
+            all_results.extend(r)
+            ok += 1 if r else 0
+            if name == "duckduckgo":
+                time.sleep(random.uniform(1.0, 2.0))
+        source_status[name] = f"{ok}/{min(max_n, len(qs))} queries returned results"
 
-    hn_qs = queries[:MAX_HN_QUERIES]
-    hn_ok = 0
-    for q in hn_qs:
-        r = search_hn(q)
-        for item in r:
-            item["_source"] = "hn"
-        all_results.extend(r)
-        hn_ok += 1 if r else 0
-    source_status["hackernews"] = f"{hn_ok}/{len(hn_qs)} queries returned results"
+    run_source("duckduckgo", search_ddg, queries, MAX_DDG_QUERIES)
+    run_source("hackernews", search_hn, queries, MAX_HN_QUERIES)
+    run_source("reddit", search_reddit, queries, MAX_REDDIT_QUERIES)
+    run_source("github", search_github, queries, MAX_GITHUB_QUERIES)
+    run_source("google-news", search_google_news, queries, MAX_NEWS_QUERIES)
+    run_source("bluesky", search_bluesky, queries, MAX_BSKY_QUERIES)
+    run_source("x-twitter", search_nitter_x, queries, MAX_NITTER_QUERIES)
 
-    rq = ["free llm api key no credit card", "free llm api credits", "free api tier llm"]
-    reddit_ok = 0
-    for q in rq[:MAX_REDDIT_QUERIES]:
-        r = search_reddit(q)
-        for item in r:
-            item["_source"] = "reddit"
-        all_results.extend(r)
-        reddit_ok += 1 if r else 0
-    source_status["reddit"] = f"{reddit_ok}/{min(MAX_REDDIT_QUERIES, len(rq))} queries returned results"
-
-    gq = ["free llm api", "free llm api credits", "free llm providers tier"]
-    gh_ok = 0
-    for q in gq[:MAX_GITHUB_QUERIES]:
-        r = search_github(q)
-        for item in r:
-            item["_source"] = "github"
-        all_results.extend(r)
-        gh_ok += 1 if r else 0
-    source_status["github"] = f"{gh_ok}/{min(MAX_GITHUB_QUERIES, len(gq))} queries returned results"
+    # Lobsters: single fetch, filtered client-side
+    lob = search_lobsters()
+    for item in lob:
+        item["_source"] = "lobsters"
+    all_results.extend(lob)
+    source_status["lobsters"] = f"{len(lob)} newest stories scanned"
 
     print(f"[{now_iso}] search returned {len(all_results)} total results")
 
@@ -614,6 +752,7 @@ def main():
         "dead_count": dead_count,
         "compatible_count": compatible_count,
         "leads_count": len(leads),
+        "total_results": len(all_results),
         "sources": source_status,
     }
 
@@ -664,6 +803,14 @@ def main():
     OFFERS_JSON.write_text(json.dumps(offers_payload, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"[{now_iso}] wrote {OFFERS_JSON}")
 
+    # Standalone leads file (all discovered candidates, scored)
+    (RESULTS_DIR / "leads.json").write_text(
+        json.dumps({"last_updated": now_iso, "count": len(leads), "leads": leads},
+                   indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    print(f"[{now_iso}] wrote {RESULTS_DIR / 'leads.json'}")
+
     # History log (keep latest first, cap at 90 entries)
     history_line = f"- {now_iso} | providers={len(providers)} | ok={ok_count} | dead={dead_count} | client-ready={compatible_count} | leads={len(leads)}\n"
     prev_history = HISTORY_MD.read_text(encoding="utf-8") if HISTORY_MD.exists() else ""
@@ -690,7 +837,7 @@ def main():
     print(f"[{now_iso}] wrote {SITE_HTML}")
 
     print(f"[{now_iso}] DONE - summary: "
-          f"{json.dumps({k: meta[k] for k in ('ok_count', 'dead_count', 'compatible_count', 'leads_count')})}")
+          f"{json.dumps({k: meta[k] for k in ('ok_count', 'dead_count', 'compatible_count', 'leads_count', 'total_results')})}")
 
 
 if __name__ == "__main__":

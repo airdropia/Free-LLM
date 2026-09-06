@@ -2,8 +2,8 @@ name: free-llm-daily-research
 
 on:
   schedule:
-    # Daily at 06:00 UTC
-    - cron: '0 6 * * *'
+    # Twice daily: 06:00 and 18:00 UTC (aggressive research - GitHub compute is free)
+    - cron: '0 6,18 * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -23,7 +23,7 @@ concurrency:
 jobs:
   research:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - name: Checkout
         uses: actions/checkout@v4

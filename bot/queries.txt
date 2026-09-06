@@ -1,20 +1,35 @@
-# Web search queries run by the bot daily (DuckDuckGo + Hacker News).
-# One query per line. The bot caps how many it uses per source.
-free llm api key no credit card
-free llm api credits 2026
-free llm provider signup offer
-free gemini api key
-free groq api key
-free openrouter free models
+# Web search queries run by the bot every run (DuckDuckGo, Hacker News,
+# Google News, Bluesky, X/Nitter). One query per line. Broad by design -
+# new providers and short-lived offers (1-2 week frontier-model freebies)
+# appear constantly; we want to catch them early.
+free llm api key
+free api key no credit card
+free api credits signup
+free api credits no card
+free api tier signup
+free trial api credits
+free frontier model api
+free gpt api access
 free claude api access
-free deepseek api
-free llama api
-free openai compatible api
-nvidia nim free api credits
-mistral free tier api
-hugging face free inference providers
-cerebras free tier
-xai grok free api
-together ai free credits
-fireworks ai free credits
-llm api free trial no cc
+free gemini api credits
+free grok api credits
+openrouter free credits
+free tokens signup bonus
+free api key promo code
+free api coupon 2026
+new llm provider launch free credits
+free codestral api
+free qwen api credits
+free deepseek credits
+free kimi api
+free mistral credits
+free groq credits
+nvidia nim free credits
+huggingface free credits
+free glm api
+free minimax api
+free moonshot api
+api key giveaway free
+free api access limited time
+free llm access now
+free api credits this week

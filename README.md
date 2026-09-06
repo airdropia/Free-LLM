@@ -3,11 +3,21 @@
 **Daily-researched directory of free LLM API offers — no credit card, just email/Google/GitHub signups.**
 Every offer is tagged with the API type it speaks (`OPENAI-COMPAT` works with any OpenAI-format client).
 
-A GitHub Actions bot re-runs research **every day (06:00 UTC)**:
+A GitHub Actions bot re-runs research **twice daily (06:00 & 18:00 UTC)** across **10 sources**:
+
+- 🌐 **DuckDuckGo** web search (16 queries)
+- 📰 **Google News RSS** — daily free-offer news
+- 🟦 **Bluesky** public API — real-time chatter
+- 🐦 **X/Twitter** via Nitter instances
+- 🔗 **Lobste.rs** tech community
+- 🐙 **GitHub** repo search — newly launched providers
+- 🟠 **Hacker News** + **Reddit**
+
+Each run:
 
 1. **Verifies** every provider link in the curated knowledge base (`bot/providers.json`) — dead links get flagged (`OK` / `BLOCKED` / `DEAD` / `DOWN`).
-2. **Searches the web** (DuckDuckGo + Hacker News + Reddit + GitHub) for new free-LLM-offer signals.
-3. **Discovers new leads** — unknown domains surfacing in today's results.
+2. **Aggressively searches** all sources for new free-LLM-offer signals (including short-lived 1-2 week frontier-model offers).
+3. **Scores new leads** by keyword relevance → `results/leads.json`.
 4. **Commits** results to this repo and **deploys** the GitHub Pages site.
 
 ## 📖 How to use the offers
@@ -31,6 +41,7 @@ Not OpenAI-compatible (e.g. `GOOGLE API`, `COHERE`) means the provider has its o
 | `bot/providers.json` | Curated knowledge base — edit to add/update providers |
 | `bot/queries.txt` | Daily search queries (DuckDuckGo / Hacker News) |
 | `results/offers.json` | Latest structured results (machine-readable) |
+| `results/leads.json` | Scored new-lead candidates discovered in the latest run |
 | `results/history.md` | Daily snapshot log (auto-capped at 90 entries) |
 | `site/index.html` | GitHub Pages site (auto-generated) |
 
