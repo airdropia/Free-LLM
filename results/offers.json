@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-09-06T16:14:30Z",
+  "last_updated": "2026-09-06T17:32:45Z",
   "summary": {
     "ok_count": 22,
     "dead_count": 3,
-    "native_count": 17,
+    "compatible_count": 23,
     "leads_count": 15
   },
   "sources": {
@@ -31,20 +31,24 @@
       "limits": "Free tier: 5-30 RPM depending on model; ~9,000 requests/day on Flash; 25 RPD on Pro; 1M token context available",
       "expiry": "ongoing",
       "expiry_note": "Permanent free tier; quotas reduced late 2025 but still free",
-      "pi": {
-        "status": "native",
-        "provider_id": "google",
+      "compat": {
         "api": "google-generative-ai",
-        "notes": "GEMINI_API_KEY env var or /login google"
+        "notes": "OpenAI-compatible endpoint available (generativelanguage.googleapis.com/v1beta/openai); also native Google API"
       },
       "trust": "high",
       "notes": "Prompts may be used for training outside EU/UK/EEA",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -66,20 +70,24 @@
       "limits": "Free tier: 30 RPM, 14,400 requests/day. Very high token throughput (~320 tok/s on 70B)",
       "expiry": "ongoing",
       "expiry_note": "Free tier is 'free forever'",
-      "pi": {
-        "status": "native",
-        "provider_id": "groq",
+      "compat": {
         "api": "openai-completions",
-        "notes": "GROQ_API_KEY env var or /login groq"
+        "notes": "Drop-in OpenAI-compatible: base URL https://api.groq.com/openai/v1"
       },
       "trust": "high",
-      "notes": "No-training policy; ideal default for pi",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "notes": "No-training policy",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -102,20 +110,24 @@
       "limits": "Free models: 20 RPM, 50 requests/day (1,000/day after $10 top-up). One key routes across many providers",
       "expiry": "ongoing",
       "expiry_note": "Free model list changes; availability per-model",
-      "pi": {
-        "status": "native",
-        "provider_id": "openrouter",
+      "compat": {
         "api": "openai-completions",
-        "notes": "OPENROUTER_API_KEY or /login openrouter (OAuth). Use model IDs like deepseek/deepseek-chat:free"
+        "notes": "OpenAI-compatible; free model IDs use ':free' suffix (e.g. deepseek/deepseek-chat:free)"
       },
       "trust": "high",
-      "notes": "Great for pi: single key, failover across providers",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "notes": "Single key, failover across many providers",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -138,20 +150,24 @@
       "limits": "Free plan: 10,000 neurons/day (~300,000 neurons/month)",
       "expiry": "ongoing",
       "expiry_note": "Ongoing free daily quota",
-      "pi": {
-        "status": "native",
-        "provider_id": "cloudflare-workers-ai",
+      "compat": {
         "api": "openai-completions",
-        "notes": "CLOUDFLARE_API_KEY + account/gateway ID"
+        "notes": "OpenAI-compatible unified endpoint (/compat) plus native Workers AI API"
       },
       "trust": "high",
       "notes": "Smaller context windows than most",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": false,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "blocked",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -173,20 +189,24 @@
       "limits": "Experiment free tier: ~1B tokens/month on Codestral; ~1 request/second; requires opt-in to training",
       "expiry": "ongoing",
       "expiry_note": "Free Experiment tier ongoing, subject to change",
-      "pi": {
-        "status": "native",
-        "provider_id": "mistral",
+      "compat": {
         "api": "openai-completions",
-        "notes": "MISTRAL_API_KEY env var or /login mistral"
+        "notes": "OpenAI-compatible endpoint available"
       },
       "trust": "high",
       "notes": "Phone verification at signup; free tier requires training opt-in",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -207,20 +227,24 @@
       "limits": "Free tier: ~1M tokens/day, ~30 RPM. Extremely fast inference",
       "expiry": "ongoing",
       "expiry_note": "Free tier ongoing",
-      "pi": {
-        "status": "native",
-        "provider_id": "cerebras",
+      "compat": {
         "api": "openai-completions",
-        "notes": "CEREBRAS_API_KEY env var or /login cerebras"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "high",
       "notes": "No-training policy",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -243,20 +267,24 @@
       "limits": "Free API credits for developers; ~40 RPM; OpenAI-compatible endpoint",
       "expiry": "ongoing",
       "expiry_note": "Free credits renew; generous for personal use",
-      "pi": {
-        "status": "native",
-        "provider_id": "nvidia",
+      "compat": {
         "api": "openai-completions",
-        "notes": "NVIDIA_API_KEY env var or /login nvidia"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "high",
       "notes": "Phone verification at signup",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -279,20 +307,24 @@
       "limits": "Free routing credits ~$0.10/month; 300 requests/hour cap",
       "expiry": "ongoing",
       "expiry_note": "Monthly free credit resets; community rate limits",
-      "pi": {
-        "status": "native",
-        "provider_id": "huggingface",
+      "compat": {
         "api": "openai-completions",
-        "notes": "HF_TOKEN env var or /login huggingface"
+        "notes": "OpenAI-compatible endpoint (/v1) plus native HF API"
       },
       "trust": "high",
       "notes": "Routes to multiple backends (Together, Fireworks, Groq, Cerebras, etc.)",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": false,
         "free": false,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "dead",
+        "free": "dead",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 404
     },
@@ -313,20 +345,24 @@
       "limits": "Trial key: ~20 RPM, 1,000 requests/month; non-commercial use",
       "expiry": "ongoing",
       "expiry_note": "Trial tier ongoing",
-      "pi": {
-        "status": "limited",
-        "provider_id": null,
-        "api": "cohere-native",
-        "notes": "Not OpenAI-compatible natively; needs a translation proxy for pi"
+      "compat": {
+        "api": "cohere",
+        "notes": "Native Cohere API (not OpenAI-compatible); needs an adapter/proxy for OpenAI-format clients"
       },
       "trust": "high",
       "notes": "Best for RAG; no training on trial tier",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -347,20 +383,24 @@
       "limits": "Free Flash tier: ~1 request/second, ~1,000 requests/day",
       "expiry": "ongoing",
       "expiry_note": "Free tier ongoing, subject to change",
-      "pi": {
-        "status": "native",
-        "provider_id": "zai",
+      "compat": {
         "api": "openai-completions",
-        "notes": "ZAI_API_KEY env var or /login zai"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "high",
       "notes": "Chinese provider; global z.ai and China bigmodel.cn consoles",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -384,20 +424,24 @@
       "limits": "Free tier: 15 RPM, 150-1,000 requests/day depending on model; Azure OpenAI-compatible endpoint",
       "expiry": "ongoing",
       "expiry_note": "Free tier ongoing for public GitHub accounts",
-      "pi": {
-        "status": "openai-compatible",
-        "provider_id": null,
+      "compat": {
         "api": "openai-completions",
-        "notes": "Works via models.json with OpenAI-compatible base URL; GitHub Copilot auth also supported natively"
+        "notes": "Azure OpenAI-compatible endpoint (models.github.ai)"
       },
       "trust": "high",
       "notes": "Rate limits apply to ALL GitHub models, not per model",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -417,20 +461,24 @@
       "limits": "~10M token trial for new accounts; thereafter extremely low pay-as-you-go pricing",
       "expiry": "trial",
       "expiry_note": "Trial credits; signup offers change frequently",
-      "pi": {
-        "status": "native",
-        "provider_id": "deepseek",
+      "compat": {
         "api": "openai-completions",
-        "notes": "DEEPSEEK_API_KEY env var or /login deepseek"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "high",
       "notes": "Excellent reasoning models at low cost",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": false,
         "free": false,
         "keys": false,
         "docs": true
+      },
+      "link_states": {
+        "website": "blocked",
+        "free": "blocked",
+        "keys": "blocked",
+        "docs": "ok"
       },
       "website_status": 403
     },
@@ -451,20 +499,24 @@
       "limits": "Free tier for new accounts: ~5M tokens on signup (valid ~30 days); generous rate limits while it lasts",
       "expiry": "trial",
       "expiry_note": "Limited-time signup offer; verify current status",
-      "pi": {
-        "status": "native",
-        "provider_id": "xai",
+      "compat": {
         "api": "openai-completions",
-        "notes": "XAI_API_KEY env var or /login xai"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "high",
       "notes": "Free credit amounts change; check docs",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": false,
         "free": false,
         "keys": false,
         "docs": true
+      },
+      "link_states": {
+        "website": "blocked",
+        "free": "dead",
+        "keys": "blocked",
+        "docs": "ok"
       },
       "website_status": 403
     },
@@ -486,20 +538,24 @@
       "limits": "$1 free credit for new accounts; some models free tier",
       "expiry": "trial",
       "expiry_note": "Trial credit; evaluation budget only",
-      "pi": {
-        "status": "native",
-        "provider_id": "fireworks",
+      "compat": {
         "api": "openai-completions",
-        "notes": "FIREWORKS_API_KEY env var or /login fireworks"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "high",
       "notes": "Small credit; fine for benchmarking",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": false,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "dead",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -521,20 +577,24 @@
       "limits": "Free signup credit (reported $1-$25 depending on period); pay-as-you-go after",
       "expiry": "trial",
       "expiry_note": "Trial credit; amounts vary over time",
-      "pi": {
-        "status": "native",
-        "provider_id": "together",
+      "compat": {
         "api": "openai-completions",
-        "notes": "TOGETHER_API_KEY env var or /login together"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "high",
       "notes": "Reported credit varies by source; verify on signup",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -555,20 +615,24 @@
       "limits": "$30 free credit; card required once credit exhausted",
       "expiry": "trial",
       "expiry_note": "Trial credit",
-      "pi": {
-        "status": "native",
-        "provider_id": "baseten",
+      "compat": {
         "api": "openai-completions",
-        "notes": "BASETEN_API_KEY env var or /login baseten"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "high",
       "notes": "Most generous trial; card needed later",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -589,20 +653,24 @@
       "limits": "$5 free credit; credit card required at signup",
       "expiry": "trial",
       "expiry_note": "Trial credit",
-      "pi": {
-        "status": "openai-compatible",
-        "provider_id": null,
+      "compat": {
         "api": "openai-completions",
-        "notes": "OpenAI-compatible; add via models.json"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "high",
       "notes": "Only 405B-class free access, but card required",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -624,20 +692,24 @@
       "limits": "Token-based daily quotas, reset daily; no card",
       "expiry": "ongoing",
       "expiry_note": "Daily free tokens ongoing",
-      "pi": {
-        "status": "limited",
-        "provider_id": null,
+      "compat": {
         "api": "other",
-        "notes": "Bot/agent platform, not a plain OpenAI-compatible API; limited pi usability"
+        "notes": "Bot/agent platform, not a plain OpenAI-compatible API; limited usability with OpenAI-format clients"
       },
       "trust": "medium",
       "notes": "Chat-bot platform; API needs its own auth flow",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -658,20 +730,24 @@
       "limits": "$1 free credit",
       "expiry": "trial",
       "expiry_note": "Trial credit",
-      "pi": {
-        "status": "openai-compatible",
-        "provider_id": null,
+      "compat": {
         "api": "openai-completions",
-        "notes": "OpenAI-compatible; add via models.json"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "medium",
       "notes": "Small credit",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -692,20 +768,24 @@
       "limits": "$10 trial credit",
       "expiry": "trial",
       "expiry_note": "Trial credit",
-      "pi": {
-        "status": "openai-compatible",
-        "provider_id": null,
+      "compat": {
         "api": "openai-completions",
-        "notes": "OpenAI-compatible API; add via models.json"
+        "notes": "OpenAI-compatible API"
       },
       "trust": "medium",
       "notes": "Hybrid SSM-Transformer architecture",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -726,20 +806,24 @@
       "limits": "Free tier with limited daily tokens for new accounts (China phone required for full quota)",
       "expiry": "trial",
       "expiry_note": "New-account free quota",
-      "pi": {
-        "status": "native",
-        "provider_id": "kimi-coding",
+      "compat": {
         "api": "openai-completions",
-        "notes": "KIMI_API_KEY env var or /login kimi-coding"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "high",
       "notes": "Kimi K2 series popular for coding",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": false,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "dead",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -760,20 +844,24 @@
       "limits": "Free tier for new accounts with daily token quota",
       "expiry": "trial",
       "expiry_note": "New-account free quota",
-      "pi": {
-        "status": "native",
-        "provider_id": "minimax",
+      "compat": {
         "api": "openai-completions",
-        "notes": "MINIMAX_API_KEY env var or /login minimax"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "high",
       "notes": "MiniMax M2.7 also served on Groq free tier",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": false
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "dead"
       },
       "website_status": 200
     },
@@ -793,21 +881,25 @@
       ],
       "limits": "New users get free quota (tokens) for Qwen models; China/Global dashboards differ",
       "expiry": "trial",
-      "expiry_note": "New-user free quota; also paid Qwen Token Plans exist (pi supports natively)",
-      "pi": {
-        "status": "native",
-        "provider_id": "qwen-token-plan",
+      "expiry_note": "New-user free quota",
+      "compat": {
         "api": "openai-completions",
-        "notes": "QWEN_TOKEN_PLAN_API_KEY for paid token plans; free quota via dashscope"
+        "notes": "OpenAI-compatible endpoint on DashScope"
       },
       "trust": "high",
-      "notes": "pi supports Qwen Token Plan (existing catalog / individual / China)",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "notes": "Alibaba Cloud account; free quota for new users",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": true
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "ok"
       },
       "website_status": 200
     },
@@ -826,20 +918,24 @@
       "limits": "Free OpenAI-compatible API key; model access varies",
       "expiry": "unknown",
       "expiry_note": "Community gateway; availability not guaranteed",
-      "pi": {
-        "status": "openai-compatible",
-        "provider_id": null,
+      "compat": {
         "api": "openai-completions",
-        "notes": "OpenAI-compatible; add via models.json"
+        "notes": "OpenAI-compatible gateway"
       },
       "trust": "low",
       "notes": "Unofficial gateway - use at your own risk; do NOT send sensitive data",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": true,
         "docs": false
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "ok",
+        "docs": "down"
       },
       "website_status": 200
     },
@@ -859,20 +955,24 @@
       "limits": "30 RPM without signup; up to 5M tokens/day with free email token",
       "expiry": "ongoing",
       "expiry_note": "Free, no billing; new provider",
-      "pi": {
-        "status": "openai-compatible",
-        "provider_id": null,
+      "compat": {
         "api": "openai-completions",
-        "notes": "OpenAI-compatible; add via models.json"
+        "notes": "OpenAI-compatible endpoint"
       },
       "trust": "medium",
       "notes": "New provider; verify reliability before heavy use",
-      "verified_at": "2026-09-06T16:14:30Z",
+      "verified_at": "2026-09-06T17:32:45Z",
       "links_verified": {
         "website": true,
         "free": true,
         "keys": false,
         "docs": false
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "dead",
+        "docs": "dead"
       },
       "website_status": 200
     }

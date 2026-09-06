@@ -19,14 +19,16 @@ input#q { width:100%; max-width:420px; padding:10px 14px; border-radius:8px; bor
 h3 { font-size:16px; margin-bottom:8px; }
 .badges { display:flex; gap:6px; flex-wrap:wrap; }
 .badge { font-size:11px; padding:2px 8px; border-radius:99px; white-space:nowrap; }
-.pi-native { background:#163a24; color:#4ade80; }
-.pi-openai-compatible { background:#14304a; color:#60a5fa; }
-.pi-limited { background:#3a2f14; color:#facc15; }
+.api-openai-completions, .api-openai-responses { background:#14304a; color:#60a5fa; }
+.api-google-generative-ai { background:#163a24; color:#4ade80; }
+.api-anthropic-messages { background:#3a1414; color:#f87171; }
+.api-cohere, .api-other { background:#2a2414; color:#fbbf24; }
 .trust-high { background:#1c2a3a; color:#7dd3fc; }
 .trust-medium { background:#2a2414; color:#fbbf24; }
 .trust-low { background:#3a1414; color:#f87171; }
 .status.ok { background:#163a24; color:#4ade80; }
-.status.bad { background:#3a1414; color:#f87171; }
+.status.blocked { background:#3a2f14; color:#facc15; }
+.status.dead, .status.down { background:#3a1414; color:#f87171; }
 .models { color:var(--txt); margin:6px 0; }
 .limits { color:var(--dim); font-size:13.5px; margin:6px 0; }
 .meta { color:var(--dim); font-size:13px; margin:6px 0; }
@@ -44,8 +46,8 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
 <body>
 <header>
   <h1>Free-LLM <span>· daily free LLM API offers</span></h1>
-  <p class="sub">Auto-researched daily by a GitHub Actions bot. Last run: <strong>2026-09-06T16:14:30Z</strong> ·
-     22 providers OK · 3 flagged · 17 pi-native ·
+  <p class="sub">Auto-researched daily by a GitHub Actions bot. Last run: <strong>2026-09-06T17:32:45Z</strong> ·
+     22 providers OK · 3 flagged · 23 client-ready ·
      zero credit cards, email/Google/GitHub signups only (unless marked CC)</p>
   <input id="q" type="search" placeholder="Filter providers, models, limits..." autofocus>
 </header>
@@ -55,7 +57,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Google AI Studio (Gemini)</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-google-generative-ai">GOOGLE API</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -71,7 +73,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Groq</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -81,13 +83,13 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
      <strong>Expiry:</strong> ongoing</p>
   <a class="btn" href="https://groq.com/" target="_blank" rel="noopener">site</a><a class="btn" href="https://console.groq.com/" target="_blank" rel="noopener">free</a><a class="btn" href="https://console.groq.com/keys" target="_blank" rel="noopener">keys</a><a class="btn" href="https://console.groq.com/docs" target="_blank" rel="noopener">docs</a>
-  <p class="note">No-training policy; ideal default for pi</p>
+  <p class="note">No-training policy</p>
 </div>
 <div class="card">
   <div class="card-top">
     <h3>OpenRouter</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -97,13 +99,13 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
      <strong>Expiry:</strong> ongoing</p>
   <a class="btn" href="https://openrouter.ai/" target="_blank" rel="noopener">site</a><a class="btn" href="https://openrouter.ai/models?max_price=0" target="_blank" rel="noopener">free</a><a class="btn" href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener">keys</a><a class="btn" href="https://openrouter.ai/docs" target="_blank" rel="noopener">docs</a>
-  <p class="note">Great for pi: single key, failover across providers</p>
+  <p class="note">Single key, failover across many providers</p>
 </div>
 <div class="card">
   <div class="card-top">
     <h3>Cloudflare Workers AI</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -119,7 +121,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Mistral (La Plateforme)</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -135,7 +137,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Cerebras</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -151,7 +153,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>NVIDIA NIM</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -167,9 +169,9 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Hugging Face Inference Providers</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
-      <span class="badge status bad">DEAD (404) · 404</span>
+      <span class="badge status dead">DEAD (404) · 404</span>
     </div>
   </div>
   <p class="models">Llama 3.2 11B Vision; Llama 3.1 8B Instruct; Qwen 2.5 72B Instruct; Gemma 2 9B; DeepSeek R1</p>
@@ -183,7 +185,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Cohere</h3>
     <div class="badges">
-      <span class="badge pi pi-limited">LIMITED</span>
+      <span class="badge api api-cohere">COHERE</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -199,7 +201,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Z.AI (Zhipu GLM)</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -215,7 +217,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>GitHub Models</h3>
     <div class="badges">
-      <span class="badge pi pi-openai-compatible">OPENAI-COMPAT</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -231,9 +233,9 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>DeepSeek</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
-      <span class="badge status bad">DEAD (403) · 403</span>
+      <span class="badge status blocked">BLOCKED (403) · 403</span>
     </div>
   </div>
   <p class="models">DeepSeek-V3.2; DeepSeek-R1</p>
@@ -247,9 +249,9 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>xAI (Grok)</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
-      <span class="badge status bad">DEAD (403) · 403</span>
+      <span class="badge status blocked">BLOCKED (403) · 403</span>
     </div>
   </div>
   <p class="models">Grok 3; Grok 3 Fast; Grok 4</p>
@@ -263,7 +265,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Fireworks AI</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -279,7 +281,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Together AI</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -295,7 +297,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Baseten</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -311,7 +313,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>SambaNova Cloud</h3>
     <div class="badges">
-      <span class="badge pi pi-openai-compatible">OPENAI-COMPAT</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -327,7 +329,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Coze (ByteDance)</h3>
     <div class="badges">
-      <span class="badge pi pi-limited">LIMITED</span>
+      <span class="badge api api-other">OTHER</span>
       <span class="badge trust trust-medium">medium</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -343,7 +345,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Nebius AI Studio</h3>
     <div class="badges">
-      <span class="badge pi pi-openai-compatible">OPENAI-COMPAT</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-medium">medium</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -359,7 +361,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>AI21 (Jamba)</h3>
     <div class="badges">
-      <span class="badge pi pi-openai-compatible">OPENAI-COMPAT</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-medium">medium</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -375,7 +377,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Moonshot AI (Kimi)</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -391,7 +393,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>MiniMax</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -407,7 +409,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>Alibaba Cloud Model Studio (Qwen)</h3>
     <div class="badges">
-      <span class="badge pi pi-native">NATIVE</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-high">high</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -417,13 +419,13 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <p class="meta"><strong>Signup:</strong> email (No credit card) &nbsp;·&nbsp;
      <strong>Expiry:</strong> trial</p>
   <a class="btn" href="https://www.alibabacloud.com/en/product/modelstudio" target="_blank" rel="noopener">site</a><a class="btn" href="https://dashscope.console.aliyun.com/" target="_blank" rel="noopener">free</a><a class="btn" href="https://dashscope.console.aliyun.com/apiKey" target="_blank" rel="noopener">keys</a><a class="btn" href="https://www.alibabacloud.com/help/en/model-studio/" target="_blank" rel="noopener">docs</a>
-  <p class="note">pi supports Qwen Token Plan (existing catalog / individual / China)</p>
+  <p class="note">Alibaba Cloud account; free quota for new users</p>
 </div>
 <div class="card">
   <div class="card-top">
     <h3>BazaarLink (free gateway)</h3>
     <div class="badges">
-      <span class="badge pi pi-openai-compatible">OPENAI-COMPAT</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-low">low</span>
       <span class="badge status ok">OK · 200</span>
     </div>
@@ -439,7 +441,7 @@ footer { max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px;
   <div class="card-top">
     <h3>LLM7.io</h3>
     <div class="badges">
-      <span class="badge pi pi-openai-compatible">OPENAI-COMPAT</span>
+      <span class="badge api api-openai-completions">OPENAI-COMPAT</span>
       <span class="badge trust trust-medium">medium</span>
       <span class="badge status ok">OK · 200</span>
     </div>

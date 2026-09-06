@@ -1,1 +1,2 @@
+- 2026-09-06T17:32:45Z | providers=25 | ok=22 | dead=3 | client-ready=23 | leads=15
 - 2026-09-06T16:14:30Z | providers=25 | ok=22 | dead=3 | pi-native=17 | leads=15
