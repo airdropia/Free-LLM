@@ -1,0 +1,20 @@
+# Web search queries run by the bot daily (DuckDuckGo + Hacker News).
+# One query per line. The bot caps how many it uses per source.
+free llm api key no credit card
+free llm api credits 2026
+free llm provider signup offer
+free gemini api key
+free groq api key
+free openrouter free models
+free claude api access
+free deepseek api
+free llama api
+free openai compatible api
+nvidia nim free api credits
+mistral free tier api
+hugging face free inference providers
+cerebras free tier
+xai grok free api
+together ai free credits
+fireworks ai free credits
+llm api free trial no cc
