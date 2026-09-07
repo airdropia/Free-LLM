@@ -1,18 +1,26 @@
 #!/usr/bin/env python3
 """
-Free-LLM research bot.
+Free-LLM research bot - aggressive third-party provider discovery.
 
-Scans the web for free LLM API offers, verifies the curated provider
-knowledge base daily, discovers new leads, and writes results to:
+Focus: FRESH third-party LLM API providers/routers and their free offers
+(often 1-2 week frontier-model freebies). Official big-name providers are
+explicitly excluded from tracking (their generic quotas are not useful).
 
-  - README.md           (generated section between OFFERS markers)
-  - results/offers.json (structured, machine-readable)
-  - results/history.md  (daily snapshot log)
-  - site/index.html     (GitHub Pages site)
+What it does every run:
 
-Runs in GitHub Actions on a daily schedule. Python stdlib only - no
-dependencies to install. Never crashes the workflow on a single source
-failure; every source is isolated and reported in the output.
+  1. Searches many sources (Bing, SearXNG, Google News, Hacker News,
+     Reddit-archive (pullpush), Lobsters, GitHub, Telegram, X/Nitter).
+  2. Scores candidate "leads" by keyword relevance.
+  3. AUTO-DISCOVERS: assesses top leads - if the site is live, speaks API
+     and offers free/credit/trial access, and is not an official provider,
+     it is AUTO-ADDED to the knowledge base (providers.json) and committed
+     back to the repo.
+  4. Verifies every tracked provider's links daily (OK / BLOCKED / DEAD / DOWN).
+  5. Writes results to README.md, results/offers.json, results/leads.json,
+     results/history.md and site/index.html (GitHub Pages).
+
+Runs in GitHub Actions. Python stdlib only. Never crashes on a single
+source failure - each source is isolated and reported.
 """
 
 import concurrent.futures
@@ -41,6 +49,7 @@ SITE_DIR = ROOT / "site"
 PROVIDERS_FILE = BOT_DIR / "providers.json"
 QUERIES_FILE = BOT_DIR / "queries.txt"
 OFFERS_JSON = RESULTS_DIR / "offers.json"
+LEADS_JSON = RESULTS_DIR / "leads.json"
 HISTORY_MD = RESULTS_DIR / "history.md"
 SITE_HTML = SITE_DIR / "index.html"
 README = ROOT / "README.md"
@@ -49,20 +58,30 @@ USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 "
     "Firefox/128.0 (Free-LLM research bot)"
 )
-TIMEOUT = 12          # seconds per HTTP request
-RETRIES = 2           # extra attempts per request
-VERIFY_WORKERS = 6    # parallel link checkers
-MAX_DDG_QUERIES = 16   # DuckDuckGo queries per run
-MAX_HN_QUERIES = 14    # Hacker News queries per run
-MAX_REDDIT_QUERIES = 4
-MAX_GITHUB_QUERIES = 5
-MAX_NEWS_QUERIES = 8   # Google News RSS queries
-MAX_BSKY_QUERIES = 8   # Bluesky public API queries
-MAX_NITTER_QUERIES = 2 # X/Twitter via Nitter queries
-MAX_NEW_LEADS = 40     # new candidate links surfaced in the report
+BROWSER_UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+)
+TIMEOUT = 12
+RETRIES = 2
+VERIFY_WORKERS = 6
+
+MAX_BING_QUERIES = 12      # Bing web search
+MAX_SEARXNG_QUERIES = 8    # SearXNG (JSON, multi-instance)
+MAX_HN_QUERIES = 14        # Hacker News
+MAX_REDDIT_QUERIES = 5     # Reddit via pullpush archive API
+MAX_GITHUB_QUERIES = 5     # GitHub repo search
+MAX_NEWS_QUERIES = 8       # Google News RSS
+MAX_LOBS_QUERIES = 1       # Lobsters newest (single fetch)
+MAX_TELEGRAM_CHANNELS = 5  # Telegram public channels
+MAX_NITTER_QUERIES = 2     # X/Twitter via Nitter (best effort)
+MAX_NEW_LEADS = 40         # leads surfaced in the report
+MAX_AUTO_ADD_PER_RUN = 8   # new providers auto-added per run
+MAX_TOTAL_PROVIDERS = 60   # cap on tracked providers (auto-prune)
+
 GH_TOKEN = os.environ.get("GH_TOKEN", "")  # provided by GitHub Actions
 
-# API compatibility labels - what an OpenAI-format client can talk to
+# API compatibility labels
 API_LABELS = {
     "openai-completions": "OPENAI-COMPAT",
     "openai-responses": "OPENAI-COMPAT",
@@ -71,22 +90,38 @@ API_LABELS = {
     "cohere": "COHERE",
     "other": "OTHER",
 }
-CLIENT_READY = {"openai-completions", "openai-responses", "google-generative-ai", "anthropic-messages"}
 
-# Lead relevance keywords - aggressive discovery of new offers
+# Lead relevance keywords - aggressive discovery
 SCORE_KEYWORDS = [
     "free", "api key", "api keys", "credits", "credit", "tokens", "trial",
-    "offer", "promo", "promotion", "coupon", "giveaway", "frontier", "gpt",
-    "claude", "gemini", "grok", "llama", "qwen", "deepseek", "kimi", "mistral",
-    "codestral", "codex", "sonnet", "opus", "glm", "minimax", "moonshot",
-    "openrouter", "groq", "cerebras", "nvidia", "huggingface", "router",
-    "gateway", "proxy", "access", "signup", "register", "new", "launch",
-    "discount", "deal", "week", "month", "limited",
+    "offer", "promo", "promotion", "coupon", "giveaway", "frontier",
+    "router", "gateway", "aggregator", "proxy", "access", "signup",
+    "register", "new", "launch", "startup", "unlimited", "unmetered",
+    "discount", "deal", "week", "month", "limited", "key", "api",
 ]
-# A lead must contain at least one strong signal to be surfaced
-STRONG_SIGNALS = ("free", "credit", "trial", "offer", "promo", "coupon", "giveaway", "api key")
+STRONG_SIGNALS = ("free", "credit", "trial", "offer", "promo", "coupon",
+                  "giveaway", "api key", "unlimited", "unmetered")
 
-# X/Twitter access via public Nitter instances (best effort, first working wins)
+# SearXNG public instances (JSON API, no key) - first working wins
+SEARXNG_INSTANCES = [
+    "https://searx.be",
+    "https://search.bus-hit.me",
+    "https://paulgo.io",
+    "https://searx.tiekoetter.com",
+    "https://searxng.site",
+]
+
+# Telegram public channels to scan (t.me/s/<channel> preview, no auth).
+# Only channels that actually exist produce content; dead ones are skipped.
+TELEGRAM_CHANNELS = [
+    "aibrews",
+    "free_api_keys",
+    "llmapi",
+    "AI_Deals",
+    "freeapis",
+]
+
+# X/Twitter via public Nitter instances (best effort, first working wins)
 NITTER_INSTANCES = [
     "https://nitter.net",
     "https://nitter.poast.org",
@@ -103,7 +138,7 @@ _ctx = ssl.create_default_context()
 
 
 def http_get(url, timeout=TIMEOUT, headers=None, retries=RETRIES, size_limit=2_000_000):
-    """GET a URL, return (status, final_url, text, latency). Raises on failure."""
+    """GET a URL, return (status, final_url, body, latency). Raises on failure."""
     hdrs = {"User-Agent": USER_AGENT, "Accept": "text/html,application/json,*/*"}
     if headers:
         hdrs.update(headers)
@@ -116,9 +151,8 @@ def http_get(url, timeout=TIMEOUT, headers=None, retries=RETRIES, size_limit=2_0
                 body = resp.read(size_limit)
                 return resp.status, resp.geturl(), body, time.time() - t0
         except urllib.error.HTTPError as e:
-            # 4xx/5xx are real answers for link-verification purposes
             return e.code, url, b"", time.time() - t0
-        except Exception as e:  # noqa: BLE001 - network errors are expected
+        except Exception as e:  # noqa: BLE001
             last_err = e
             time.sleep(1.5 * (attempt + 1))
     raise RuntimeError(f"GET {url} failed: {last_err}")
@@ -143,11 +177,10 @@ def extract_title(html_text):
 
 
 def classify_status(status):
-    """Map an HTTP status to a link state: ok / blocked / dead / down."""
     if 200 <= status < 400:
         return "ok"
     if status == 403:
-        return "blocked"   # bot detection; likely fine in a browser
+        return "blocked"
     if 400 <= status < 500:
         return "dead"
     return "down"
@@ -178,61 +211,61 @@ def verify_url(url):
 # --------------------------------------------------------------------------
 # Search sources (each isolated; failures reported, never fatal)
 # --------------------------------------------------------------------------
-def search_ddg(query, max_results=8):
-    """DuckDuckGo HTML search (no API key). Returns list of dicts."""
+def search_bing(query, max_results=8):
+    """Bing web search HTML scrape (no key)."""
     q = urllib.parse.quote(query)
     try:
         status, final, body, _ = http_get(
-            f"https://html.duckduckgo.com/html/?q={q}",
-            headers={"Accept": "text/html"},
+            f"https://www.bing.com/search?q={q}&count=20",
+            headers={"User-Agent": BROWSER_UA, "Accept": "text/html"},
             timeout=15, retries=1,
         )
         if status >= 400:
-            # fall back to the lite endpoint (less bot protection)
-            status, final, body, _ = http_get(
-                f"https://lite.duckduckgo.com/lite/?q={q}",
-                headers={"Accept": "text/html"},
-                timeout=15, retries=1,
-            )
-            if status >= 400:
-                return []
+            return []
         text = body.decode("utf-8", errors="replace")
         out = []
-        blocks = re.split(r'<div class="result', text)[1:]
-        for b in blocks:
-            am = re.search(r'class="result__a"[^>]*href="([^"]+)"', b)
-            tm = re.search(r'class="result__a"[^>]*>(.*?)</a>', b, re.S)
-            sm = re.search(r'class="result__snippet"[^>]*>(.*?)</a>', b, re.S)
+        for b in re.split(r'<li class="b_algo"', text)[1:]:
+            am = re.search(r'<h2[^>]*><a[^>]+href="([^"]+)"', b)
+            tm = re.search(r"<h2[^>]*><a[^>]*>(.*?)</a>", b, re.S)
+            sm = re.search(r"<p[^>]*>(.*?)</p>", b, re.S)
             if not am:
                 continue
-            raw = html_mod.unescape(am.group(1))
-            # DuckDuckGo wraps links in /l/?uddg=... redirects
-            if "uddg=" in raw:
-                uddg = urllib.parse.parse_qs(urllib.parse.urlparse(raw).query).get("uddg", [None])[0]
-                url = uddg if uddg else raw
-            else:
-                url = raw
+            url = html_mod.unescape(am.group(1))
             title = html_mod.unescape(re.sub(r"<[^>]+>", "", tm.group(1))).strip() if tm else ""
             snippet = html_mod.unescape(re.sub(r"<[^>]+>", "", sm.group(1))).strip() if sm else ""
-            if url.startswith("//"):
-                url = "https:" + url
             out.append({"title": title, "url": url, "snippet": snippet[:220]})
             if len(out) >= max_results:
                 break
-        if not out:
-            # generic fallback: any uddg-redirect anchors (lite endpoint etc.)
-            for m in re.finditer(r'<a[^>]+href="([^"]*uddg=[^"]*)"[^>]*>(.*?)</a>', text, re.S | re.I):
-                raw = html_mod.unescape(m.group(1))
-                uddg = urllib.parse.parse_qs(urllib.parse.urlparse(raw).query).get("uddg", [None])[0]
-                if not uddg:
-                    continue
-                title = html_mod.unescape(re.sub(r"<[^>]+>", "", m.group(2))).strip()
-                out.append({"title": title, "url": uddg, "snippet": ""})
-                if len(out) >= max_results:
-                    break
         return out
     except Exception:
         return []
+
+
+def search_searxng(query, max_results=8):
+    """SearXNG JSON (no key) across public instances."""
+    q = urllib.parse.quote(query)
+    for inst in SEARXNG_INSTANCES:
+        try:
+            status, final, body, _ = http_get(
+                f"{inst}/search?q={q}&format=json",
+                headers={"Accept": "application/json"},
+                timeout=12, retries=1,
+            )
+            if status >= 400:
+                continue
+            data = json.loads(body.decode("utf-8", errors="replace"))
+            out = []
+            for r in (data.get("results") or [])[:max_results]:
+                out.append({
+                    "title": r.get("title", ""),
+                    "url": r.get("url", ""),
+                    "snippet": (r.get("content") or "")[:220],
+                })
+            if out:
+                return out
+        except Exception:
+            continue
+    return []
 
 
 def search_hn(query, max_results=12):
@@ -254,20 +287,18 @@ def search_hn(query, max_results=12):
     return out
 
 
-def search_reddit(query, max_results=10):
-    """Reddit search JSON (no key; may be blocked from datacenter IPs)."""
+def search_reddit_pullpush(query, max_results=10):
+    """Reddit submissions via pullpush.io archive (free, no key)."""
     q = urllib.parse.quote(query)
     data = fetch_json(
-        f"https://www.reddit.com/search.json?q={q}&limit={max_results}&sort=new&t=month",
-        headers={"Accept": "application/json"},
+        f"https://api.pullpush.io/reddit/search/submission/?q={q}&size={max_results}&sort=desc"
     )
     out = []
-    if data and data.get("data") and data["data"].get("children"):
-        for c in data["data"]["children"]:
-            d = c.get("data", {})
+    if data and data.get("data"):
+        for d in data["data"]:
             out.append({
                 "title": d.get("title", ""),
-                "url": "https://www.reddit.com" + d.get("permalink", ""),
+                "url": "https://www.reddit.com" + (d.get("permalink") or ""),
                 "snippet": (d.get("selftext") or "")[:220],
                 "subreddit": d.get("subreddit", ""),
                 "date": d.get("created_utc", 0),
@@ -329,31 +360,8 @@ def search_google_news(query, max_results=8):
         return []
 
 
-def search_bluesky(query, max_results=15):
-    """Bluesky public search API (no key, real-time chatter)."""
-    q = urllib.parse.quote(query)
-    data = fetch_json(
-        f"https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q={q}&limit={max_results}"
-    )
-    out = []
-    if data and data.get("posts"):
-        for p in data["posts"]:
-            txt = (p.get("record", {}) or {}).get("text", "") or ""
-            author = ((p.get("author", {}) or {}).get("handle", "")) or ""
-            uri = p.get("uri", "")
-            m = re.search(r"https?://[^\s)]+", txt)
-            url = m.group(0) if m else f"https://bsky.app/profile/{author}"
-            out.append({
-                "title": f"@{author}: {txt[:120]}",
-                "url": url,
-                "snippet": txt[:220],
-                "date": p.get("indexedAt", ""),
-            })
-    return out
-
-
 def search_lobsters(max_results=40):
-    """Lobste.rs newest stories JSON (no key); filtered by keywords later."""
+    """Lobste.rs newest stories JSON (no key)."""
     data = fetch_json("https://lobste.rs/newest.json")
     out = []
     if data:
@@ -366,6 +374,36 @@ def search_lobsters(max_results=40):
             })
             if len(out) >= max_results:
                 break
+    return out
+
+
+def search_telegram(channels, max_results=12):
+    """Telegram public channel previews via t.me/s/<channel> (no auth)."""
+    out = []
+    for ch in channels:
+        try:
+            status, final, body, _ = http_get(
+                f"https://t.me/s/{ch}",
+                headers={"User-Agent": BROWSER_UA, "Accept": "text/html"},
+                timeout=12, retries=1,
+            )
+            if status >= 400:
+                continue
+            text = body.decode("utf-8", errors="replace")
+            msgs = re.findall(r'<div class="tgme_widget_message_text[^>]*>(.*?)</div>', text, re.S)
+            for m in msgs[:max_results]:
+                clean = html_mod.unescape(re.sub(r"<[^>]+>", " ", m)).strip()
+                if not clean:
+                    continue
+                if not any(k in clean.lower() for k in ("free", "api", "credit", "key", "trial")):
+                    continue
+                lm = re.search(r'href="(https?://[^"]+)"', m)
+                url = html_mod.unescape(lm.group(1)) if lm else f"https://t.me/s/{ch}"
+                out.append({"title": f"[TG:{ch}] {clean[:120]}", "url": url, "snippet": clean[:220]})
+            if out and len(out) >= max_results:
+                break
+        except Exception:
+            continue
     return out
 
 
@@ -399,14 +437,14 @@ def search_nitter_x(query, max_results=10):
                     url = m.group(0) if m else f"{inst}/search?q={q}"
                 results.append({"title": txt[:140], "url": url, "snippet": txt[:220]})
             if results:
-                break  # first working instance wins
+                break
         except Exception:
             continue
     return results
 
 
 # --------------------------------------------------------------------------
-# Lead extraction
+# Lead scoring & discovery
 # --------------------------------------------------------------------------
 def domain_of(url):
     try:
@@ -423,8 +461,7 @@ def score_lead(text):
 
 
 def extract_leads(all_results, known_domains):
-    """Collect candidate URLs from search results not already in the KB.
-    Keeps the best-scoring item per domain, sorted by relevance."""
+    """Collect candidate URLs not already in the KB, best per domain, sorted."""
     best_by_domain = {}
     for item in all_results:
         url = item.get("url", "")
@@ -449,8 +486,92 @@ def extract_leads(all_results, known_domains):
         }
         if dom not in best_by_domain or score > best_by_domain[dom]["score"]:
             best_by_domain[dom] = rec
-    leads = sorted(best_by_domain.values(), key=lambda x: -x["score"])[:MAX_NEW_LEADS]
-    return leads
+    return sorted(best_by_domain.values(), key=lambda x: -x["score"])[:MAX_NEW_LEADS]
+
+
+def assess_lead(lead, known_domains, blocklist, news_domains):
+    """Authenticity check for auto-adding a lead as a tracked provider."""
+    dom = lead["domain"]
+    if dom in known_domains or dom in blocklist or dom in news_domains:
+        return None
+    url = f"https://{dom}"
+    reasons = []
+    status = 0
+    text = ""
+    try:
+        status, final, body, _ = http_get(url, timeout=12, retries=1)
+        if status >= 400:
+            reasons.append(f"homepage HTTP {status}")
+            # fallback: fetch through the free r.jina.ai reader proxy
+            try:
+                s2, _, b2, _ = http_get(f"https://r.jina.ai/{url}", timeout=18, retries=1)
+                if s2 < 400:
+                    status, body, text = 200, b2, b2.decode("utf-8", errors="replace")
+                    reasons.append("read via r.jina.ai")
+            except Exception:
+                pass
+        else:
+            text = body.decode("utf-8", errors="replace")
+    except Exception:
+        return {"add": False, "reasons": ["homepage unreachable"]}
+    if status >= 400:
+        return {"add": False, "reasons": reasons}
+
+    low = text.lower()
+    signals = []
+    if "api" in low:
+        signals.append("mentions api")
+    if any(k in low for k in ("free", "credit", "trial", "signup", "promo", "coupon")):
+        signals.append("free/credit/trial signal")
+    if any(k in low for k in ("api key", "chat/completions", "openai", "v1/models", "bearer")):
+        signals.append("key/completions signal")
+    if len(signals) >= 2:
+        reasons += signals
+        reasons.append(f"homepage reachable ({status})")
+        return {"add": True, "reasons": reasons, "status": status}
+    return {"add": False, "reasons": reasons or ["no api/free signals on page"]}
+
+
+def build_provider(lead, assess, now_iso):
+    dom = lead["domain"]
+    return {
+        "name": (lead.get("title") or dom)[:60],
+        "slug": dom.replace(".", "-")[:50],
+        "website": f"https://{dom}",
+        "free_url": lead["url"] if lead["url"].startswith("https://") else f"https://{dom}",
+        "key_url": "",
+        "docs_url": "",
+        "signup": "email",
+        "credit_card_required": False,
+        "models": ["see website"],
+        "limits": "see website",
+        "expiry": "unknown",
+        "expiry_note": "Auto-discovered; verify before relying on it",
+        "compat": {"api": "openai-completions", "notes": "auto-discovered; verify endpoint"},
+        "trust": "medium",
+        "notes": f"Auto-discovered {now_iso[:10]} via {lead['source']}",
+        "auto": True,
+        "discovered_at": now_iso,
+        "discovery_signals": assess["reasons"],
+    }
+
+
+def prune_providers(providers, verified, max_total=MAX_TOTAL_PROVIDERS):
+    """Keep the list under the cap: drop dead auto-added providers first."""
+    if len(providers) <= max_total:
+        return providers
+    auto = sorted([p for p in providers if p.get("auto")], key=lambda p: p.get("discovered_at", ""))
+    for p in auto:
+        if len(providers) <= max_total:
+            break
+        v = verified.get(p.get("website"))
+        if v and not v["ok"]:
+            providers.remove(p)
+    for p in auto:
+        if len(providers) <= max_total:
+            break
+        providers.remove(p)
+    return providers
 
 
 # --------------------------------------------------------------------------
@@ -476,35 +597,35 @@ def api_slug(p):
     return p.get("compat", {}).get("api", "other").replace("_", "-")
 
 
-def trust_label(p):
-    return p.get("trust", "unknown")
-
-
-def render_markdown(providers, meta, leads, source_status):
+def render_markdown(providers, meta, leads, source_status, auto_added):
     now = meta["last_updated"]
     lines = []
-    lines.append(f"\n<!-- OFFERS-START -->\n")
-    lines.append(f"## Latest Offers - {now}\n")
+    lines.append("\n<!-- OFFERS-START -->\n")
+    lines.append(f"## Latest Third-Party Offers - {now}\n")
     lines.append(f"> {meta['ok_count']} providers verified OK | {meta['dead_count']} flagged | "
-                 f"{meta['compatible_count']} client-ready (OpenAI-compatible or native API) | last full run: {now}\n")
-    lines.append("| Provider | Client API | Models | Limits | Signup | Expiry | Links |")
+                 f"{meta['auto_added_count']} auto-discovered this run | last full run: {now}\n")
+    if auto_added:
+        lines.append("\n### ✨ Auto-discovered this run (new providers added)\n")
+        for a in auto_added:
+            lines.append(f"- **{a['name']}** (`{a['domain']}`) — {', '.join(a['reasons'])}")
+        lines.append("")
+    lines.append("\n| Provider | Client API | Models | Limits | Signup | Expiry | Links |")
     lines.append("|---|---|---|---|---|---|---|")
     for p in providers:
         links = []
-        if p["v_website"] and p["v_website"]["ok"]:
-            links.append(f"[site]({p['website']})")
-        if p["v_free"] and p["v_free"]["ok"]:
-            links.append(f"[free]({p['free_url']})")
-        if p["v_keys"] and p["v_keys"]["ok"]:
-            links.append(f"[keys]({p['key_url']})")
-        if p["v_docs"] and p["v_docs"]["ok"]:
-            links.append(f"[docs]({p['docs_url']})")
-        link_str = " ".join(links) if links else f"**{status_badge(p['v_website'])}**"
-        models = "; ".join(p["models"][:4]) + (" …" if len(p["models"]) > 4 else "")
-        signup = "no-CC " + p["signup"] if not p["credit_card_required"] else "**CC** " + p["signup"]
+        for label, key, url in (("site", "v_website", p["website"]),
+                                ("free", "v_free", p["free_url"]),
+                                ("keys", "v_keys", p["key_url"]),
+                                ("docs", "v_docs", p["docs_url"])):
+            if p.get(key) and p[key]["ok"] and url:
+                links.append(f"[{label}]({url})")
+        link_str = " ".join(links) if links else f"**{status_badge(p.get('v_website', {'ok': False}))}**"
+        models = "; ".join(p["models"][:3]) + (" …" if len(p["models"]) > 3 else "")
+        signup = "no-CC " + p["signup"] if not p.get("credit_card_required", True) else "**CC?** " + p["signup"]
         expiry = p["expiry"]
+        mark = " ⚡" if p.get("discovered_at", "") == meta["last_updated"] else (" ↻" if p.get("auto") else "")
         lines.append(
-            f"| **{p['name']}** ({p['trust']}) | {compat_badge(p)} | {models} | "
+            f"| **{p['name']}**{mark} ({p['trust']}) | {compat_badge(p)} | {models} | "
             f"{p['limits']} | {signup} | {expiry} | {link_str} |"
         )
     if leads:
@@ -512,21 +633,21 @@ def render_markdown(providers, meta, leads, source_status):
         for l in leads:
             lines.append(
                 f"- [{l['title']}]({l['url']}) ({l['domain']}, via {l['source']}, "
-                f"score {l['score']}: {', '.join(l['hits'])})"
+                f"score {l['score']}: {', '.join(l['hits'])})\n"
             )
-    lines.append("\n### Source status\n")
+    lines.append("### Source status\n")
     for k, v in source_status.items():
         lines.append(f"- {k}: {v}")
-    lines.append(f"\n_Last verified: {now}. Free tiers change often - check links before relying on them._\n")
+    lines.append(f"\n_Last verified: {now}. Offers change fast - verify links before relying on them._\n")
     lines.append("<!-- OFFERS-END -->\n")
     return "\n".join(lines)
 
 
-def render_html(providers, meta, leads, source_status):
+def render_html(providers, meta, leads, source_status, auto_added):
     now = meta["last_updated"]
     cards = []
     for p in providers:
-        v = p["v_website"]
+        v = p.get("v_website", {"ok": False})
         status = status_badge(v)
         status_cls = v.get("state", "down")
         links = []
@@ -534,19 +655,26 @@ def render_html(providers, meta, leads, source_status):
                                 ("free", "v_free", p["free_url"]),
                                 ("keys", "v_keys", p["key_url"]),
                                 ("docs", "v_docs", p["docs_url"])):
-            if p[key] and p[key]["ok"]:
+            if p.get(key) and p[key]["ok"] and url:
                 links.append(f'<a class="btn" href="{html_escape(url)}" target="_blank" rel="noopener">{label}</a>')
         if not links:
-            links.append(f'<span class="btn dead">DEAD</span>')
-        cc = "No credit card" if not p["credit_card_required"] else "CC required"
+            links.append(f'<span class="btn dead">{status}</span>')
+        badges = [
+            f'<span class="badge api api-{api_slug(p)}">{compat_badge(p)}</span>',
+            f'<span class="badge trust trust-{p["trust"]}">{p["trust"]}</span>',
+        ]
+        if p.get("discovered_at", "") == meta["last_updated"]:
+            badges.insert(0, '<span class="badge fresh">NEW</span>')
+        elif p.get("auto"):
+            badges.insert(0, '<span class="badge auto">AUTO</span>')
+        badges.append(f'<span class="badge status {status_cls}">{status}</span>')
+        cc = "No credit card" if not p.get("credit_card_required", True) else "CC?"
         cards.append(f"""
 <div class="card">
   <div class="card-top">
     <h3>{html_escape(p['name'])}</h3>
     <div class="badges">
-      <span class="badge api api-{api_slug(p)}">{compat_badge(p)}</span>
-      <span class="badge trust trust-{p['trust']}">{p['trust']}</span>
-      <span class="badge status {status_cls}">{status} · {p['v_website'].get('status', '-')}</span>
+      {''.join(badges)}
     </div>
   </div>
   <p class="models">{html_escape('; '.join(p['models']))}</p>
@@ -573,7 +701,7 @@ def render_html(providers, meta, leads, source_status):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free-LLM - Daily Free LLM API Offers</title>
+<title>Free-LLM - Fresh Third-Party LLM API Offers</title>
 <style>
 :root {{ --bg:#0f1117; --card:#171a23; --txt:#e6e8ee; --dim:#8b90a0; --accent:#4f8cff; }}
 * {{ box-sizing:border-box; margin:0; padding:0; }}
@@ -596,6 +724,8 @@ h3 {{ font-size:16px; margin-bottom:8px; }}
 .trust-high {{ background:#1c2a3a; color:#7dd3fc; }}
 .trust-medium {{ background:#2a2414; color:#fbbf24; }}
 .trust-low {{ background:#3a1414; color:#f87171; }}
+.auto {{ background:#1a2433; color:#93c5fd; }}
+.fresh {{ background:#0e3a2a; color:#34d399; }}
 .status.ok {{ background:#163a24; color:#4ade80; }}
 .status.blocked {{ background:#3a2f14; color:#facc15; }}
 .status.dead, .status.down {{ background:#3a1414; color:#f87171; }}
@@ -615,10 +745,11 @@ footer {{ max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px
 </head>
 <body>
 <header>
-  <h1>Free-LLM <span>· daily free LLM API offers</span></h1>
-  <p class="sub">Auto-researched daily by a GitHub Actions bot. Last run: <strong>{now}</strong> ·
-     {meta['ok_count']} providers OK · {meta['dead_count']} flagged · {meta['compatible_count']} client-ready ·
-     zero credit cards, email/Google/GitHub signups only (unless marked CC)</p>
+  <h1>Free-LLM <span>· fresh third-party LLM API offers</span></h1>
+  <p class="sub">Auto-researched twice daily by a GitHub Actions bot. Last run: <strong>{now}</strong> ·
+     {meta['ok_count']} providers OK · {meta['dead_count']} flagged ·
+     {meta['auto_added_count']} auto-discovered this run ·
+     <span class="badge fresh">NEW</span> = added this run · <span class="badge auto">AUTO</span> = auto-discovered earlier</p>
   <input id="q" type="search" placeholder="Filter providers, models, limits..." autofocus>
 </header>
 <div class="grid" id="grid">
@@ -630,8 +761,8 @@ footer {{ max-width:1100px; margin:30px auto; color:var(--dim); font-size:12.5px
   <ul>{src_html}</ul>
 </section>
 <footer>Generated by <a href="https://github.com/airdropia/Free-LLM">Free-LLM</a> research bot.
-  Free tiers change frequently; always verify links before relying on an offer.
-  Data is community-curated, not a guarantee.</footer>
+  Official big-name providers are excluded by design; focus is fresh third-party offers.
+  Offers change fast - verify links before relying on anything.</footer>
 <script>
 const q = document.getElementById('q');
 q.addEventListener('input', () => {{
@@ -653,8 +784,7 @@ def html_escape(s):
 # Main
 # --------------------------------------------------------------------------
 def main():
-    # This bot is meant to run only inside GitHub Actions (keeps the local
-    # machine clean). Refuse local execution unless explicitly forced.
+    # CI-only guard: never run locally (keeps the local machine clean)
     if os.environ.get("GITHUB_ACTIONS") != "true" and "--force-local" not in sys.argv:
         print("Refusing to run outside GitHub Actions (local machine stays clean).")
         print("Run in CI, or pass --force-local to override.")
@@ -670,7 +800,9 @@ def main():
         print(f"FATAL: cannot read {PROVIDERS_FILE}: {e}")
         sys.exit(1)
     providers = kb.get("providers", [])
-    print(f"[{now_iso}] loaded {len(providers)} providers from knowledge base")
+    blocklist = set(kb.get("_official_blocklist", []))
+    news_domains = set(kb.get("_news_domains", []))
+    print(f"[{now_iso}] loaded {len(providers)} third-party providers from knowledge base")
 
     # 2. Run web searches
     queries = [l.strip() for l in QUERIES_FILE.read_text(encoding="utf-8").splitlines()
@@ -686,19 +818,24 @@ def main():
                 item["_source"] = name
             all_results.extend(r)
             ok += 1 if r else 0
-            if name == "duckduckgo":
-                time.sleep(random.uniform(1.0, 2.0))
         source_status[name] = f"{ok}/{min(max_n, len(qs))} queries returned results"
 
-    run_source("duckduckgo", search_ddg, queries, MAX_DDG_QUERIES)
+    run_source("bing", search_bing, queries, MAX_BING_QUERIES)
+    run_source("searxng", search_searxng, queries, MAX_SEARXNG_QUERIES)
     run_source("hackernews", search_hn, queries, MAX_HN_QUERIES)
-    run_source("reddit", search_reddit, queries, MAX_REDDIT_QUERIES)
+    run_source("reddit", search_reddit_pullpush, queries, MAX_REDDIT_QUERIES)
     run_source("github", search_github, queries, MAX_GITHUB_QUERIES)
     run_source("google-news", search_google_news, queries, MAX_NEWS_QUERIES)
-    run_source("bluesky", search_bluesky, queries, MAX_BSKY_QUERIES)
     run_source("x-twitter", search_nitter_x, queries, MAX_NITTER_QUERIES)
 
-    # Lobsters: single fetch, filtered client-side
+    # Telegram: channel scan (no query)
+    tg = search_telegram(TELEGRAM_CHANNELS[:MAX_TELEGRAM_CHANNELS])
+    for item in tg:
+        item["_source"] = "telegram"
+    all_results.extend(tg)
+    source_status["telegram"] = f"{len(tg)} posts matched"
+
+    # Lobsters: single fetch
     lob = search_lobsters()
     for item in lob:
         item["_source"] = "lobsters"
@@ -707,7 +844,7 @@ def main():
 
     print(f"[{now_iso}] search returned {len(all_results)} total results")
 
-    # 3. Verify all KB URLs in parallel
+    # 3. Verify all tracked KB URLs in parallel
     urls_to_check = {}
     for p in providers:
         for key in ("website", "free_url", "key_url", "docs_url"):
@@ -725,44 +862,65 @@ def main():
 
     dead = [u for u, r in verified.items() if not r["ok"]]
     print(f"[{now_iso}] verification done: {len(verified) - len(dead)} OK, {len(dead)} dead/unreachable")
-    for u in dead:
-        print(f"  DEAD: {u} ({verified[u]['status']})")
 
-    # 4. Attach verification + build offers list
+    # 4. Attach verification results
     for p in providers:
-        p["v_website"] = verified.get(p.get("website"), {"ok": False, "status": "n/a", "url": p.get("website")})
-        p["v_free"] = verified.get(p.get("free_url"), {"ok": False, "status": "n/a", "url": p.get("free_url")})
-        p["v_keys"] = verified.get(p.get("key_url"), {"ok": False, "status": "n/a", "url": p.get("key_url")})
-        p["v_docs"] = verified.get(p.get("docs_url"), {"ok": False, "status": "n/a", "url": p.get("docs_url")})
+        p["v_website"] = verified.get(p.get("website"), {"ok": False, "status": "n/a", "state": "down", "url": p.get("website")})
+        p["v_free"] = verified.get(p.get("free_url"), {"ok": False, "status": "n/a", "state": "down", "url": p.get("free_url")})
+        p["v_keys"] = verified.get(p.get("key_url"), {"ok": False, "status": "n/a", "state": "down", "url": p.get("key_url")})
+        p["v_docs"] = verified.get(p.get("docs_url"), {"ok": False, "status": "n/a", "state": "down", "url": p.get("docs_url")})
         p["verified_at"] = now_iso
 
-    ok_count = sum(1 for p in providers if p["v_website"]["ok"])
-    dead_count = len(providers) - ok_count
-    compatible_count = sum(1 for p in providers if p.get("compat", {}).get("api") in CLIENT_READY)
-
-    # 5. New leads (candidates outside the KB)
+    # 5. Leads
     known_domains = {domain_of(p.get("website", "")) for p in providers}
     leads = extract_leads(all_results, known_domains)
     print(f"[{now_iso}] {len(leads)} new leads")
+
+    # 6. Auto-discover: assess top leads, auto-add authentic new providers
+    auto_added = []
+    for lead in leads[:MAX_AUTO_ADD_PER_RUN]:
+        if len(providers) >= MAX_TOTAL_PROVIDERS:
+            break
+        a = assess_lead(lead, known_domains, blocklist, news_domains)
+        if a and a["add"]:
+            p = build_provider(lead, a, now_iso)
+            p["v_website"] = {"ok": True, "status": a.get("status", 200), "state": "ok", "url": p["website"]}
+            p["v_free"] = {"ok": True, "status": 200, "state": "ok", "url": p["free_url"]}
+            p["v_keys"] = {"ok": False, "status": "n/a", "state": "down", "url": ""}
+            p["v_docs"] = {"ok": False, "status": "n/a", "state": "down", "url": ""}
+            p["verified_at"] = now_iso
+            providers.append(p)
+            known_domains.add(lead["domain"])
+            auto_added.append({"name": p["name"], "domain": lead["domain"], "reasons": a["reasons"]})
+    if auto_added:
+        kb["providers"] = prune_providers(providers, verified)
+        PROVIDERS_FILE.write_text(json.dumps(kb, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(f"[{now_iso}] AUTO-ADDED {len(auto_added)} providers: {[a['domain'] for a in auto_added]}")
+
+    providers = prune_providers(providers, verified)
+
+    ok_count = sum(1 for p in providers if p.get("v_website", {}).get("ok"))
+    dead_count = len(providers) - ok_count
+    auto_added_count = len(auto_added)
 
     meta = {
         "last_updated": now_iso,
         "providers_count": len(providers),
         "ok_count": ok_count,
         "dead_count": dead_count,
-        "compatible_count": compatible_count,
+        "auto_added_count": auto_added_count,
         "leads_count": len(leads),
         "total_results": len(all_results),
         "sources": source_status,
     }
 
-    # 6. Write outputs
+    # 7. Write outputs
     RESULTS_DIR.mkdir(exist_ok=True)
     SITE_DIR.mkdir(exist_ok=True)
 
     offers_payload = {
         "last_updated": now_iso,
-        "summary": {k: meta[k] for k in ("ok_count", "dead_count", "compatible_count", "leads_count")},
+        "summary": {k: meta[k] for k in ("ok_count", "dead_count", "auto_added_count", "leads_count", "total_results")},
         "sources": source_status,
         "offers": [
             {
@@ -773,7 +931,7 @@ def main():
                 "key_url": p["key_url"],
                 "docs_url": p["docs_url"],
                 "signup": p["signup"],
-                "credit_card_required": p["credit_card_required"],
+                "credit_card_required": p.get("credit_card_required", True),
                 "models": p["models"],
                 "limits": p["limits"],
                 "expiry": p["expiry"],
@@ -781,6 +939,9 @@ def main():
                 "compat": p.get("compat", {}),
                 "trust": p.get("trust", "unknown"),
                 "notes": p.get("notes", ""),
+                "auto": p.get("auto", False),
+                "discovered_at": p.get("discovered_at", ""),
+                "discovery_signals": p.get("discovery_signals", []),
                 "verified_at": now_iso,
                 "links_verified": {
                     "website": p["v_website"]["ok"],
@@ -799,26 +960,25 @@ def main():
             for p in providers
         ],
         "new_leads": leads,
+        "auto_added": auto_added,
     }
     OFFERS_JSON.write_text(json.dumps(offers_payload, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"[{now_iso}] wrote {OFFERS_JSON}")
 
-    # Standalone leads file (all discovered candidates, scored)
-    (RESULTS_DIR / "leads.json").write_text(
+    LEADS_JSON.write_text(
         json.dumps({"last_updated": now_iso, "count": len(leads), "leads": leads},
                    indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
-    print(f"[{now_iso}] wrote {RESULTS_DIR / 'leads.json'}")
+    print(f"[{now_iso}] wrote {LEADS_JSON}")
 
-    # History log (keep latest first, cap at 90 entries)
-    history_line = f"- {now_iso} | providers={len(providers)} | ok={ok_count} | dead={dead_count} | client-ready={compatible_count} | leads={len(leads)}\n"
+    history_line = (f"- {now_iso} | providers={len(providers)} | ok={ok_count} | dead={dead_count} "
+                    f"| auto-added={auto_added_count} | leads={len(leads)} | results={len(all_results)}\n")
     prev_history = HISTORY_MD.read_text(encoding="utf-8") if HISTORY_MD.exists() else ""
     prev_lines = prev_history.splitlines()[:90]
     HISTORY_MD.write_text(history_line + "\n".join(prev_lines) + ("\n" if prev_lines else ""), encoding="utf-8")
 
-    # README section
-    md = render_markdown(providers, meta, leads, source_status)
+    md = render_markdown(providers, meta, leads, source_status, auto_added)
     if README.exists():
         text = README.read_text(encoding="utf-8")
         if "<!-- OFFERS-START -->" in text and "<!-- OFFERS-END -->" in text:
@@ -832,12 +992,11 @@ def main():
         README.write_text(md, encoding="utf-8")
     print(f"[{now_iso}] updated {README}")
 
-    # Pages site
-    SITE_HTML.write_text(render_html(providers, meta, leads, source_status), encoding="utf-8")
+    SITE_HTML.write_text(render_html(providers, meta, leads, source_status, auto_added), encoding="utf-8")
     print(f"[{now_iso}] wrote {SITE_HTML}")
 
     print(f"[{now_iso}] DONE - summary: "
-          f"{json.dumps({k: meta[k] for k in ('ok_count', 'dead_count', 'compatible_count', 'leads_count', 'total_results')})}")
+          f"{json.dumps({k: meta[k] for k in ('ok_count', 'dead_count', 'auto_added_count', 'leads_count', 'total_results')})}")
 
 
 if __name__ == "__main__":

@@ -1,35 +1,25 @@
-# Web search queries run by the bot every run (DuckDuckGo, Hacker News,
-# Google News, Bluesky, X/Nitter). One query per line. Broad by design -
-# new providers and short-lived offers (1-2 week frontier-model freebies)
-# appear constantly; we want to catch them early.
-free llm api key
-free api key no credit card
-free api credits signup
-free api credits no card
-free api tier signup
-free trial api credits
-free frontier model api
-free gpt api access
-free claude api access
-free gemini api credits
-free grok api credits
-openrouter free credits
-free tokens signup bonus
+# Web search queries for FRESH THIRD-PARTY LLM provider discovery.
+# Official big-name providers are intentionally NOT queried - we want the
+# new routers/aggregators/gateways with generous or short-lived free offers.
+new free llm provider
+fresh free llm api
+free llm api router
+free api aggregator
+free api gateway credits
+free api proxy signup
 free api key promo code
-free api coupon 2026
-new llm provider launch free credits
-free codestral api
-free qwen api credits
-free deepseek credits
-free kimi api
-free mistral credits
-free groq credits
-nvidia nim free credits
-huggingface free credits
-free glm api
-free minimax api
-free moonshot api
-api key giveaway free
-free api access limited time
-free llm access now
-free api credits this week
+free api credits giveaway
+free api credits limited time
+free api access new user
+free api key no card
+free llm api telegram
+free api key telegram
+unlimited free llm api
+free api no token tracking
+free api signup bonus
+free frontier model access
+new ai api launch free credits
+ai api startup free tier
+free api key this week
+free api credits today
+llm api free trial no signup
