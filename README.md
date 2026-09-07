@@ -66,11 +66,12 @@ Auto-discovered providers are community finds, not endorsements.
 
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Third-Party Offers - 2026-09-07T11:35:16Z
+## Latest Third-Party Offers - 2026-09-07T21:07:04Z
 
-> 6 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-07T11:35:16Z
+> 6 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-07T21:07:04Z
 
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
@@ -86,11 +87,11 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [Free models you can use with your OpenClaw (no credit card needed)](https://news.ycombinator.com/item?id=47681837) (news.ycombinator.com, via hackernews, score 7: free, api key, credit, trial, new, key, api)
 
-- [Unlimited AI Credits from One Integer: New API's Quota Overflow (CVE-2026-71479) and How to Check Your Gateway - buttondown.com](https://news.google.com/rss/articles/CBMimgFBVV95cUxQZmhFb1p5UTMxb3Ryc2phRmZKOU81M1B3Um40MFA1YUFxRXM4NTh6VGhQa29PbUg2TnJoa3BlX0wwTEV5Zm9RcEZXNUc3YVdSVUNoaFVyT1J4bVVoTmVJQUJVTktjamMya2RvTjRSRUNTV25IaW13cGhfalNkSDVuZDZnRnhSMTBYbG1ObllzRWJ4QldSeXBPSDdn?oc=5) (news.google.com, via google-news, score 7: credits, credit, gateway, new, unlimited, limited, api)
-
 - [Show HN: Faster more accurate multimodal vector search](https://github.com/nickswami/dasein-python-sdk) (github.com, via hackernews, score 6: free, api key, trial, week, key, api)
 
 - [Show HN: Private AI assistant for $1.99 -Free AI](https://personalassistantdeploy.com/) (personalassistantdeploy.com, via hackernews, score 6: free, api key, api keys, month, key, api)
+
+- [Google and OpenAI offer free API credits—but there's one catch - How-To Geek](https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEttNldEemZuTHJ3clRMblBLYWVobl9MZnN5NzRUMnAxOTZaYWZPVUZRcUxNZl96TnN3ekZ4T05UZWUyQXlWdE5YbVBQblRHcWp5SEF2VURra0EwZkRIbG1Od21KWGdMU0lkRHk2WXRhdHJuZ1NHTWlWaklRSFh0RGRDd1Z0MHMzS0xYWVQyYXE?oc=5) (news.google.com, via google-news, score 6: free, credits, credit, offer, new, api)
 
 - [Show HN: One API for GPT-5, Claude-Sonnet-4, DeepSeek, Gemini](https://wisdom-gate.juheapi.com/studio/chat) (wisdom-gate.juheapi.com, via hackernews, score 3: aggregator, access, api)
 
@@ -108,7 +109,7 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [[TG:AI_Deals] Grab : Upto 85% Off on Aristocrat Trolleys + Bank Offers  😱    😱      🔗   Link:  https://www.amazon.in/s?hidden-keywords](https://www.amazon.in/s?hidden-keywords=B0H1MZV6FH%7CB0H2VRDNJK%7CB0H1MPQYKP%7CB0FC6RGJTT%7CB0FFBCLHTT&tag=aideals0ff-21) (amazon.in, via telegram, score 3: offer, deal, key)
 
-- [Free Online Games at Poki - Play Now!](https://www.bing.com/ck/a?!&&p=8884c109877d016abda58fd5deabe2dafe21808457138769a98d6d85201a0e73JmltdHM9MTc4ODczOTIwMA&ptn=3&ver=2&hsh=4&fclid=05d949a6-82ca-6f1a-249a-5e6b83416e6d&u=a1aHR0cHM6Ly9wb2tpLmNvbS8_bXNvY2tpZD0wNWQ5NDlhNjgyY2E2ZjFhMjQ5YTVlNmI4MzQxNmU2ZA&ntb=1) (bing.com, via bing, score 2: free, new)
+- [CBS News | Breaking news, top stories & today's latest headlines](https://www.bing.com/ck/a?!&&p=bcb3c805f6f9b8b1a3825e16aea24021c01e16bf234cfdf17a10fea89794ba4aJmltdHM9MTc4ODczOTIwMA&ptn=3&ver=2&hsh=4&fclid=1a90cec6-8675-63f1-1411-d90b87c36249&u=a1aHR0cHM6Ly93d3cuY2JzbmV3cy5jb20v&ntb=1) (bing.com, via bing, score 2: offer, new)
 
 - [Launch HN: Speko (YC S26) – OpenRouter for Voice AI](https://speko.ai/) (speko.ai, via hackernews, score 2: router, launch)
 
@@ -150,9 +151,10 @@ Auto-discovered providers are community finds, not endorsements.
 - telegram: 3 posts matched
 - lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-07T11:35:16Z. Offers change fast - verify links before relying on them._
+_Last verified: 2026-09-07T21:07:04Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
 
 
 
