@@ -1,39 +1,71 @@
 {
-  "last_updated": "2026-09-06T19:10:59Z",
-  "count": 37,
+  "last_updated": "2026-09-07T07:06:14Z",
+  "count": 31,
   "leads": [
     {
-      "title": "A free web-based AI chat tool leveraging Puter",
-      "url": "https://news.ycombinator.com/item?id=45710013",
+      "title": "Free models you can use with your OpenClaw (no credit card needed)",
+      "url": "https://news.ycombinator.com/item?id=47681837",
       "domain": "news.ycombinator.com",
-      "snippet": "I&#x27;ve set up a free web-based AI chat tool leveraging Puter. It supports all popular models including Claude, Gemini, GPT, OpenAI series, Deepseek, and Qwen. In theory, it can ",
+      "snippet": "We put together a list of free models you can connect to OpenClaw today through Manifest. No credit card, no trial that expires after 3 days. Just grab an API key and go.<p>Here&#x",
       "source": "hackernews",
-      "score": 8,
+      "score": 7,
       "hits": [
         "free",
-        "gpt",
-        "claude",
-        "gemini",
-        "qwen",
-        "deepseek",
+        "api key",
+        "credit",
+        "trial",
         "new",
-        "deal"
+        "key",
+        "api"
       ]
     },
     {
-      "title": "Show HN: One API for GPT-5, Claude-Sonnet-4, DeepSeek, Gemini",
-      "url": "https://wisdom-gate.juheapi.com/studio/chat",
-      "domain": "wisdom-gate.juheapi.com",
-      "snippet": "We built an API aggregator for LLM APIs.  \nIt supports GPT-5, Claude-4, DeepSeek V3, Gemini, and others — all accessible via a single API interface.<p>Why we built this\nManaging mu",
+      "title": "Unlimited AI Credits from One Integer: New API's Quota Overflow (CVE-2026-71479) and How to Check Your Gateway - Buttondown",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZmhFb1p5UTMxb3Ryc2phRmZKOU81M1B3Um40MFA1YUFxRXM4NTh6VGhQa29PbUg2TnJoa3BlX0wwTEV5Zm9RcEZXNUc3YVdSVUNoaFVyT1J4bVVoTmVJQUJVTktjamMya2RvTjRSRUNTV25IaW13cGhfalNkSDVuZDZnRnhSMTBYbG1ObllzRWJ4QldSeXBPSDdn?oc=5",
+      "domain": "news.google.com",
+      "snippet": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQZmhFb1p5UTMxb3Ryc2phRmZKOU81M1B3Um40MFA1YUFxRXM4NTh6VGhQa29PbUg2TnJoa3BlX0wwTEV5Zm9RcEZXNUc3YVdSVUNoaFVyT1J4bVVoTmVJQU",
+      "source": "google-news",
+      "score": 7,
+      "hits": [
+        "credits",
+        "credit",
+        "gateway",
+        "new",
+        "unlimited",
+        "limited",
+        "api"
+      ]
+    },
+    {
+      "title": "Show HN: Faster more accurate multimodal vector search",
+      "url": "https://github.com/nickswami/dasein-python-sdk",
+      "domain": "github.com",
+      "snippet": "Last week we shared our VectorDBBench results [0] showing better accuracy and faster search.<p>this week you can checkout the sdk \nand get an api key issued through github oauth. N",
       "source": "hackernews",
       "score": 6,
       "hits": [
-        "gpt",
-        "claude",
-        "gemini",
-        "deepseek",
-        "sonnet",
-        "access"
+        "free",
+        "api key",
+        "trial",
+        "week",
+        "key",
+        "api"
+      ]
+    },
+    {
+      "title": "Show HN: Private AI assistant for $1.99 -Free AI",
+      "url": "https://personalassistantdeploy.com/",
+      "domain": "personalassistantdeploy.com",
+      "snippet": "Hey HN — solo dev here. Built this because I wanted a private AI assistant on Telegram without paying $20&#x2F;month for ChatGPT Plus or managing API keys.<p>For $1.99 you get your",
+      "source": "hackernews",
+      "score": 6,
+      "hits": [
+        "free",
+        "api key",
+        "api keys",
+        "month",
+        "key",
+        "api"
       ]
     },
     {
@@ -47,215 +79,116 @@
         "credits",
         "credit",
         "frontier",
-        "gpt",
-        "claude",
-        "month"
+        "unmetered",
+        "month",
+        "api"
       ]
     },
     {
-      "title": "X offers free API credits for its Grok Bot - Social Media Today",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPZTlRU0pPb2czSEprX0lKNFM5S1N3Ujl4bVRPT0s2LTdGTkhFZlBwYUNndXliQU9FSWFJZHhFcjJuM2pvcUZVOXdWNURodlRQX2dOUjJ1MEw3dkxjclMxNVFRX1l6X0MwZUFfYU9ZY29VTDdQX0xUNWlWSEp5MlhVSUQ2RmZTekE1WlFGREJiSkloQQ?oc=5",
-      "domain": "news.google.com",
-      "snippet": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPZTlRU0pPb2czSEprX0lKNFM5S1N3Ujl4bVRPT0s2LTdGTkhFZlBwYUNndXliQU9FSWFJZHhFcjJuM2pvcUZVOXdWNURodlRQX2dOUjJ1MEw3dkxjclMxNV",
-      "source": "google-news",
-      "score": 6,
-      "hits": [
-        "free",
-        "credits",
-        "credit",
-        "offer",
-        "grok",
-        "new"
-      ]
-    },
-    {
-      "title": "Show HN: Chat with Orion – a visual agent that sees, reasons and acts",
-      "url": "https://chat.vlm.run/",
-      "domain": "chat.vlm.run",
-      "snippet": "Hey HN! We’re excited to share Orion [1] — our new visual agent that sees, reasons, and acts across images, videos, and documents.<p>Frontier VLMs (GPT, Claude, Gemini) can describ",
+      "title": "Show HN: OpenLegion – AI agent fleet with container isolation and vault proxy",
+      "url": "https://www.openlegion.ai",
+      "domain": "openlegion.ai",
+      "snippet": "I built OpenLegion because every AI agent framework I tried had the same problems in production: API keys sitting in config files inside the agent&#x27;s environment, no way to set",
       "source": "hackernews",
       "score": 5,
       "hits": [
-        "frontier",
-        "gpt",
-        "claude",
-        "gemini",
-        "new"
-      ]
-    },
-    {
-      "title": "Show HN: Generous free tier for SERP and AI web scraping",
-      "url": "https://cloro.dev/",
-      "domain": "cloro.dev",
-      "snippet": "Hackers,<p>We wanted to share our newly-added recurring Free tier for cloro.dev, the leading AI UI scraping platform in the world.<p>We extract structured data from ChatGPT, Perple",
-      "source": "hackernews",
-      "score": 5,
-      "hits": [
-        "free",
-        "gpt",
-        "gemini",
-        "grok",
-        "new"
-      ]
-    },
-    {
-      "title": "Show HN: LLM Onestop – Access ChatGPT, Claude, Gemini, and more in one interface",
-      "url": "https://www.llmonestop.com",
-      "domain": "llmonestop.com",
-      "snippet": "Hi HN! I built LLM OneStop (<a href=\"https:&#x2F;&#x2F;www.llmonestop.com\" rel=\"nofollow\">https:&#x2F;&#x2F;www.llmonestop.com</a>), a unified interface for accessing multiple AI l",
-      "source": "hackernews",
-      "score": 4,
-      "hits": [
-        "gpt",
-        "claude",
-        "gemini",
-        "access"
-      ]
-    },
-    {
-      "title": "Show HN: AudioWorkletProcessor Generator Powered by AI",
-      "url": "https://angular-audio.com/worklet-generator",
-      "domain": "angular-audio.com",
-      "snippet": "Hello,\nHere is an editor and generator for audioworkletprocessor class in javascript.\nThe workspace is dedicated to develop this class.\nYou can drag and drop files to test and sign",
-      "source": "hackernews",
-      "score": 4,
-      "hits": [
-        "free",
-        "credits",
-        "credit",
-        "signup"
-      ]
-    },
-    {
-      "title": "Show HN: Dereference.dev – Prompt-First IDE for Parallel Claude Code Sessions",
-      "url": "https://www.dereference.dev/",
-      "domain": "dereference.dev",
-      "snippet": "Hi Hacker News,<p>After spending nearly $2,000 a month on Claude Code API access and many hours refining our workflow, we found running multiple parallel sessions was often more fr",
-      "source": "hackernews",
-      "score": 4,
-      "hits": [
-        "claude",
-        "access",
-        "new",
-        "month"
-      ]
-    },
-    {
-      "title": "Show HN: Get GPT-5.2, Grok-4.1-fast, KimiK2.5 and more LLMs at half the cost",
-      "url": "https://frogapi.app",
-      "domain": "frogapi.app",
-      "snippet": "Hey I&#x27;m Vansh. I built frogAPI because I was tired of managing separate accounts and billing for every AI provider.<p>It&#x27;s an OpenAI-compatible API gateway. Swap your bas",
-      "source": "hackernews",
-      "score": 4,
-      "hits": [
-        "gpt",
-        "grok",
-        "kimi",
-        "gateway"
-      ]
-    },
-    {
-      "title": "Show HN: Onera – end-to-end encrypted AI chat",
-      "url": "https://onera.chat",
-      "domain": "onera.chat",
-      "snippet": "Hi HN, we built and open-sourced a privacy-focused AI chat client.<p>The goal is simple: the server should not be able to read your chats or access your LLM API keys, even if it’s ",
-      "source": "hackernews",
-      "score": 3,
-      "hits": [
         "api key",
         "api keys",
-        "access"
+        "proxy",
+        "key",
+        "api"
       ]
     },
     {
-      "title": "Show HN: LibreThinker, free AI assistant for LibreOffice Writer, 10k installs",
-      "url": "https://librethinker.com/",
-      "domain": "librethinker.com",
-      "snippet": "4 months ago, I released an extension for LibreOfffice Writer that adds an AI copilot to its sidebar. Did a Show HN at the time but got no interest T_T <a href=\"https:&#x2F;&#x2F;n",
-      "source": "hackernews",
-      "score": 3,
-      "hits": [
-        "free",
-        "new",
-        "month"
-      ]
-    },
-    {
-      "title": "Show HN: I Built Zero-Knowledge .env Sharing",
-      "url": "https://secretdrop.dev/",
-      "domain": "secretdrop.dev",
-      "snippet": "Hey everyone,\nEnglish is not my native language. This post was polished with AI, but the content is mine.<p>I run a small dev agency in Germany. Every week someone shares database ",
-      "source": "hackernews",
-      "score": 3,
-      "hits": [
-        "api key",
-        "api keys",
-        "week"
-      ]
-    },
-    {
-      "title": "Show HN: Vlm Run, Extract JSON from images, videos and documents in a simple API",
-      "url": "https://vlm.run/",
-      "domain": "vlm.run",
-      "snippet": "Hey HN,<p>We’ve been building out an API for ‘Visual ETL’ that we call vlm.run. We’ve been working with foundation models (GPT4o, Gemini) for a few months and kept running into fai",
-      "source": "hackernews",
-      "score": 3,
-      "hits": [
-        "gpt",
-        "gemini",
-        "month"
-      ]
-    },
-    {
-      "title": "A developer exploited an API flaw to provide free access to GPT-4",
-      "url": "https://techcrunch.com/2023/04/25/a-developer-exploited-an-api-flaw-to-provide-free-access-to-gpt-4/",
-      "domain": "techcrunch.com",
+      "title": "A DEX aggregator whose quotes are computed on-chain (free API, no key)",
+      "url": "https://blazephoenix.xyz/",
+      "domain": "blazephoenix.xyz",
       "snippet": "",
       "source": "hackernews",
+      "score": 4,
+      "hits": [
+        "free",
+        "aggregator",
+        "key",
+        "api"
+      ]
+    },
+    {
+      "title": "Show HN: API router that picks the cheapest model that fits each query",
+      "url": "https://www.komilion.com/",
+      "domain": "komilion.com",
+      "snippet": "I got frustrated paying $60&#x2F;M tokens for reasoning queries when a $0.80&#x2F;M model gives comparable results for most of them. So I built Komilion — a model router that class",
+      "source": "hackernews",
+      "score": 3,
+      "hits": [
+        "tokens",
+        "router",
+        "api"
+      ]
+    },
+    {
+      "title": "Show HN: One API for GPT-5, Claude-Sonnet-4, DeepSeek, Gemini",
+      "url": "https://wisdom-gate.juheapi.com/studio/chat",
+      "domain": "wisdom-gate.juheapi.com",
+      "snippet": "We built an API aggregator for LLM APIs.  \nIt supports GPT-5, Claude-4, DeepSeek V3, Gemini, and others — all accessible via a single API interface.<p>Why we built this\nManaging mu",
+      "source": "hackernews",
+      "score": 3,
+      "hits": [
+        "aggregator",
+        "access",
+        "api"
+      ]
+    },
+    {
+      "title": "Combining HTTP and JavaScript APIs with php",
+      "url": "http://united-coders.com/christian-harms/combining-http-and-javascript-apis-with-php",
+      "domain": "united-coders.com",
+      "snippet": "Use XML/Text HTTP APIs and JavaScript, combining with php and get a ip to geo location aggregator (or use the free script directly).",
+      "source": "hackernews",
       "score": 3,
       "hits": [
         "free",
-        "gpt",
-        "access"
+        "aggregator",
+        "api"
       ]
     },
     {
-      "title": "Show HN: GPT UI similar to ChatGPT but with sudo access",
-      "url": "https://chat.lit.codes/",
-      "domain": "chat.lit.codes",
-      "snippet": "This is an interface on top of the OpenAI API for GPT-3 and 4. It looks similar to ChatGPT, but has a few more features.<p>It does require you to have an API key for the GPT API. T",
+      "title": "Show HN: I made a free competition/giveaway aggregator",
+      "url": "https://comps.gg",
+      "domain": "comps.gg",
+      "snippet": "I made this a bit ago, but just recently revamped it all, if you like entering free competitions I think it could help you enter hundreds more.<p>My next job is to add pagination t",
       "source": "hackernews",
       "score": 3,
       "hits": [
-        "api key",
-        "gpt",
-        "access"
+        "free",
+        "giveaway",
+        "aggregator"
       ]
     },
     {
-      "title": "Show HN: Llmswap v3.0 – CLI and SDK for OpenAI, Claude, Gemini, Watsonx",
-      "url": "https://pypi.org/project/llmswap/",
-      "domain": "pypi.org",
-      "snippet": "LLMSwap is a CLI and Python SDK for switching between AI providers (OpenAI, Claude, Gemini, IBM watsonx, Ollama) with automatic fallbacks and response caching.<p>Started this durin",
+      "title": "Show HN: Recase – A free proxy server to cache API calls for you",
+      "url": "https://recase.herokuapp.com/landing/?next=/",
+      "domain": "recase.herokuapp.com",
+      "snippet": "Hi everyone! I&#x27;m Alan, creator of Recase, a zero-setup cache to help you avoid making redundant API calls.<p>If you&#x27;re like me, you try your best to avoid paying for API ",
       "source": "hackernews",
       "score": 3,
       "hits": [
-        "claude",
-        "gemini",
-        "llama"
+        "free",
+        "proxy",
+        "api"
       ]
     },
     {
-      "title": "Launch HN: Speko (YC S26) – OpenRouter for Voice AI",
-      "url": "https://speko.ai/",
-      "domain": "speko.ai",
-      "snippet": "Hi HN! I&#x27;m Bek, founder of Speko, a platform that finds an optimal combination of speech-to-text, LLM, and text-to-speech models, given your constraints, among all our public ",
+      "title": "Show HN: Spidra – AI web scraper that adapts to any website",
+      "url": "https://spidra.io",
+      "domain": "spidra.io",
+      "snippet": "Hey HN,<p>We just launched a new landing page for Spidra (spidra.io) and I thought to share because we now have a sleek modern UI.<p>You may ask. What is Spidra? Well, it&#x27;s an",
       "source": "hackernews",
       "score": 3,
       "hits": [
-        "openrouter",
-        "router",
-        "launch"
+        "new",
+        "launch",
+        "api"
       ]
     },
     {
@@ -272,179 +205,113 @@
       ]
     },
     {
-      "title": "Show HN: Ctxsync – Chat with your codebase that stays in sync",
-      "url": "https://ctxsync.com",
-      "domain": "ctxsync.com",
-      "snippet": "Hi HN. I got tired of uploading my data to ChatGPT, having a useful conversation, then realizing a week later I need to re-upload again, because data changed.<p>Built ctxsync to fi",
-      "source": "hackernews",
-      "score": 2,
-      "hits": [
-        "gpt",
-        "week"
-      ]
-    },
-    {
-      "title": "Show HN: NCompass Technologies – yet another AI Inference API, but hear us out",
-      "url": "https://www.ncompass.tech/about",
-      "domain": "ncompass.tech",
-      "snippet": "Hello HackerNews!<p>I’m excited to share what we’ve been working on at nCompass Technologies: an AI inference* platform that gives you a scalable and reliable API to access any ope",
-      "source": "hackernews",
-      "score": 2,
-      "hits": [
-        "access",
-        "new"
-      ]
-    },
-    {
-      "title": "Show HN: Stateful AI API with OS Models",
-      "url": "https://ark-labs.com/",
-      "domain": "ark-labs.com",
-      "snippet": "We just launched ARK Cloud API: OpenAI‑compatible, stateful AI inference service that keeps context across calls to slash token spend (0.01 USD &#x2F; 1M input tokens), spins up in",
-      "source": "hackernews",
-      "score": 2,
-      "hits": [
-        "tokens",
-        "launch"
-      ]
-    },
-    {
-      "title": "Show HN: Handelsregister.ai – Dev-friendly API for the German business registry",
-      "url": "https://handelsregister.ai/de",
-      "domain": "handelsregister.ai",
-      "snippet": "German &quot;Handelsregister&quot;, i.e. company data is notoriously messy and difficult to parse programmatically. Handelsregister.ai simplifies this by providing structured acces",
-      "source": "hackernews",
-      "score": 2,
-      "hits": [
-        "access",
-        "register"
-      ]
-    },
-    {
-      "title": "Show HN: Vxpix – $50 Lifetime Screenshot API, Free Tier with No Signup",
-      "url": "https://tool.vxpix.com/",
-      "domain": "tool.vxpix.com",
-      "snippet": "",
-      "source": "hackernews",
-      "score": 2,
-      "hits": [
-        "free",
-        "signup"
-      ]
-    },
-    {
-      "title": "Show HN: JSONBin – Free JSON storage API (no signup required)",
-      "url": "https://jsonbin-zeta.vercel.app",
-      "domain": "jsonbin-zeta.vercel.app",
-      "snippet": "I built JSONBin because I kept needing a quick place to store JSON for prototypes.<p>It&#x27;s simple: POST any JSON to &#x2F;api&#x2F;bins, get back an ID and URL. Retrieve with a",
-      "source": "hackernews",
-      "score": 2,
-      "hits": [
-        "free",
-        "signup"
-      ]
-    },
-    {
-      "title": "Show HN: RouterLab – open-source AI API with Swiss hosting",
-      "url": "https://routerlab.ch",
-      "domain": "routerlab.ch",
-      "snippet": "Hi HN!<p>We built RouterLab to give developers access to AI models through a single API layer, with open source models hosted on our own infrastructure in Switzerland and Germany.<",
-      "source": "hackernews",
-      "score": 2,
-      "hits": [
-        "router",
-        "access"
-      ]
-    },
-    {
-      "title": "Show HN: Command-G – Copilot for Xcode made possible using Mac Accessibility API",
-      "url": "https://www.commandg.app/",
-      "domain": "commandg.app",
-      "snippet": "Hi HN,<p>What started out as an impulse to build my own ChatGPT client turned into a full-blown coding assistant integrated with Xcode.<p>There’s more I’d like to add but here’s wh",
-      "source": "hackernews",
-      "score": 2,
-      "hits": [
-        "gpt",
-        "access"
-      ]
-    },
-    {
-      "title": "Show HN: AI Image Describer – GPT-4o Vision for alt text and SEO descriptions",
-      "url": "https://ai-image-describer.online/",
-      "domain": "ai-image-describer.online",
-      "snippet": "I built this to automate image descriptions for my projects. It generates:\n- Alt text for accessibility (WCAG compliant)\n- SEO descriptions with keyword injection\n- Creative captio",
-      "source": "hackernews",
-      "score": 2,
-      "hits": [
-        "gpt",
-        "access"
-      ]
-    },
-    {
-      "title": "Show HN: Jobbi – Free AI resume tailoring with unlimited PDF exports",
-      "url": "https://jobbi.app",
-      "domain": "jobbi.app",
-      "snippet": "Hi HN,\nI’m a frontend engineer and built Jobbi.app, a small tool that uses AI to tailor a resume to each job description. It’s currently free, unlimited, with PDF export.\nProblem\nD",
-      "source": "hackernews",
-      "score": 2,
-      "hits": [
-        "free",
-        "limited"
-      ]
-    },
-    {
-      "title": "Show HN: OPC Skills – 9 AI agent skills for solopreneurs (Claude Code, Cursor)",
-      "url": "https://opc.dev/",
-      "domain": "opc.dev",
-      "snippet": "I built a collection of AI agent skills for one-person companies. Skills are markdown files that AI coding assistants can load and execute.<p>What it does:\n- domain-hunter: Compare",
-      "source": "hackernews",
-      "score": 2,
-      "hits": [
-        "promo",
-        "claude"
-      ]
-    },
-    {
-      "title": "Free LLM API – every free model behind one key",
-      "url": "https://freellmapi.co/",
-      "domain": "freellmapi.co",
-      "snippet": "",
-      "source": "hackernews",
-      "score": 1,
-      "hits": [
-        "free"
-      ]
-    },
-    {
-      "title": "Show HN: SkillScan – Free API to detect malicious AI agent skill files",
-      "url": "https://skillscan.chitacloud.dev",
-      "domain": "skillscan.chitacloud.dev",
-      "snippet": "After the ClawdHub supply chain attack (credential stealer in 1 of 286 skills), I built SkillScan - a free, no-auth API to scan skill.md files for threats.<p>What it detects:\n- Kno",
-      "source": "hackernews",
-      "score": 1,
-      "hits": [
-        "free"
-      ]
-    },
-    {
       "title": "Show HN: LobsterLair – OpenClaw hosting with AI included ($19/mo)",
       "url": "https://lobsterlair.xyz",
       "domain": "lobsterlair.xyz",
       "snippet": "Hey HN, I built LobsterLair because I got tired of maintaining my own OpenClaw setup. Docker updates, uptime monitoring, API key management — it ate more time than actually using t",
       "source": "hackernews",
-      "score": 1,
+      "score": 3,
       "hits": [
-        "api key"
+        "api key",
+        "key",
+        "api"
       ]
     },
     {
-      "title": "Show HN: Finqual – Free SEC-based API for fundamentals, insider and 13F data",
-      "url": "https://finqual.app/",
-      "domain": "finqual.app",
-      "snippet": "Hi guys,<p>I’ve been building investing tools for myself and kept running into the same issue:<p>Most free financial APIs give you price data and some fundamentals, but insider tra",
-      "source": "hackernews",
-      "score": 1,
+      "title": "[TG:AI_Deals] Grab : Upto 85% Off on Aristocrat Trolleys + Bank Offers  😱    😱      🔗   Link:  https://www.amazon.in/s?hidden-keywords",
+      "url": "https://www.amazon.in/s?hidden-keywords=B0H1MZV6FH%7CB0H2VRDNJK%7CB0H1MPQYKP%7CB0FC6RGJTT%7CB0FFBCLHTT&tag=aideals0ff-21",
+      "domain": "amazon.in",
+      "snippet": "Grab : Upto 85% Off on Aristocrat Trolleys + Bank Offers  😱    😱      🔗   Link:  https://www.amazon.in/s?hidden-keywords=B0H1MZV6FH%7CB0H2VRDNJK%7CB0H1MPQYKP%7CB0FC6RGJTT%7CB0FFBCL",
+      "source": "telegram",
+      "score": 3,
       "hits": [
-        "free"
+        "offer",
+        "deal",
+        "key"
+      ]
+    },
+    {
+      "title": "CBS News | Breaking news, top stories & today's latest headlines",
+      "url": "https://www.bing.com/ck/a?!&&p=f4c1f09e7f5aa487854f62b2bd3b0228f1cfe5d63c0245bd5148d2c2d5d00d8eJmltdHM9MTc4ODczOTIwMA&ptn=3&ver=2&hsh=4&fclid=13e71fa1-cf9e-6e4b-3dd3-086cce406f4d&u=a1aHR0cHM6Ly93d3cuY2JzbmV3cy5jb20v&ntb=1",
+      "domain": "bing.com",
+      "snippet": "CBS News offers breaking news coverage of today's top headlines. Stay informed on the biggest new stories with our balanced, …",
+      "source": "bing",
+      "score": 2,
+      "hits": [
+        "offer",
+        "new"
+      ]
+    },
+    {
+      "title": "Launch HN: Speko (YC S26) – OpenRouter for Voice AI",
+      "url": "https://speko.ai/",
+      "domain": "speko.ai",
+      "snippet": "Hi HN! I&#x27;m Bek, founder of Speko, a platform that finds an optimal combination of speech-to-text, LLM, and text-to-speech models, given your constraints, among all our public ",
+      "source": "hackernews",
+      "score": 2,
+      "hits": [
+        "router",
+        "launch"
+      ]
+    },
+    {
+      "title": "Show HN: LaunchPad – Job aggregator I built overnight after Amazon layoffs",
+      "url": "https://launchpad-kappa-ashy.vercel.app/",
+      "domain": "launchpad-kappa-ashy.vercel.app",
+      "snippet": "Hi HN,<p>After hearing about Amazon&#x27;s layoffs, I spent an evening building LaunchPad (<a href=\"https:&#x2F;&#x2F;launchpad-kappa-ashy.vercel.app\" rel=\"nofollow\">https:&#x2F;&#",
+      "source": "hackernews",
+      "score": 2,
+      "hits": [
+        "aggregator",
+        "launch"
+      ]
+    },
+    {
+      "title": "Show HN: Smplogs – Local-first AWS Cloudwatch log analyzer via WASM",
+      "url": "https://www.smplogs.com",
+      "domain": "smplogs.com",
+      "snippet": "smplogs analyzes your AWS CloudWatch log exports (Lambda, API Gateway, ECS) and turns them into severity-ranked findings, root cause analysis, and log signature clusters. The entir",
+      "source": "hackernews",
+      "score": 2,
+      "hits": [
+        "gateway",
+        "api"
+      ]
+    },
+    {
+      "title": "Show HN: AI coding agent for VS Code with pay-as-you-go pricing- no subscription",
+      "url": "https://www.llmonestop.com/#pricing",
+      "domain": "llmonestop.com",
+      "snippet": "I built LLM OneStop Code—an AI coding agent for VS Code that works like Claude Code or Cursor, but with one key difference: pure pay-as-you-go pricing. No monthly subscription requ",
+      "source": "hackernews",
+      "score": 2,
+      "hits": [
+        "month",
+        "key"
+      ]
+    },
+    {
+      "title": "Show HN: Get GPT-5.2, Grok-4.1-fast, KimiK2.5 and more LLMs at half the cost",
+      "url": "https://frogapi.app",
+      "domain": "frogapi.app",
+      "snippet": "Hey I&#x27;m Vansh. I built frogAPI because I was tired of managing separate accounts and billing for every AI provider.<p>It&#x27;s an OpenAI-compatible API gateway. Swap your bas",
+      "source": "hackernews",
+      "score": 2,
+      "hits": [
+        "gateway",
+        "api"
+      ]
+    },
+    {
+      "title": "Show HN: Till.sh, enhanced access controls for AWS S3",
+      "url": "https://till.sh",
+      "domain": "till.sh",
+      "snippet": "Hi everyone, I&#x27;m an independent developer who has been building an S3-related project over the past few months: <a href=\"https:&#x2F;&#x2F;till.sh\" rel=\"nofollow\">https:&#x2F;",
+      "source": "hackernews",
+      "score": 2,
+      "hits": [
+        "access",
+        "month"
       ]
     },
     {
@@ -453,31 +320,94 @@
       "domain": "zodiiapp.com",
       "snippet": "Hi HN! I’m Alex (co‑founder of Zodii), and I built Zodii, a comprehensive REST API suite that lets developers integrate astrology, numerology, and tarot capabilities—fast and free ",
       "source": "hackernews",
-      "score": 1,
+      "score": 2,
       "hits": [
-        "free"
+        "free",
+        "api"
       ]
     },
     {
-      "title": "Show HN: SharpAPI – Real-time sports odds API with +EV and arbitrage detection",
-      "url": "https://sharpapi.io",
-      "domain": "sharpapi.io",
-      "snippet": "Hey HN! I built SharpAPI to solve my own frustration with existing sports betting APIs.<p>The problem:\n- OddsBlaze ($349&#x2F;mo entry) has poor support and surprise breaking chang",
+      "title": "Show HN: Twogether AI – Multi-Person Photo Generation API",
+      "url": "https://twogether.ai/?source=hn",
+      "domain": "twogether.ai",
+      "snippet": "Hey everyone, at Magicflow (YC W23) we&#x27;re helping our customers run AI image generation in production, enabling them to produce high-quality photos at scale.<p>We are launchin",
       "source": "hackernews",
-      "score": 1,
+      "score": 2,
       "hits": [
-        "free"
+        "launch",
+        "api"
       ]
     },
     {
-      "title": "Show HN: Free API mock server from your OpenAPI spec (no sign-up)",
-      "url": "https://apinotes.io/mock-server",
-      "domain": "apinotes.io",
-      "snippet": "Hi HN\nI built ApiNotes Mock Server, a small tool that generates a live mock REST API from an OpenAPI (3.0&#x2F;3.1) or Swagger 2.0 spec.<p>The goal was to remove all friction when ",
+      "title": "Show HN: Gensee – Free AI Agent Optimization and Deployment",
+      "url": "https://platform.gensee.ai",
+      "domain": "platform.gensee.ai",
+      "snippet": "I&#x27;m the co-founder of GenseeAI (<a href=\"https:&#x2F;&#x2F;www.gensee.ai\" rel=\"nofollow\">https:&#x2F;&#x2F;www.gensee.ai</a>). We&#x27;ve recently launched the public beta of ",
       "source": "hackernews",
-      "score": 1,
+      "score": 2,
       "hits": [
-        "free"
+        "free",
+        "launch"
+      ]
+    },
+    {
+      "title": "Show HN: Quiltt Connector, Embeddable onboarding for finance products",
+      "url": "https://www.quiltt.io/product/connector",
+      "domain": "quiltt.io",
+      "snippet": "Hey Hacker News, I&#x27;m excited to announce the launch of Quiltt Connector!<p>Quiltt Connector is a modular, fully embeddable front-end experience that helps teams onboard custom",
+      "source": "hackernews",
+      "score": 2,
+      "hits": [
+        "new",
+        "launch"
+      ]
+    },
+    {
+      "title": "Show HN: Run any Llama model finetune and more, instantly",
+      "url": "https://featherless.ai",
+      "domain": "featherless.ai",
+      "snippet": "Hi there, looking for feedback on my new project &quot;Featherless.AI&quot;<p>The idea is to allow users to run all the models on hugging face instantly. Via the OpenAI API compati",
+      "source": "hackernews",
+      "score": 2,
+      "hits": [
+        "new",
+        "api"
+      ]
+    },
+    {
+      "title": "Show HN: SanctionSnap – free 250 sanctions checks via API",
+      "url": "https://sanctionsnap.com",
+      "domain": "sanctionsnap.com",
+      "snippet": "Hi HN,<p>I kept seeing teams pull CSV sanction files every day, so I built *SanctionSnap*.<p>*What it does*\n- One REST call checks a name against 10 live lists (OFAC, UN, EU, UK, A",
+      "source": "hackernews",
+      "score": 2,
+      "hits": [
+        "free",
+        "api"
+      ]
+    },
+    {
+      "title": "Show HN: Gradient – a web API for fine-tuning and deploying Llama2",
+      "url": "https://gradient.ai/",
+      "domain": "gradient.ai",
+      "snippet": "We’ve just launched Gradient — an API that helps you build private LLMs that you own. We simplify inference and fine-tuning on open-source LLMs such as llama2, and you only pay by ",
+      "source": "hackernews",
+      "score": 2,
+      "hits": [
+        "launch",
+        "api"
+      ]
+    },
+    {
+      "title": "[TG:AI_Deals] MediBuddy Loot : Flat ₹5151 Off on Full Body Health Check-Up + FREE Vitamin Tests   🔥    🔥      👉   63+ Lab Tests (Vitam",
+      "url": "https://bilty.co/ydk1PE",
+      "domain": "bilty.co",
+      "snippet": "MediBuddy Loot : Flat ₹5151 Off on Full Body Health Check-Up + FREE Vitamin Tests   🔥    🔥      👉   63+ Lab Tests (Vitamin D, Thyroid, Diabetes, Liver, Kidney, CBC, Lipid Profile, ",
+      "source": "telegram",
+      "score": 2,
+      "hits": [
+        "free",
+        "deal"
       ]
     }
   ]

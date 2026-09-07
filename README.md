@@ -63,8 +63,108 @@ Auto-discovered providers are community finds, not endorsements.
 
 ## 📊 Latest Third-Party Offers
 
+
 <!-- OFFERS-START -->
 
-_First run in progress — results appear here after the bot's next execution._
+## Latest Third-Party Offers - 2026-09-07T07:06:14Z
+
+> 6 providers verified OK | 0 flagged | 4 auto-discovered this run | last full run: 2026-09-07T07:06:14Z
+
+
+### ✨ Auto-discovered this run (new providers added)
+
+- **Show HN: An unmetered LLM API–$6/month, no token tracking, n** (`yolo-auto.com`) — mentions api, free/credit/trial signal, key/completions signal, homepage reachable (200)
+- **Show HN: OpenLegion – AI agent fleet with container isolatio** (`openlegion.ai`) — mentions api, free/credit/trial signal, key/completions signal, homepage reachable (200)
+- **A DEX aggregator whose quotes are computed on-chain (free AP** (`blazephoenix.xyz`) — mentions api, free/credit/trial signal, homepage reachable (200)
+- **Show HN: API router that picks the cheapest model that fits ** (`komilion.com`) — mentions api, free/credit/trial signal, key/completions signal, homepage reachable (200)
+
+
+| Provider | Client API | Models | Limits | Signup | Expiry | Links |
+|---|---|---|---|---|---|---|
+| **LLM7.io** (medium) | OPENAI-COMPAT | DeepSeek-R1; Qwen 2.5 | 30 RPM without signup; up to 5M tokens/day with free email token | no-CC none | ongoing | [site](https://llm7.io/) [free](https://llm7.io/) |
+| **BazaarLink (free gateway)** (low) | OPENAI-COMPAT | Various via gateway (OpenAI-compatible) | Free OpenAI-compatible API key; model access varies | no-CC email | unknown | [site](https://bazaarlink.ai/free) [free](https://bazaarlink.ai/free) [keys](https://bazaarlink.ai/free) |
+| **Show HN: An unmetered LLM API–$6/month, no token tracking, n** ⚡ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://yolo-auto.com) [free](https://yolo-auto.com/) |
+| **Show HN: OpenLegion – AI agent fleet with container isolatio** ⚡ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://openlegion.ai) [free](https://www.openlegion.ai) |
+| **A DEX aggregator whose quotes are computed on-chain (free AP** ⚡ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://blazephoenix.xyz) [free](https://blazephoenix.xyz/) |
+| **Show HN: API router that picks the cheapest model that fits ** ⚡ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://komilion.com) [free](https://www.komilion.com/) |
+
+### New leads (unverified, found in today's search)
+
+- [Free models you can use with your OpenClaw (no credit card needed)](https://news.ycombinator.com/item?id=47681837) (news.ycombinator.com, via hackernews, score 7: free, api key, credit, trial, new, key, api)
+
+- [Unlimited AI Credits from One Integer: New API's Quota Overflow (CVE-2026-71479) and How to Check Your Gateway - Buttondown](https://news.google.com/rss/articles/CBMimgFBVV95cUxQZmhFb1p5UTMxb3Ryc2phRmZKOU81M1B3Um40MFA1YUFxRXM4NTh6VGhQa29PbUg2TnJoa3BlX0wwTEV5Zm9RcEZXNUc3YVdSVUNoaFVyT1J4bVVoTmVJQUJVTktjamMya2RvTjRSRUNTV25IaW13cGhfalNkSDVuZDZnRnhSMTBYbG1ObllzRWJ4QldSeXBPSDdn?oc=5) (news.google.com, via google-news, score 7: credits, credit, gateway, new, unlimited, limited, api)
+
+- [Show HN: Faster more accurate multimodal vector search](https://github.com/nickswami/dasein-python-sdk) (github.com, via hackernews, score 6: free, api key, trial, week, key, api)
+
+- [Show HN: Private AI assistant for $1.99 -Free AI](https://personalassistantdeploy.com/) (personalassistantdeploy.com, via hackernews, score 6: free, api key, api keys, month, key, api)
+
+- [Show HN: An unmetered LLM API–$6/month, no token tracking, no limits](https://yolo-auto.com/) (yolo-auto.com, via hackernews, score 6: credits, credit, frontier, unmetered, month, api)
+
+- [Show HN: OpenLegion – AI agent fleet with container isolation and vault proxy](https://www.openlegion.ai) (openlegion.ai, via hackernews, score 5: api key, api keys, proxy, key, api)
+
+- [A DEX aggregator whose quotes are computed on-chain (free API, no key)](https://blazephoenix.xyz/) (blazephoenix.xyz, via hackernews, score 4: free, aggregator, key, api)
+
+- [Show HN: API router that picks the cheapest model that fits each query](https://www.komilion.com/) (komilion.com, via hackernews, score 3: tokens, router, api)
+
+- [Show HN: One API for GPT-5, Claude-Sonnet-4, DeepSeek, Gemini](https://wisdom-gate.juheapi.com/studio/chat) (wisdom-gate.juheapi.com, via hackernews, score 3: aggregator, access, api)
+
+- [Combining HTTP and JavaScript APIs with php](http://united-coders.com/christian-harms/combining-http-and-javascript-apis-with-php) (united-coders.com, via hackernews, score 3: free, aggregator, api)
+
+- [Show HN: I made a free competition/giveaway aggregator](https://comps.gg) (comps.gg, via hackernews, score 3: free, giveaway, aggregator)
+
+- [Show HN: Recase – A free proxy server to cache API calls for you](https://recase.herokuapp.com/landing/?next=/) (recase.herokuapp.com, via hackernews, score 3: free, proxy, api)
+
+- [Show HN: Spidra – AI web scraper that adapts to any website](https://spidra.io) (spidra.io, via hackernews, score 3: new, launch, api)
+
+- [Show HN: Pomo – Manage your Stripe promo codes without code](https://usecopi.com/69fb5996) (usecopi.com, via hackernews, score 3: free, promo, launch)
+
+- [Show HN: LobsterLair – OpenClaw hosting with AI included ($19/mo)](https://lobsterlair.xyz) (lobsterlair.xyz, via hackernews, score 3: api key, key, api)
+
+- [[TG:AI_Deals] Grab : Upto 85% Off on Aristocrat Trolleys + Bank Offers  😱    😱      🔗   Link:  https://www.amazon.in/s?hidden-keywords](https://www.amazon.in/s?hidden-keywords=B0H1MZV6FH%7CB0H2VRDNJK%7CB0H1MPQYKP%7CB0FC6RGJTT%7CB0FFBCLHTT&tag=aideals0ff-21) (amazon.in, via telegram, score 3: offer, deal, key)
+
+- [CBS News | Breaking news, top stories & today's latest headlines](https://www.bing.com/ck/a?!&&p=f4c1f09e7f5aa487854f62b2bd3b0228f1cfe5d63c0245bd5148d2c2d5d00d8eJmltdHM9MTc4ODczOTIwMA&ptn=3&ver=2&hsh=4&fclid=13e71fa1-cf9e-6e4b-3dd3-086cce406f4d&u=a1aHR0cHM6Ly93d3cuY2JzbmV3cy5jb20v&ntb=1) (bing.com, via bing, score 2: offer, new)
+
+- [Launch HN: Speko (YC S26) – OpenRouter for Voice AI](https://speko.ai/) (speko.ai, via hackernews, score 2: router, launch)
+
+- [Show HN: LaunchPad – Job aggregator I built overnight after Amazon layoffs](https://launchpad-kappa-ashy.vercel.app/) (launchpad-kappa-ashy.vercel.app, via hackernews, score 2: aggregator, launch)
+
+- [Show HN: Smplogs – Local-first AWS Cloudwatch log analyzer via WASM](https://www.smplogs.com) (smplogs.com, via hackernews, score 2: gateway, api)
+
+- [Show HN: AI coding agent for VS Code with pay-as-you-go pricing- no subscription](https://www.llmonestop.com/#pricing) (llmonestop.com, via hackernews, score 2: month, key)
+
+- [Show HN: Get GPT-5.2, Grok-4.1-fast, KimiK2.5 and more LLMs at half the cost](https://frogapi.app) (frogapi.app, via hackernews, score 2: gateway, api)
+
+- [Show HN: Till.sh, enhanced access controls for AWS S3](https://till.sh) (till.sh, via hackernews, score 2: access, month)
+
+- [Show HN: Zodii – a developer-first astrology, numerology and tarot API platform](https://www.zodiiapp.com/) (zodiiapp.com, via hackernews, score 2: free, api)
+
+- [Show HN: Twogether AI – Multi-Person Photo Generation API](https://twogether.ai/?source=hn) (twogether.ai, via hackernews, score 2: launch, api)
+
+- [Show HN: Gensee – Free AI Agent Optimization and Deployment](https://platform.gensee.ai) (platform.gensee.ai, via hackernews, score 2: free, launch)
+
+- [Show HN: Quiltt Connector, Embeddable onboarding for finance products](https://www.quiltt.io/product/connector) (quiltt.io, via hackernews, score 2: new, launch)
+
+- [Show HN: Run any Llama model finetune and more, instantly](https://featherless.ai) (featherless.ai, via hackernews, score 2: new, api)
+
+- [Show HN: SanctionSnap – free 250 sanctions checks via API](https://sanctionsnap.com) (sanctionsnap.com, via hackernews, score 2: free, api)
+
+- [Show HN: Gradient – a web API for fine-tuning and deploying Llama2](https://gradient.ai/) (gradient.ai, via hackernews, score 2: launch, api)
+
+- [[TG:AI_Deals] MediBuddy Loot : Flat ₹5151 Off on Full Body Health Check-Up + FREE Vitamin Tests   🔥    🔥      👉   63+ Lab Tests (Vitam](https://bilty.co/ydk1PE) (bilty.co, via telegram, score 2: free, deal)
+
+### Source status
+
+- bing: 12/12 queries returned results
+- searxng: 0/8 queries returned results
+- hackernews: 14/14 queries returned results
+- reddit: 0/5 queries returned results
+- github: 5/5 queries returned results
+- google-news: 8/8 queries returned results
+- x-twitter: 0/2 queries returned results
+- telegram: 3 posts matched
+- lobsters: 25 newest stories scanned
+
+_Last verified: 2026-09-07T07:06:14Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
