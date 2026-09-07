@@ -102,6 +102,11 @@ SCORE_KEYWORDS = [
 STRONG_SIGNALS = ("free", "credit", "trial", "offer", "promo", "coupon",
                   "giveaway", "api key", "unlimited", "unmetered")
 
+# LLM-specific page signals - prevents crypto/DEX/finance false positives
+LLM_SIGNALS = ("llm", " gpt", "gpt-", "claude", "gemini", "grok", "llama", "qwen",
+               "deepseek", "mistral", "kimi", "glm", "chat completions",
+               "chat/completions", "assistant api", "language model")
+
 # SearXNG public instances (JSON API, no key) - first working wins
 SEARXNG_INSTANCES = [
     "https://searx.be",
@@ -519,23 +524,38 @@ def assess_lead(lead, known_domains, blocklist, news_domains):
 
     low = text.lower()
     signals = []
+    llm_hit = any(k in low for k in LLM_SIGNALS)
     if "api" in low:
         signals.append("mentions api")
     if any(k in low for k in ("free", "credit", "trial", "signup", "promo", "coupon")):
         signals.append("free/credit/trial signal")
     if any(k in low for k in ("api key", "chat/completions", "openai", "v1/models", "bearer")):
         signals.append("key/completions signal")
-    if len(signals) >= 2:
+    if llm_hit:
+        signals.append("llm/model signal")
+    if llm_hit and len(signals) >= 3:
         reasons += signals
         reasons.append(f"homepage reachable ({status})")
         return {"add": True, "reasons": reasons, "status": status}
     return {"add": False, "reasons": reasons or ["no api/free signals on page"]}
 
 
+def clean_name(title, dom):
+    """Derive a tidy provider name from a lead title, falling back to domain."""
+    t = (title or "").strip()
+    for pre in ("Show HN:", "Show HN :", "Launch HN:", "Ask HN:", "HN:"):
+        if t.startswith(pre):
+            t = t[len(pre):].strip()
+            break
+    if len(t) < 3 or len(t) > 55:
+        return dom
+    return t[:55]
+
+
 def build_provider(lead, assess, now_iso):
     dom = lead["domain"]
     return {
-        "name": (lead.get("title") or dom)[:60],
+        "name": clean_name(lead.get("title"), dom),
         "slug": dom.replace(".", "-")[:50],
         "website": f"https://{dom}",
         "free_url": lead["url"] if lead["url"].startswith("https://") else f"https://{dom}",
