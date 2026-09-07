@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-09-07T07:06:14Z",
+  "last_updated": "2026-09-07T07:14:23Z",
   "summary": {
     "ok_count": 6,
     "dead_count": 0,
-    "auto_added_count": 4,
-    "leads_count": 31,
-    "total_results": 352
+    "auto_added_count": 1,
+    "leads_count": 28,
+    "total_results": 353
   },
   "sources": {
     "bing": "12/12 queries returned results",
@@ -44,7 +44,7 @@
       "auto": false,
       "discovered_at": "",
       "discovery_signals": [],
-      "verified_at": "2026-09-07T07:06:14Z",
+      "verified_at": "2026-09-07T07:14:23Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -83,7 +83,7 @@
       "auto": false,
       "discovered_at": "",
       "discovery_signals": [],
-      "verified_at": "2026-09-07T07:06:14Z",
+      "verified_at": "2026-09-07T07:14:23Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -99,10 +99,10 @@
       "website_status": 200
     },
     {
-      "provider": "Show HN: An unmetered LLM API–$6/month, no token tracking, n",
+      "provider": "yolo-auto.com",
       "slug": "yolo-auto-com",
       "website": "https://yolo-auto.com",
-      "free_url": "https://yolo-auto.com/",
+      "free_url": "https://yolo-auto.com",
       "key_url": "",
       "docs_url": "",
       "signup": "email",
@@ -110,7 +110,7 @@
       "models": [
         "see website"
       ],
-      "limits": "see website",
+      "limits": "Unmetered LLM API; paid plan reported ~$6/month, verify free tier",
       "expiry": "unknown",
       "expiry_note": "Auto-discovered; verify before relying on it",
       "compat": {
@@ -118,16 +118,11 @@
         "notes": "auto-discovered; verify endpoint"
       },
       "trust": "medium",
-      "notes": "Auto-discovered 2026-09-07 via hackernews",
+      "notes": "Auto-discovered from Hacker News; unmetered API claims - verify",
       "auto": true,
       "discovered_at": "2026-09-07T07:06:14Z",
-      "discovery_signals": [
-        "mentions api",
-        "free/credit/trial signal",
-        "key/completions signal",
-        "homepage reachable (200)"
-      ],
-      "verified_at": "2026-09-07T07:06:14Z",
+      "discovery_signals": [],
+      "verified_at": "2026-09-07T07:14:23Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -143,10 +138,10 @@
       "website_status": 200
     },
     {
-      "provider": "Show HN: OpenLegion – AI agent fleet with container isolatio",
+      "provider": "openlegion.ai",
       "slug": "openlegion-ai",
       "website": "https://openlegion.ai",
-      "free_url": "https://www.openlegion.ai",
+      "free_url": "https://openlegion.ai",
       "key_url": "",
       "docs_url": "",
       "signup": "email",
@@ -154,7 +149,7 @@
       "models": [
         "see website"
       ],
-      "limits": "see website",
+      "limits": "AI agent fleet with container isolation; free tier - verify",
       "expiry": "unknown",
       "expiry_note": "Auto-discovered; verify before relying on it",
       "compat": {
@@ -162,16 +157,11 @@
         "notes": "auto-discovered; verify endpoint"
       },
       "trust": "medium",
-      "notes": "Auto-discovered 2026-09-07 via hackernews",
+      "notes": "Auto-discovered from Hacker News",
       "auto": true,
       "discovered_at": "2026-09-07T07:06:14Z",
-      "discovery_signals": [
-        "mentions api",
-        "free/credit/trial signal",
-        "key/completions signal",
-        "homepage reachable (200)"
-      ],
-      "verified_at": "2026-09-07T07:06:14Z",
+      "discovery_signals": [],
+      "verified_at": "2026-09-07T07:14:23Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -187,7 +177,46 @@
       "website_status": 200
     },
     {
-      "provider": "A DEX aggregator whose quotes are computed on-chain (free AP",
+      "provider": "komilion.com",
+      "slug": "komilion-com",
+      "website": "https://komilion.com",
+      "free_url": "https://komilion.com",
+      "key_url": "",
+      "docs_url": "",
+      "signup": "email",
+      "credit_card_required": false,
+      "models": [
+        "see website"
+      ],
+      "limits": "API router that picks the cheapest model for the task; free tier - verify",
+      "expiry": "unknown",
+      "expiry_note": "Auto-discovered; verify before relying on it",
+      "compat": {
+        "api": "openai-completions",
+        "notes": "auto-discovered; verify endpoint"
+      },
+      "trust": "medium",
+      "notes": "Auto-discovered from Hacker News",
+      "auto": true,
+      "discovered_at": "2026-09-07T07:06:14Z",
+      "discovery_signals": [],
+      "verified_at": "2026-09-07T07:14:23Z",
+      "links_verified": {
+        "website": true,
+        "free": true,
+        "keys": false,
+        "docs": false
+      },
+      "link_states": {
+        "website": "ok",
+        "free": "ok",
+        "keys": "down",
+        "docs": "down"
+      },
+      "website_status": 200
+    },
+    {
+      "provider": "blazephoenix.xyz",
       "slug": "blazephoenix-xyz",
       "website": "https://blazephoenix.xyz",
       "free_url": "https://blazephoenix.xyz/",
@@ -208,57 +237,14 @@
       "trust": "medium",
       "notes": "Auto-discovered 2026-09-07 via hackernews",
       "auto": true,
-      "discovered_at": "2026-09-07T07:06:14Z",
+      "discovered_at": "2026-09-07T07:14:23Z",
       "discovery_signals": [
         "mentions api",
         "free/credit/trial signal",
+        "llm/model signal",
         "homepage reachable (200)"
       ],
-      "verified_at": "2026-09-07T07:06:14Z",
-      "links_verified": {
-        "website": true,
-        "free": true,
-        "keys": false,
-        "docs": false
-      },
-      "link_states": {
-        "website": "ok",
-        "free": "ok",
-        "keys": "down",
-        "docs": "down"
-      },
-      "website_status": 200
-    },
-    {
-      "provider": "Show HN: API router that picks the cheapest model that fits ",
-      "slug": "komilion-com",
-      "website": "https://komilion.com",
-      "free_url": "https://www.komilion.com/",
-      "key_url": "",
-      "docs_url": "",
-      "signup": "email",
-      "credit_card_required": false,
-      "models": [
-        "see website"
-      ],
-      "limits": "see website",
-      "expiry": "unknown",
-      "expiry_note": "Auto-discovered; verify before relying on it",
-      "compat": {
-        "api": "openai-completions",
-        "notes": "auto-discovered; verify endpoint"
-      },
-      "trust": "medium",
-      "notes": "Auto-discovered 2026-09-07 via hackernews",
-      "auto": true,
-      "discovered_at": "2026-09-07T07:06:14Z",
-      "discovery_signals": [
-        "mentions api",
-        "free/credit/trial signal",
-        "key/completions signal",
-        "homepage reachable (200)"
-      ],
-      "verified_at": "2026-09-07T07:06:14Z",
+      "verified_at": "2026-09-07T07:14:23Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -342,37 +328,6 @@
       ]
     },
     {
-      "title": "Show HN: An unmetered LLM API–$6/month, no token tracking, no limits",
-      "url": "https://yolo-auto.com/",
-      "domain": "yolo-auto.com",
-      "snippet": "Hi HN,<p>I was once given the advice: Don&#x27;t waste expensive frontier model credits (GPT&#x2F;Claude&#x2F;etc.) on bulk work. Send the boring, repetitive, high-volume jobs to a",
-      "source": "hackernews",
-      "score": 6,
-      "hits": [
-        "credits",
-        "credit",
-        "frontier",
-        "unmetered",
-        "month",
-        "api"
-      ]
-    },
-    {
-      "title": "Show HN: OpenLegion – AI agent fleet with container isolation and vault proxy",
-      "url": "https://www.openlegion.ai",
-      "domain": "openlegion.ai",
-      "snippet": "I built OpenLegion because every AI agent framework I tried had the same problems in production: API keys sitting in config files inside the agent&#x27;s environment, no way to set",
-      "source": "hackernews",
-      "score": 5,
-      "hits": [
-        "api key",
-        "api keys",
-        "proxy",
-        "key",
-        "api"
-      ]
-    },
-    {
       "title": "A DEX aggregator whose quotes are computed on-chain (free API, no key)",
       "url": "https://blazephoenix.xyz/",
       "domain": "blazephoenix.xyz",
@@ -383,19 +338,6 @@
         "free",
         "aggregator",
         "key",
-        "api"
-      ]
-    },
-    {
-      "title": "Show HN: API router that picks the cheapest model that fits each query",
-      "url": "https://www.komilion.com/",
-      "domain": "komilion.com",
-      "snippet": "I got frustrated paying $60&#x2F;M tokens for reasoning queries when a $0.80&#x2F;M model gives comparable results for most of them. So I built Komilion — a model router that class",
-      "source": "hackernews",
-      "score": 3,
-      "hits": [
-        "tokens",
-        "router",
         "api"
       ]
     },
@@ -504,15 +446,15 @@
       ]
     },
     {
-      "title": "CBS News | Breaking news, top stories & today's latest headlines",
-      "url": "https://www.bing.com/ck/a?!&&p=f4c1f09e7f5aa487854f62b2bd3b0228f1cfe5d63c0245bd5148d2c2d5d00d8eJmltdHM9MTc4ODczOTIwMA&ptn=3&ver=2&hsh=4&fclid=13e71fa1-cf9e-6e4b-3dd3-086cce406f4d&u=a1aHR0cHM6Ly93d3cuY2JzbmV3cy5jb20v&ntb=1",
+      "title": "NBC News - Breaking Headlines and Video Reports on World, U.S.",
+      "url": "https://www.bing.com/ck/a?!&&p=cc3cd49d2f3736b7e13640c80f49d2ca99fcce52a82894b7789e9236496b1e9cJmltdHM9MTc4ODczOTIwMA&ptn=3&ver=2&hsh=4&fclid=27d6c06f-b0e4-6916-34c9-d7a2b1e86875&u=a1aHR0cHM6Ly93d3cubmJjbmV3cy5jb20v&ntb=1",
       "domain": "bing.com",
-      "snippet": "CBS News offers breaking news coverage of today's top headlines. Stay informed on the biggest new stories with our balanced, …",
+      "snippet": "New York, Los Angeles and Washington, D.C., announced changes this week amid a growing grassroots push against technology in …",
       "source": "bing",
       "score": 2,
       "hits": [
-        "offer",
-        "new"
+        "new",
+        "week"
       ]
     },
     {
@@ -686,41 +628,12 @@
   ],
   "auto_added": [
     {
-      "name": "Show HN: An unmetered LLM API–$6/month, no token tracking, n",
-      "domain": "yolo-auto.com",
-      "reasons": [
-        "mentions api",
-        "free/credit/trial signal",
-        "key/completions signal",
-        "homepage reachable (200)"
-      ]
-    },
-    {
-      "name": "Show HN: OpenLegion – AI agent fleet with container isolatio",
-      "domain": "openlegion.ai",
-      "reasons": [
-        "mentions api",
-        "free/credit/trial signal",
-        "key/completions signal",
-        "homepage reachable (200)"
-      ]
-    },
-    {
-      "name": "A DEX aggregator whose quotes are computed on-chain (free AP",
+      "name": "blazephoenix.xyz",
       "domain": "blazephoenix.xyz",
       "reasons": [
         "mentions api",
         "free/credit/trial signal",
-        "homepage reachable (200)"
-      ]
-    },
-    {
-      "name": "Show HN: API router that picks the cheapest model that fits ",
-      "domain": "komilion.com",
-      "reasons": [
-        "mentions api",
-        "free/credit/trial signal",
-        "key/completions signal",
+        "llm/model signal",
         "homepage reachable (200)"
       ]
     }

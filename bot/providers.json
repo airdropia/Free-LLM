@@ -1,53 +1,119 @@
 {
   "_comment": "Third-party-only knowledge base. Official big-name providers (Google, OpenAI, Anthropic, Groq, OpenRouter, Z.AI, Qwen, Mistral, Cerebras, NVIDIA, HF, DeepSeek, xAI, Together, Fireworks, Cohere, Moonshot, MiniMax, ...) are deliberately EXCLUDED - their generic free quotas are not useful for real work. The bot AUTO-ADDS fresh third-party providers it discovers (auto: true entries). signup values: google | email | github | email+phone | email+cc | cc | none | unknown. expiry: ongoing | trial | limited | unknown.",
   "_official_blocklist": [
-    "google.com", "googleapis.com", "google.dev", "aistudio.google.com", "gemini.google.com",
-    "openai.com", "openai.org", "chatgpt.com",
-    "anthropic.com", "claude.ai",
-    "groq.com", "console.groq.com",
+    "google.com",
+    "googleapis.com",
+    "google.dev",
+    "aistudio.google.com",
+    "gemini.google.com",
+    "openai.com",
+    "openai.org",
+    "chatgpt.com",
+    "anthropic.com",
+    "claude.ai",
+    "groq.com",
+    "console.groq.com",
     "openrouter.ai",
-    "z.ai", "bigmodel.cn", "zhipuai.cn", "zhipuai.com",
-    "qwen.ai", "alibabacloud.com", "aliyun.com", "dashscope.aliyuncs.com",
+    "z.ai",
+    "bigmodel.cn",
+    "zhipuai.cn",
+    "zhipuai.com",
+    "qwen.ai",
+    "alibabacloud.com",
+    "aliyun.com",
+    "dashscope.aliyuncs.com",
     "mistral.ai",
     "cerebras.ai",
-    "nvidia.com", "build.nvidia.com", "ngc.nvidia.com",
+    "nvidia.com",
+    "build.nvidia.com",
+    "ngc.nvidia.com",
     "huggingface.co",
     "cohere.com",
-    "x.ai", "x.com", "grok.com",
-    "deepseek.com", "platform.deepseek.com",
+    "x.ai",
+    "x.com",
+    "grok.com",
+    "deepseek.com",
+    "platform.deepseek.com",
     "together.ai",
     "fireworks.ai",
     "baseten.co",
     "sambanova.ai",
-    "coze.com", "coze.cn",
+    "coze.com",
+    "coze.cn",
     "nebius.com",
     "ai21.com",
     "moonshot.ai",
-    "minimax.io", "minimaxi.com",
-    "github.com", "github.io",
+    "minimax.io",
+    "minimaxi.com",
+    "github.com",
+    "github.io",
     "cloudflare.com",
-    "microsoft.com", "azure.com", "azure.microsoft.com",
-    "amazon.com", "aws.amazon.com",
+    "microsoft.com",
+    "azure.com",
+    "azure.microsoft.com",
+    "amazon.com",
+    "aws.amazon.com",
     "meta.ai",
     "perplexity.ai",
     "lmarena.ai",
-    "baidu.com", "tencent.com", "bytedance.com", "doubao.com",
+    "baidu.com",
+    "tencent.com",
+    "bytedance.com",
+    "doubao.com",
     "kimi.com"
   ],
   "_news_domains": [
-    "news.google.com", "news.ycombinator.com", "reddit.com",
-    "medium.com", "substack.com", "ghost.io", "beehiiv.com",
-    "techcrunch.com", "theverge.com", "wired.com", "arstechnica.com",
-    "businessinsider.com", "venturebeat.com", "forbes.com", "cnbc.com",
-    "reuters.com", "bloomberg.com", "theinformation.com",
-    "zdnet.com", "tomsguide.com", "digitaltrends.com", "geeky-gadgets.com",
-    "mspoweruser.com", "windowscentral.com", "macrumors.com", "9to5mac.com",
-    "engadget.com", "gizmodo.com", "mashable.com", "bbc.com", "cnn.com",
-    "nytimes.com", "theguardian.com", "youtube.com", "twitter.com",
-    "t.me", "telegram.me", "discord.com", "ycombinator.com",
-    "xda-developers.com", "lifehacker.com", "howtogeek.com", "makeuseof.com",
-    "pcmag.com", "tomshardware.com", "phoronix.com", "theregister.com",
-    "infoq.com", "dev.to", "hashnode.com", "freecodecamp.org"
+    "news.google.com",
+    "news.ycombinator.com",
+    "reddit.com",
+    "medium.com",
+    "substack.com",
+    "ghost.io",
+    "beehiiv.com",
+    "techcrunch.com",
+    "theverge.com",
+    "wired.com",
+    "arstechnica.com",
+    "businessinsider.com",
+    "venturebeat.com",
+    "forbes.com",
+    "cnbc.com",
+    "reuters.com",
+    "bloomberg.com",
+    "theinformation.com",
+    "zdnet.com",
+    "tomsguide.com",
+    "digitaltrends.com",
+    "geeky-gadgets.com",
+    "mspoweruser.com",
+    "windowscentral.com",
+    "macrumors.com",
+    "9to5mac.com",
+    "engadget.com",
+    "gizmodo.com",
+    "mashable.com",
+    "bbc.com",
+    "cnn.com",
+    "nytimes.com",
+    "theguardian.com",
+    "youtube.com",
+    "twitter.com",
+    "t.me",
+    "telegram.me",
+    "discord.com",
+    "ycombinator.com",
+    "xda-developers.com",
+    "lifehacker.com",
+    "howtogeek.com",
+    "makeuseof.com",
+    "pcmag.com",
+    "tomshardware.com",
+    "phoronix.com",
+    "theregister.com",
+    "infoq.com",
+    "dev.to",
+    "hashnode.com",
+    "freecodecamp.org"
   ],
   "providers": [
     {
@@ -59,14 +125,57 @@
       "docs_url": "https://llm7.io/docs",
       "signup": "none",
       "credit_card_required": false,
-      "models": ["DeepSeek-R1", "Qwen 2.5"],
+      "models": [
+        "DeepSeek-R1",
+        "Qwen 2.5"
+      ],
       "limits": "30 RPM without signup; up to 5M tokens/day with free email token",
       "expiry": "ongoing",
       "expiry_note": "Free, no billing",
-      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible endpoint" },
+      "compat": {
+        "api": "openai-completions",
+        "notes": "OpenAI-compatible endpoint"
+      },
       "trust": "medium",
       "notes": "New provider; verify reliability before heavy use",
-      "auto": false
+      "auto": false,
+      "v_website": {
+        "url": "https://llm7.io/",
+        "status": 200,
+        "state": "ok",
+        "ok": true,
+        "final_url": "https://llm7.io/",
+        "latency": 0.1,
+        "title": "LLM7.io | One LLM API. Your Gateway to AI Innovation. Connect to leading AI models with one endpoint. Prototype, build, "
+      },
+      "v_free": {
+        "url": "https://llm7.io/",
+        "status": 200,
+        "state": "ok",
+        "ok": true,
+        "final_url": "https://llm7.io/",
+        "latency": 0.1,
+        "title": "LLM7.io | One LLM API. Your Gateway to AI Innovation. Connect to leading AI models with one endpoint. Prototype, build, "
+      },
+      "v_keys": {
+        "url": "https://llm7.io/keys",
+        "status": 404,
+        "state": "dead",
+        "ok": false,
+        "final_url": "https://llm7.io/keys",
+        "latency": 0.1,
+        "title": ""
+      },
+      "v_docs": {
+        "url": "https://llm7.io/docs",
+        "status": 404,
+        "state": "dead",
+        "ok": false,
+        "final_url": "https://llm7.io/docs",
+        "latency": 0.1,
+        "title": ""
+      },
+      "verified_at": "2026-09-07T07:14:23Z"
     },
     {
       "name": "BazaarLink (free gateway)",
@@ -77,14 +186,56 @@
       "docs_url": "https://docs.bazaarlink.ai/",
       "signup": "email",
       "credit_card_required": false,
-      "models": ["Various via gateway (OpenAI-compatible)"],
+      "models": [
+        "Various via gateway (OpenAI-compatible)"
+      ],
       "limits": "Free OpenAI-compatible API key; model access varies",
       "expiry": "unknown",
       "expiry_note": "Community gateway; availability not guaranteed",
-      "compat": { "api": "openai-completions", "notes": "OpenAI-compatible gateway" },
+      "compat": {
+        "api": "openai-completions",
+        "notes": "OpenAI-compatible gateway"
+      },
       "trust": "low",
       "notes": "Unofficial gateway - use at your own risk; do NOT send sensitive data",
-      "auto": false
+      "auto": false,
+      "v_website": {
+        "url": "https://bazaarlink.ai/free",
+        "status": 200,
+        "state": "ok",
+        "ok": true,
+        "final_url": "https://bazaarlink.ai/free",
+        "latency": 0.8,
+        "title": "Free LLM API — Free AI API Key, No Credit Card"
+      },
+      "v_free": {
+        "url": "https://bazaarlink.ai/free",
+        "status": 200,
+        "state": "ok",
+        "ok": true,
+        "final_url": "https://bazaarlink.ai/free",
+        "latency": 0.8,
+        "title": "Free LLM API — Free AI API Key, No Credit Card"
+      },
+      "v_keys": {
+        "url": "https://bazaarlink.ai/free",
+        "status": 200,
+        "state": "ok",
+        "ok": true,
+        "final_url": "https://bazaarlink.ai/free",
+        "latency": 0.8,
+        "title": "Free LLM API — Free AI API Key, No Credit Card"
+      },
+      "v_docs": {
+        "url": "https://docs.bazaarlink.ai/",
+        "status": 0,
+        "state": "down",
+        "ok": false,
+        "final_url": "https://docs.bazaarlink.ai/",
+        "latency": 4.5,
+        "title": "unreachable (RuntimeError)"
+      },
+      "verified_at": "2026-09-07T07:14:23Z"
     },
     {
       "name": "yolo-auto.com",
@@ -95,15 +246,51 @@
       "docs_url": "",
       "signup": "email",
       "credit_card_required": false,
-      "models": ["see website"],
+      "models": [
+        "see website"
+      ],
       "limits": "Unmetered LLM API; paid plan reported ~$6/month, verify free tier",
       "expiry": "unknown",
       "expiry_note": "Auto-discovered; verify before relying on it",
-      "compat": { "api": "openai-completions", "notes": "auto-discovered; verify endpoint" },
+      "compat": {
+        "api": "openai-completions",
+        "notes": "auto-discovered; verify endpoint"
+      },
       "trust": "medium",
       "notes": "Auto-discovered from Hacker News; unmetered API claims - verify",
       "auto": true,
-      "discovered_at": "2026-09-07T07:06:14Z"
+      "discovered_at": "2026-09-07T07:06:14Z",
+      "v_website": {
+        "url": "https://yolo-auto.com",
+        "status": 200,
+        "state": "ok",
+        "ok": true,
+        "final_url": "https://yolo-auto.com",
+        "latency": 0.1,
+        "title": "Flat-Rate Qwen3.8-27B API · Yolo-Auto"
+      },
+      "v_free": {
+        "url": "https://yolo-auto.com",
+        "status": 200,
+        "state": "ok",
+        "ok": true,
+        "final_url": "https://yolo-auto.com",
+        "latency": 0.1,
+        "title": "Flat-Rate Qwen3.8-27B API · Yolo-Auto"
+      },
+      "v_keys": {
+        "ok": false,
+        "status": "n/a",
+        "state": "down",
+        "url": ""
+      },
+      "v_docs": {
+        "ok": false,
+        "status": "n/a",
+        "state": "down",
+        "url": ""
+      },
+      "verified_at": "2026-09-07T07:14:23Z"
     },
     {
       "name": "openlegion.ai",
@@ -114,15 +301,51 @@
       "docs_url": "",
       "signup": "email",
       "credit_card_required": false,
-      "models": ["see website"],
+      "models": [
+        "see website"
+      ],
       "limits": "AI agent fleet with container isolation; free tier - verify",
       "expiry": "unknown",
       "expiry_note": "Auto-discovered; verify before relying on it",
-      "compat": { "api": "openai-completions", "notes": "auto-discovered; verify endpoint" },
+      "compat": {
+        "api": "openai-completions",
+        "notes": "auto-discovered; verify endpoint"
+      },
       "trust": "medium",
       "notes": "Auto-discovered from Hacker News",
       "auto": true,
-      "discovered_at": "2026-09-07T07:06:14Z"
+      "discovered_at": "2026-09-07T07:06:14Z",
+      "v_website": {
+        "url": "https://openlegion.ai",
+        "status": 200,
+        "state": "ok",
+        "ok": true,
+        "final_url": "https://www.openlegion.ai/en",
+        "latency": 0.3,
+        "title": "AI Agent Platform & Framework - OpenLegion | Automate Anything, Stay in Control"
+      },
+      "v_free": {
+        "url": "https://openlegion.ai",
+        "status": 200,
+        "state": "ok",
+        "ok": true,
+        "final_url": "https://www.openlegion.ai/en",
+        "latency": 0.3,
+        "title": "AI Agent Platform & Framework - OpenLegion | Automate Anything, Stay in Control"
+      },
+      "v_keys": {
+        "ok": false,
+        "status": "n/a",
+        "state": "down",
+        "url": ""
+      },
+      "v_docs": {
+        "ok": false,
+        "status": "n/a",
+        "state": "down",
+        "url": ""
+      },
+      "verified_at": "2026-09-07T07:14:23Z"
     },
     {
       "name": "komilion.com",
@@ -133,15 +356,106 @@
       "docs_url": "",
       "signup": "email",
       "credit_card_required": false,
-      "models": ["see website"],
+      "models": [
+        "see website"
+      ],
       "limits": "API router that picks the cheapest model for the task; free tier - verify",
       "expiry": "unknown",
       "expiry_note": "Auto-discovered; verify before relying on it",
-      "compat": { "api": "openai-completions", "notes": "auto-discovered; verify endpoint" },
+      "compat": {
+        "api": "openai-completions",
+        "notes": "auto-discovered; verify endpoint"
+      },
       "trust": "medium",
       "notes": "Auto-discovered from Hacker News",
       "auto": true,
-      "discovered_at": "2026-09-07T07:06:14Z"
+      "discovered_at": "2026-09-07T07:06:14Z",
+      "v_website": {
+        "url": "https://komilion.com",
+        "status": 200,
+        "state": "ok",
+        "ok": true,
+        "final_url": "https://www.komilion.com/",
+        "latency": 0.2,
+        "title": "Komilion - One API for 400+ AI Models"
+      },
+      "v_free": {
+        "url": "https://komilion.com",
+        "status": 200,
+        "state": "ok",
+        "ok": true,
+        "final_url": "https://www.komilion.com/",
+        "latency": 0.2,
+        "title": "Komilion - One API for 400+ AI Models"
+      },
+      "v_keys": {
+        "ok": false,
+        "status": "n/a",
+        "state": "down",
+        "url": ""
+      },
+      "v_docs": {
+        "ok": false,
+        "status": "n/a",
+        "state": "down",
+        "url": ""
+      },
+      "verified_at": "2026-09-07T07:14:23Z"
+    },
+    {
+      "name": "blazephoenix.xyz",
+      "slug": "blazephoenix-xyz",
+      "website": "https://blazephoenix.xyz",
+      "free_url": "https://blazephoenix.xyz/",
+      "key_url": "",
+      "docs_url": "",
+      "signup": "email",
+      "credit_card_required": false,
+      "models": [
+        "see website"
+      ],
+      "limits": "see website",
+      "expiry": "unknown",
+      "expiry_note": "Auto-discovered; verify before relying on it",
+      "compat": {
+        "api": "openai-completions",
+        "notes": "auto-discovered; verify endpoint"
+      },
+      "trust": "medium",
+      "notes": "Auto-discovered 2026-09-07 via hackernews",
+      "auto": true,
+      "discovered_at": "2026-09-07T07:14:23Z",
+      "discovery_signals": [
+        "mentions api",
+        "free/credit/trial signal",
+        "llm/model signal",
+        "homepage reachable (200)"
+      ],
+      "v_website": {
+        "ok": true,
+        "status": 200,
+        "state": "ok",
+        "url": "https://blazephoenix.xyz"
+      },
+      "v_free": {
+        "ok": true,
+        "status": 200,
+        "state": "ok",
+        "url": "https://blazephoenix.xyz/"
+      },
+      "v_keys": {
+        "ok": false,
+        "status": "n/a",
+        "state": "down",
+        "url": ""
+      },
+      "v_docs": {
+        "ok": false,
+        "status": "n/a",
+        "state": "down",
+        "url": ""
+      },
+      "verified_at": "2026-09-07T07:14:23Z"
     }
   ]
 }

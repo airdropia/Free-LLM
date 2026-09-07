@@ -64,29 +64,27 @@ Auto-discovered providers are community finds, not endorsements.
 ## 📊 Latest Third-Party Offers
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Third-Party Offers - 2026-09-07T07:06:14Z
+## Latest Third-Party Offers - 2026-09-07T07:14:23Z
 
-> 6 providers verified OK | 0 flagged | 4 auto-discovered this run | last full run: 2026-09-07T07:06:14Z
+> 6 providers verified OK | 0 flagged | 1 auto-discovered this run | last full run: 2026-09-07T07:14:23Z
 
 
 ### ✨ Auto-discovered this run (new providers added)
 
-- **Show HN: An unmetered LLM API–$6/month, no token tracking, n** (`yolo-auto.com`) — mentions api, free/credit/trial signal, key/completions signal, homepage reachable (200)
-- **Show HN: OpenLegion – AI agent fleet with container isolatio** (`openlegion.ai`) — mentions api, free/credit/trial signal, key/completions signal, homepage reachable (200)
-- **A DEX aggregator whose quotes are computed on-chain (free AP** (`blazephoenix.xyz`) — mentions api, free/credit/trial signal, homepage reachable (200)
-- **Show HN: API router that picks the cheapest model that fits ** (`komilion.com`) — mentions api, free/credit/trial signal, key/completions signal, homepage reachable (200)
+- **blazephoenix.xyz** (`blazephoenix.xyz`) — mentions api, free/credit/trial signal, llm/model signal, homepage reachable (200)
 
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
 |---|---|---|---|---|---|---|
 | **LLM7.io** (medium) | OPENAI-COMPAT | DeepSeek-R1; Qwen 2.5 | 30 RPM without signup; up to 5M tokens/day with free email token | no-CC none | ongoing | [site](https://llm7.io/) [free](https://llm7.io/) |
 | **BazaarLink (free gateway)** (low) | OPENAI-COMPAT | Various via gateway (OpenAI-compatible) | Free OpenAI-compatible API key; model access varies | no-CC email | unknown | [site](https://bazaarlink.ai/free) [free](https://bazaarlink.ai/free) [keys](https://bazaarlink.ai/free) |
-| **Show HN: An unmetered LLM API–$6/month, no token tracking, n** ⚡ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://yolo-auto.com) [free](https://yolo-auto.com/) |
-| **Show HN: OpenLegion – AI agent fleet with container isolatio** ⚡ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://openlegion.ai) [free](https://www.openlegion.ai) |
-| **A DEX aggregator whose quotes are computed on-chain (free AP** ⚡ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://blazephoenix.xyz) [free](https://blazephoenix.xyz/) |
-| **Show HN: API router that picks the cheapest model that fits ** ⚡ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://komilion.com) [free](https://www.komilion.com/) |
+| **yolo-auto.com** ↻ (medium) | OPENAI-COMPAT | see website | Unmetered LLM API; paid plan reported ~$6/month, verify free tier | no-CC email | unknown | [site](https://yolo-auto.com) [free](https://yolo-auto.com) |
+| **openlegion.ai** ↻ (medium) | OPENAI-COMPAT | see website | AI agent fleet with container isolation; free tier - verify | no-CC email | unknown | [site](https://openlegion.ai) [free](https://openlegion.ai) |
+| **komilion.com** ↻ (medium) | OPENAI-COMPAT | see website | API router that picks the cheapest model for the task; free tier - verify | no-CC email | unknown | [site](https://komilion.com) [free](https://komilion.com) |
+| **blazephoenix.xyz** ⚡ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://blazephoenix.xyz) [free](https://blazephoenix.xyz/) |
 
 ### New leads (unverified, found in today's search)
 
@@ -98,13 +96,7 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [Show HN: Private AI assistant for $1.99 -Free AI](https://personalassistantdeploy.com/) (personalassistantdeploy.com, via hackernews, score 6: free, api key, api keys, month, key, api)
 
-- [Show HN: An unmetered LLM API–$6/month, no token tracking, no limits](https://yolo-auto.com/) (yolo-auto.com, via hackernews, score 6: credits, credit, frontier, unmetered, month, api)
-
-- [Show HN: OpenLegion – AI agent fleet with container isolation and vault proxy](https://www.openlegion.ai) (openlegion.ai, via hackernews, score 5: api key, api keys, proxy, key, api)
-
 - [A DEX aggregator whose quotes are computed on-chain (free API, no key)](https://blazephoenix.xyz/) (blazephoenix.xyz, via hackernews, score 4: free, aggregator, key, api)
-
-- [Show HN: API router that picks the cheapest model that fits each query](https://www.komilion.com/) (komilion.com, via hackernews, score 3: tokens, router, api)
 
 - [Show HN: One API for GPT-5, Claude-Sonnet-4, DeepSeek, Gemini](https://wisdom-gate.juheapi.com/studio/chat) (wisdom-gate.juheapi.com, via hackernews, score 3: aggregator, access, api)
 
@@ -122,7 +114,7 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [[TG:AI_Deals] Grab : Upto 85% Off on Aristocrat Trolleys + Bank Offers  😱    😱      🔗   Link:  https://www.amazon.in/s?hidden-keywords](https://www.amazon.in/s?hidden-keywords=B0H1MZV6FH%7CB0H2VRDNJK%7CB0H1MPQYKP%7CB0FC6RGJTT%7CB0FFBCLHTT&tag=aideals0ff-21) (amazon.in, via telegram, score 3: offer, deal, key)
 
-- [CBS News | Breaking news, top stories & today's latest headlines](https://www.bing.com/ck/a?!&&p=f4c1f09e7f5aa487854f62b2bd3b0228f1cfe5d63c0245bd5148d2c2d5d00d8eJmltdHM9MTc4ODczOTIwMA&ptn=3&ver=2&hsh=4&fclid=13e71fa1-cf9e-6e4b-3dd3-086cce406f4d&u=a1aHR0cHM6Ly93d3cuY2JzbmV3cy5jb20v&ntb=1) (bing.com, via bing, score 2: offer, new)
+- [NBC News - Breaking Headlines and Video Reports on World, U.S.](https://www.bing.com/ck/a?!&&p=cc3cd49d2f3736b7e13640c80f49d2ca99fcce52a82894b7789e9236496b1e9cJmltdHM9MTc4ODczOTIwMA&ptn=3&ver=2&hsh=4&fclid=27d6c06f-b0e4-6916-34c9-d7a2b1e86875&u=a1aHR0cHM6Ly93d3cubmJjbmV3cy5jb20v&ntb=1) (bing.com, via bing, score 2: new, week)
 
 - [Launch HN: Speko (YC S26) – OpenRouter for Voice AI](https://speko.ai/) (speko.ai, via hackernews, score 2: router, launch)
 
@@ -164,7 +156,8 @@ Auto-discovered providers are community finds, not endorsements.
 - telegram: 3 posts matched
 - lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-07T07:06:14Z. Offers change fast - verify links before relying on them._
+_Last verified: 2026-09-07T07:14:23Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
 
