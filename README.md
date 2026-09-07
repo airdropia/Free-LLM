@@ -65,16 +65,12 @@ Auto-discovered providers are community finds, not endorsements.
 
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Third-Party Offers - 2026-09-07T07:14:23Z
+## Latest Third-Party Offers - 2026-09-07T11:35:16Z
 
-> 6 providers verified OK | 0 flagged | 1 auto-discovered this run | last full run: 2026-09-07T07:14:23Z
-
-
-### ✨ Auto-discovered this run (new providers added)
-
-- **blazephoenix.xyz** (`blazephoenix.xyz`) — mentions api, free/credit/trial signal, llm/model signal, homepage reachable (200)
+> 6 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-07T11:35:16Z
 
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
@@ -84,19 +80,17 @@ Auto-discovered providers are community finds, not endorsements.
 | **yolo-auto.com** ↻ (medium) | OPENAI-COMPAT | see website | Unmetered LLM API; paid plan reported ~$6/month, verify free tier | no-CC email | unknown | [site](https://yolo-auto.com) [free](https://yolo-auto.com) |
 | **openlegion.ai** ↻ (medium) | OPENAI-COMPAT | see website | AI agent fleet with container isolation; free tier - verify | no-CC email | unknown | [site](https://openlegion.ai) [free](https://openlegion.ai) |
 | **komilion.com** ↻ (medium) | OPENAI-COMPAT | see website | API router that picks the cheapest model for the task; free tier - verify | no-CC email | unknown | [site](https://komilion.com) [free](https://komilion.com) |
-| **blazephoenix.xyz** ⚡ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://blazephoenix.xyz) [free](https://blazephoenix.xyz/) |
+| **blazephoenix.xyz** ↻ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://blazephoenix.xyz) [free](https://blazephoenix.xyz/) |
 
 ### New leads (unverified, found in today's search)
 
 - [Free models you can use with your OpenClaw (no credit card needed)](https://news.ycombinator.com/item?id=47681837) (news.ycombinator.com, via hackernews, score 7: free, api key, credit, trial, new, key, api)
 
-- [Unlimited AI Credits from One Integer: New API's Quota Overflow (CVE-2026-71479) and How to Check Your Gateway - Buttondown](https://news.google.com/rss/articles/CBMimgFBVV95cUxQZmhFb1p5UTMxb3Ryc2phRmZKOU81M1B3Um40MFA1YUFxRXM4NTh6VGhQa29PbUg2TnJoa3BlX0wwTEV5Zm9RcEZXNUc3YVdSVUNoaFVyT1J4bVVoTmVJQUJVTktjamMya2RvTjRSRUNTV25IaW13cGhfalNkSDVuZDZnRnhSMTBYbG1ObllzRWJ4QldSeXBPSDdn?oc=5) (news.google.com, via google-news, score 7: credits, credit, gateway, new, unlimited, limited, api)
+- [Unlimited AI Credits from One Integer: New API's Quota Overflow (CVE-2026-71479) and How to Check Your Gateway - buttondown.com](https://news.google.com/rss/articles/CBMimgFBVV95cUxQZmhFb1p5UTMxb3Ryc2phRmZKOU81M1B3Um40MFA1YUFxRXM4NTh6VGhQa29PbUg2TnJoa3BlX0wwTEV5Zm9RcEZXNUc3YVdSVUNoaFVyT1J4bVVoTmVJQUJVTktjamMya2RvTjRSRUNTV25IaW13cGhfalNkSDVuZDZnRnhSMTBYbG1ObllzRWJ4QldSeXBPSDdn?oc=5) (news.google.com, via google-news, score 7: credits, credit, gateway, new, unlimited, limited, api)
 
 - [Show HN: Faster more accurate multimodal vector search](https://github.com/nickswami/dasein-python-sdk) (github.com, via hackernews, score 6: free, api key, trial, week, key, api)
 
 - [Show HN: Private AI assistant for $1.99 -Free AI](https://personalassistantdeploy.com/) (personalassistantdeploy.com, via hackernews, score 6: free, api key, api keys, month, key, api)
-
-- [A DEX aggregator whose quotes are computed on-chain (free API, no key)](https://blazephoenix.xyz/) (blazephoenix.xyz, via hackernews, score 4: free, aggregator, key, api)
 
 - [Show HN: One API for GPT-5, Claude-Sonnet-4, DeepSeek, Gemini](https://wisdom-gate.juheapi.com/studio/chat) (wisdom-gate.juheapi.com, via hackernews, score 3: aggregator, access, api)
 
@@ -114,7 +108,7 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [[TG:AI_Deals] Grab : Upto 85% Off on Aristocrat Trolleys + Bank Offers  😱    😱      🔗   Link:  https://www.amazon.in/s?hidden-keywords](https://www.amazon.in/s?hidden-keywords=B0H1MZV6FH%7CB0H2VRDNJK%7CB0H1MPQYKP%7CB0FC6RGJTT%7CB0FFBCLHTT&tag=aideals0ff-21) (amazon.in, via telegram, score 3: offer, deal, key)
 
-- [NBC News - Breaking Headlines and Video Reports on World, U.S.](https://www.bing.com/ck/a?!&&p=cc3cd49d2f3736b7e13640c80f49d2ca99fcce52a82894b7789e9236496b1e9cJmltdHM9MTc4ODczOTIwMA&ptn=3&ver=2&hsh=4&fclid=27d6c06f-b0e4-6916-34c9-d7a2b1e86875&u=a1aHR0cHM6Ly93d3cubmJjbmV3cy5jb20v&ntb=1) (bing.com, via bing, score 2: new, week)
+- [Free Online Games at Poki - Play Now!](https://www.bing.com/ck/a?!&&p=8884c109877d016abda58fd5deabe2dafe21808457138769a98d6d85201a0e73JmltdHM9MTc4ODczOTIwMA&ptn=3&ver=2&hsh=4&fclid=05d949a6-82ca-6f1a-249a-5e6b83416e6d&u=a1aHR0cHM6Ly9wb2tpLmNvbS8_bXNvY2tpZD0wNWQ5NDlhNjgyY2E2ZjFhMjQ5YTVlNmI4MzQxNmU2ZA&ntb=1) (bing.com, via bing, score 2: free, new)
 
 - [Launch HN: Speko (YC S26) – OpenRouter for Voice AI](https://speko.ai/) (speko.ai, via hackernews, score 2: router, launch)
 
@@ -156,8 +150,9 @@ Auto-discovered providers are community finds, not endorsements.
 - telegram: 3 posts matched
 - lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-07T07:14:23Z. Offers change fast - verify links before relying on them._
+_Last verified: 2026-09-07T11:35:16Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
 
 
