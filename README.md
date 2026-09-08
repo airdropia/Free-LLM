@@ -68,11 +68,17 @@ Auto-discovered providers are community finds, not endorsements.
 
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Third-Party Offers - 2026-09-08T10:34:42Z
+## Latest Third-Party Offers - 2026-09-08T20:43:06Z
 
-> 6 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-08T10:34:42Z
+> 7 providers verified OK | 0 flagged | 1 auto-discovered this run | last full run: 2026-09-08T20:43:06Z
+
+
+### ✨ Auto-discovered this run (new providers added)
+
+- **Download A Free PC Game Every Week - Epic Games Store** (`bing.com`) — mentions api, free/credit/trial signal, llm/model signal, homepage reachable (200)
 
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
@@ -83,6 +89,7 @@ Auto-discovered providers are community finds, not endorsements.
 | **openlegion.ai** ↻ (medium) | OPENAI-COMPAT | see website | AI agent fleet with container isolation; free tier - verify | no-CC email | unknown | [site](https://openlegion.ai) [free](https://openlegion.ai) |
 | **komilion.com** ↻ (medium) | OPENAI-COMPAT | see website | API router that picks the cheapest model for the task; free tier - verify | no-CC email | unknown | [site](https://komilion.com) [free](https://komilion.com) |
 | **blazephoenix.xyz** ↻ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://blazephoenix.xyz) [free](https://blazephoenix.xyz/) |
+| **Download A Free PC Game Every Week - Epic Games Store** ⚡ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://bing.com) [free](https://www.bing.com/ck/a?!&&p=ecbb143ce464506739ea732064ece0cd7ed0a7f109e378f470e50e8c7dab3fa9JmltdHM9MTc4ODgyNTYwMA&ptn=3&ver=2&hsh=4&fclid=264e8efd-936e-6193-2c1e-993392fa605a&u=a1aHR0cHM6Ly9zdG9yZS5lcGljZ2FtZXMuY29tL2ZyZWUtZ2FtZXM_bGFuZz1lbi1VUw&ntb=1) |
 
 ### New leads (unverified, found in today's search)
 
@@ -93,6 +100,8 @@ Auto-discovered providers are community finds, not endorsements.
 - [Show HN: Private AI assistant for $1.99 -Free AI](https://personalassistantdeploy.com/) (personalassistantdeploy.com, via hackernews, score 6: free, api key, api keys, month, key, api)
 
 - [Google and OpenAI offer free API credits—but there's one catch - How-To Geek](https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEttNldEemZuTHJ3clRMblBLYWVobl9MZnN5NzRUMnAxOTZaYWZPVUZRcUxNZl96TnN3ekZ4T05UZWUyQXlWdE5YbVBQblRHcWp5SEF2VURra0EwZkRIbG1Od21KWGdMU0lkRHk2WXRhdHJuZ1NHTWlWaklRSFh0RGRDd1Z0MHMzS0xYWVQyYXE?oc=5) (news.google.com, via google-news, score 6: free, credits, credit, offer, new, api)
+
+- [Download A Free PC Game Every Week - Epic Games Store](https://www.bing.com/ck/a?!&&p=ecbb143ce464506739ea732064ece0cd7ed0a7f109e378f470e50e8c7dab3fa9JmltdHM9MTc4ODgyNTYwMA&ptn=3&ver=2&hsh=4&fclid=264e8efd-936e-6193-2c1e-993392fa605a&u=a1aHR0cHM6Ly9zdG9yZS5lcGljZ2FtZXMuY29tL2ZyZWUtZ2FtZXM_bGFuZz1lbi1VUw&ntb=1) (bing.com, via bing, score 3: free, offer, week)
 
 - [Show HN: One API for GPT-5, Claude-Sonnet-4, DeepSeek, Gemini](https://wisdom-gate.juheapi.com/studio/chat) (wisdom-gate.juheapi.com, via hackernews, score 3: aggregator, access, api)
 
@@ -109,8 +118,6 @@ Auto-discovered providers are community finds, not endorsements.
 - [Show HN: LobsterLair – OpenClaw hosting with AI included ($19/mo)](https://lobsterlair.xyz) (lobsterlair.xyz, via hackernews, score 3: api key, key, api)
 
 - [[TG:AI_Deals] Grab : Upto 85% Off on Aristocrat Trolleys + Bank Offers  😱    😱      🔗   Link:  https://www.amazon.in/s?hidden-keywords](https://www.amazon.in/s?hidden-keywords=B0H1MZV6FH%7CB0H2VRDNJK%7CB0H1MPQYKP%7CB0FC6RGJTT%7CB0FFBCLHTT&tag=aideals0ff-21) (amazon.in, via telegram, score 3: offer, deal, key)
-
-- [Free Online Games at Poki - Play Now!](https://www.bing.com/ck/a?!&&p=463e1de373e222c128c391464080cc2ffc989919ebdcd64552eaf5bff6d05058JmltdHM9MTc4ODgyNTYwMA&ptn=3&ver=2&hsh=4&fclid=33bccf52-54a3-63d3-0957-d89c55396230&u=a1aHR0cHM6Ly9wb2tpLmNvbS8_bXNvY2tpZD0zM2JjY2Y1MjU0YTM2M2QzMDk1N2Q4OWM1NTM5NjIzMA&ntb=1) (bing.com, via bing, score 2: free, new)
 
 - [Launch HN: Speko (YC S26) – OpenRouter for Voice AI](https://speko.ai/) (speko.ai, via hackernews, score 2: router, launch)
 
@@ -152,9 +159,10 @@ Auto-discovered providers are community finds, not endorsements.
 - telegram: 3 posts matched
 - lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-08T10:34:42Z. Offers change fast - verify links before relying on them._
+_Last verified: 2026-09-08T20:43:06Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
 
 
 
