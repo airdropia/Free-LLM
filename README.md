@@ -67,11 +67,12 @@ Auto-discovered providers are community finds, not endorsements.
 
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Third-Party Offers - 2026-09-07T21:07:04Z
+## Latest Third-Party Offers - 2026-09-08T10:34:42Z
 
-> 6 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-07T21:07:04Z
+> 6 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-08T10:34:42Z
 
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
@@ -109,7 +110,7 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [[TG:AI_Deals] Grab : Upto 85% Off on Aristocrat Trolleys + Bank Offers  😱    😱      🔗   Link:  https://www.amazon.in/s?hidden-keywords](https://www.amazon.in/s?hidden-keywords=B0H1MZV6FH%7CB0H2VRDNJK%7CB0H1MPQYKP%7CB0FC6RGJTT%7CB0FFBCLHTT&tag=aideals0ff-21) (amazon.in, via telegram, score 3: offer, deal, key)
 
-- [CBS News | Breaking news, top stories & today's latest headlines](https://www.bing.com/ck/a?!&&p=bcb3c805f6f9b8b1a3825e16aea24021c01e16bf234cfdf17a10fea89794ba4aJmltdHM9MTc4ODczOTIwMA&ptn=3&ver=2&hsh=4&fclid=1a90cec6-8675-63f1-1411-d90b87c36249&u=a1aHR0cHM6Ly93d3cuY2JzbmV3cy5jb20v&ntb=1) (bing.com, via bing, score 2: offer, new)
+- [Free Online Games at Poki - Play Now!](https://www.bing.com/ck/a?!&&p=463e1de373e222c128c391464080cc2ffc989919ebdcd64552eaf5bff6d05058JmltdHM9MTc4ODgyNTYwMA&ptn=3&ver=2&hsh=4&fclid=33bccf52-54a3-63d3-0957-d89c55396230&u=a1aHR0cHM6Ly9wb2tpLmNvbS8_bXNvY2tpZD0zM2JjY2Y1MjU0YTM2M2QzMDk1N2Q4OWM1NTM5NjIzMA&ntb=1) (bing.com, via bing, score 2: free, new)
 
 - [Launch HN: Speko (YC S26) – OpenRouter for Voice AI](https://speko.ai/) (speko.ai, via hackernews, score 2: router, launch)
 
@@ -151,9 +152,10 @@ Auto-discovered providers are community finds, not endorsements.
 - telegram: 3 posts matched
 - lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-07T21:07:04Z. Offers change fast - verify links before relying on them._
+_Last verified: 2026-09-08T10:34:42Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
 
 
 
