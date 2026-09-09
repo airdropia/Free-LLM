@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-09T10:45:48Z",
-  "count": 26,
+  "last_updated": "2026-09-09T20:25:01Z",
+  "count": 25,
   "leads": [
     {
       "title": "Free models you can use with your OpenClaw (no credit card needed)",
@@ -159,10 +159,10 @@
       ]
     },
     {
-      "title": "[TG:AI_Deals] Grab : Upto 85% Off on Aristocrat Trolleys + Bank Offers  😱    😱      🔗   Link:  https://www.amazon.in/s?hidden-keywords",
-      "url": "https://www.amazon.in/s?hidden-keywords=B0H1MZV6FH%7CB0H2VRDNJK%7CB0H1MPQYKP%7CB0FC6RGJTT%7CB0FFBCLHTT&tag=aideals0ff-21",
+      "title": "[TG:AI_Deals] Amazon Fresh   💥    Upto 500₹ Cashback  Collect Offer :   https://www.amazon.in/h/your-offers?widgetParameters=%25257B%2",
+      "url": "https://www.amazon.in/h/your-offers?widgetParameters=%25257B%22filters%22%3A%5B%25257B%22key%22%3A%22AdvertisersProgram%22%2C%22operator%22%3A%22any%22%2C%22values%22%3A%5B%22IN_Mktplace%22%2C%22Subscribe%252Band%252BSave%252BRetail%22%5D%25257D%2C%25257B%22key%22%3A%22AdvertisersSubcategories%22%2C%22operator%22%3A%22any%22%2C%22values%22%3A%5B%22Grocery%22%2C%22Amazon%252BFresh%22%2C%22gl_fruits_and_vegetables%22%2C%22gl_grocery%22%2C%22Amazon%252BPay%252Bcashback%22%2C%22gl_meat_and_fish%22%5D%25257D%2C%25257B%22key%22%3A%22RewardAdType%22%2C%22operator%22%3A%22any%22%2C%22values%22%3A%5B%22FREE_TO_COLLECT%22%2C%22UNLOCKED%22%5D%25257D%2C%25257B%22key%22%3A%22State%22%2C%22operator%22%3A%22any%22%2C%22values%22%3A%5B%22Issued%22%2C%22New%22%2C%22Clipped%22%2C%22Reserved%22%5D%25257D%5D%2C%22sorts%22%3A%5B%25257B%22direction%22%3A%22desc%22%2C%22key%22%3A%22CR7%22%2C%22order%22%3A1%25257D%5D%2C%22resultSize%22%3A150%2C%22layoutType%22%3A1%2C%22title%22%3A%22Fresh_ShopCollect%22%2C%22language%22%3A%22en_IN%22%2C%22shouldHideUnlockNowBottomSheet%22%3Afalse%2C%22showCustomerRewardCounters%22%3Afalse%2C%22fetchRewardsForUnrecognisedCustomers%22%3Afalse%2C%22creativeId%22%3A%2261ac2554-c086-4976-998e-07554d3e56e5%22%2C%22widgetName%22%3A%22RHP1_mobile-hybrid-9_Fresh%22%2C%22includeClaimCodeRewards%22%3Afalse%25257D&sid=eoAiCq&sid=C7XBRl&tag=aideals0ff-21",
       "domain": "amazon.in",
-      "snippet": "Grab : Upto 85% Off on Aristocrat Trolleys + Bank Offers  😱    😱      🔗   Link:  https://www.amazon.in/s?hidden-keywords=B0H1MZV6FH%7CB0H2VRDNJK%7CB0H1MPQYKP%7CB0FC6RGJTT%7CB0FFBCL",
+      "snippet": "Amazon Fresh   💥    Upto 500₹ Cashback  Collect Offer :   https://www.amazon.in/h/your-offers?widgetParameters=%25257B%22filters%22%3A%5B%25257B%22key%22%3A%22AdvertisersProgram%22",
       "source": "telegram",
       "score": 3,
       "hits": [
@@ -325,18 +325,6 @@
       "hits": [
         "launch",
         "api"
-      ]
-    },
-    {
-      "title": "[TG:AI_Deals] MediBuddy Loot : Flat ₹5151 Off on Full Body Health Check-Up + FREE Vitamin Tests   🔥    🔥      👉   63+ Lab Tests (Vitam",
-      "url": "https://bilty.co/ydk1PE",
-      "domain": "bilty.co",
-      "snippet": "MediBuddy Loot : Flat ₹5151 Off on Full Body Health Check-Up + FREE Vitamin Tests   🔥    🔥      👉   63+ Lab Tests (Vitamin D, Thyroid, Diabetes, Liver, Kidney, CBC, Lipid Profile, ",
-      "source": "telegram",
-      "score": 2,
-      "hits": [
-        "free",
-        "deal"
       ]
     }
   ]

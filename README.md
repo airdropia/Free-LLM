@@ -70,11 +70,12 @@ Auto-discovered providers are community finds, not endorsements.
 
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Third-Party Offers - 2026-09-09T10:45:48Z
+## Latest Third-Party Offers - 2026-09-09T20:25:01Z
 
-> 7 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-09T10:45:48Z
+> 7 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-09T20:25:01Z
 
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
@@ -111,7 +112,7 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [Show HN: LobsterLair – OpenClaw hosting with AI included ($19/mo)](https://lobsterlair.xyz) (lobsterlair.xyz, via hackernews, score 3: api key, key, api)
 
-- [[TG:AI_Deals] Grab : Upto 85% Off on Aristocrat Trolleys + Bank Offers  😱    😱      🔗   Link:  https://www.amazon.in/s?hidden-keywords](https://www.amazon.in/s?hidden-keywords=B0H1MZV6FH%7CB0H2VRDNJK%7CB0H1MPQYKP%7CB0FC6RGJTT%7CB0FFBCLHTT&tag=aideals0ff-21) (amazon.in, via telegram, score 3: offer, deal, key)
+- [[TG:AI_Deals] Amazon Fresh   💥    Upto 500₹ Cashback  Collect Offer :   https://www.amazon.in/h/your-offers?widgetParameters=%25257B%2](https://www.amazon.in/h/your-offers?widgetParameters=%25257B%22filters%22%3A%5B%25257B%22key%22%3A%22AdvertisersProgram%22%2C%22operator%22%3A%22any%22%2C%22values%22%3A%5B%22IN_Mktplace%22%2C%22Subscribe%252Band%252BSave%252BRetail%22%5D%25257D%2C%25257B%22key%22%3A%22AdvertisersSubcategories%22%2C%22operator%22%3A%22any%22%2C%22values%22%3A%5B%22Grocery%22%2C%22Amazon%252BFresh%22%2C%22gl_fruits_and_vegetables%22%2C%22gl_grocery%22%2C%22Amazon%252BPay%252Bcashback%22%2C%22gl_meat_and_fish%22%5D%25257D%2C%25257B%22key%22%3A%22RewardAdType%22%2C%22operator%22%3A%22any%22%2C%22values%22%3A%5B%22FREE_TO_COLLECT%22%2C%22UNLOCKED%22%5D%25257D%2C%25257B%22key%22%3A%22State%22%2C%22operator%22%3A%22any%22%2C%22values%22%3A%5B%22Issued%22%2C%22New%22%2C%22Clipped%22%2C%22Reserved%22%5D%25257D%5D%2C%22sorts%22%3A%5B%25257B%22direction%22%3A%22desc%22%2C%22key%22%3A%22CR7%22%2C%22order%22%3A1%25257D%5D%2C%22resultSize%22%3A150%2C%22layoutType%22%3A1%2C%22title%22%3A%22Fresh_ShopCollect%22%2C%22language%22%3A%22en_IN%22%2C%22shouldHideUnlockNowBottomSheet%22%3Afalse%2C%22showCustomerRewardCounters%22%3Afalse%2C%22fetchRewardsForUnrecognisedCustomers%22%3Afalse%2C%22creativeId%22%3A%2261ac2554-c086-4976-998e-07554d3e56e5%22%2C%22widgetName%22%3A%22RHP1_mobile-hybrid-9_Fresh%22%2C%22includeClaimCodeRewards%22%3Afalse%25257D&sid=eoAiCq&sid=C7XBRl&tag=aideals0ff-21) (amazon.in, via telegram, score 3: offer, deal, key)
 
 - [Launch HN: Speko (YC S26) – OpenRouter for Voice AI](https://speko.ai/) (speko.ai, via hackernews, score 2: router, launch)
 
@@ -139,8 +140,6 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [Show HN: Gradient – a web API for fine-tuning and deploying Llama2](https://gradient.ai/) (gradient.ai, via hackernews, score 2: launch, api)
 
-- [[TG:AI_Deals] MediBuddy Loot : Flat ₹5151 Off on Full Body Health Check-Up + FREE Vitamin Tests   🔥    🔥      👉   63+ Lab Tests (Vitam](https://bilty.co/ydk1PE) (bilty.co, via telegram, score 2: free, deal)
-
 ### Source status
 
 - bing: 12/12 queries returned results
@@ -150,12 +149,13 @@ Auto-discovered providers are community finds, not endorsements.
 - github: 5/5 queries returned results
 - google-news: 8/8 queries returned results
 - x-twitter: 0/2 queries returned results
-- telegram: 3 posts matched
+- telegram: 2 posts matched
 - lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-09T10:45:48Z. Offers change fast - verify links before relying on them._
+_Last verified: 2026-09-09T20:25:01Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
 
 
 
