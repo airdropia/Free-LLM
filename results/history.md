@@ -1,3 +1,4 @@
+- 2026-09-10T10:36:58Z | providers=8 | ok=8 | dead=0 | auto-added=1 | leads=25 | results=352
 - 2026-09-09T20:25:01Z | providers=7 | ok=7 | dead=0 | auto-added=0 | leads=25 | results=315
 - 2026-09-09T10:45:48Z | providers=7 | ok=7 | dead=0 | auto-added=0 | leads=26 | results=356
 - 2026-09-08T20:43:06Z | providers=7 | ok=7 | dead=0 | auto-added=1 | leads=27 | results=364
