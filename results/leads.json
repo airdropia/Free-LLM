@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-10T10:36:58Z",
-  "count": 25,
+  "last_updated": "2026-09-10T20:25:28Z",
+  "count": 24,
   "leads": [
     {
       "title": "Free models you can use with your OpenClaw (no credit card needed)",
@@ -32,22 +32,6 @@
         "trial",
         "week",
         "key",
-        "api"
-      ]
-    },
-    {
-      "title": "Show HN: Community curated list of 310 AI providers offering $4.3k free credits",
-      "url": "https://www.uprouter.online/",
-      "domain": "uprouter.online",
-      "snippet": "Hey people! I have been compiling a directory of AI API providers which provide a combined total of $4.3k in free API credits and I&#x27;m super proud of it so far. It serves as a ",
-      "source": "hackernews",
-      "score": 6,
-      "hits": [
-        "free",
-        "credits",
-        "credit",
-        "offer",
-        "router",
         "api"
       ]
     },

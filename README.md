@@ -72,16 +72,12 @@ Auto-discovered providers are community finds, not endorsements.
 
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Third-Party Offers - 2026-09-10T10:36:58Z
+## Latest Third-Party Offers - 2026-09-10T20:25:28Z
 
-> 8 providers verified OK | 0 flagged | 1 auto-discovered this run | last full run: 2026-09-10T10:36:58Z
-
-
-### ✨ Auto-discovered this run (new providers added)
-
-- **uprouter.online** (`uprouter.online`) — mentions api, free/credit/trial signal, key/completions signal, llm/model signal, homepage reachable (200)
+> 8 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-10T20:25:28Z
 
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
@@ -93,15 +89,13 @@ Auto-discovered providers are community finds, not endorsements.
 | **komilion.com** ↻ (medium) | OPENAI-COMPAT | see website | API router that picks the cheapest model for the task; free tier - verify | no-CC email | unknown | [site](https://komilion.com) [free](https://komilion.com) |
 | **blazephoenix.xyz** ↻ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://blazephoenix.xyz) [free](https://blazephoenix.xyz/) |
 | **Download A Free PC Game Every Week - Epic Games Store** ↻ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://bing.com) [free](https://www.bing.com/ck/a?!&&p=ecbb143ce464506739ea732064ece0cd7ed0a7f109e378f470e50e8c7dab3fa9JmltdHM9MTc4ODgyNTYwMA&ptn=3&ver=2&hsh=4&fclid=264e8efd-936e-6193-2c1e-993392fa605a&u=a1aHR0cHM6Ly9zdG9yZS5lcGljZ2FtZXMuY29tL2ZyZWUtZ2FtZXM_bGFuZz1lbi1VUw&ntb=1) |
-| **uprouter.online** ⚡ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://uprouter.online) [free](https://www.uprouter.online/) |
+| **uprouter.online** ↻ (medium) | OPENAI-COMPAT | see website | see website | no-CC email | unknown | [site](https://uprouter.online) [free](https://www.uprouter.online/) |
 
 ### New leads (unverified, found in today's search)
 
 - [Free models you can use with your OpenClaw (no credit card needed)](https://news.ycombinator.com/item?id=47681837) (news.ycombinator.com, via hackernews, score 7: free, api key, credit, trial, new, key, api)
 
 - [Show HN: Faster more accurate multimodal vector search](https://github.com/nickswami/dasein-python-sdk) (github.com, via hackernews, score 6: free, api key, trial, week, key, api)
-
-- [Show HN: Community curated list of 310 AI providers offering $4.3k free credits](https://www.uprouter.online/) (uprouter.online, via hackernews, score 6: free, credits, credit, offer, router, api)
 
 - [Show HN: Private AI assistant for $1.99 -Free AI](https://personalassistantdeploy.com/) (personalassistantdeploy.com, via hackernews, score 6: free, api key, api keys, month, key, api)
 
@@ -159,9 +153,10 @@ Auto-discovered providers are community finds, not endorsements.
 - telegram: 0 posts matched
 - lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-10T10:36:58Z. Offers change fast - verify links before relying on them._
+_Last verified: 2026-09-10T20:25:28Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
 
 
 
