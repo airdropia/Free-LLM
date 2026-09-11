@@ -74,11 +74,12 @@ Auto-discovered providers are community finds, not endorsements.
 
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Third-Party Offers - 2026-09-11T10:36:48Z
+## Latest Third-Party Offers - 2026-09-11T20:26:18Z
 
-> 8 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-11T10:36:48Z
+> 8 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-11T20:26:18Z
 
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
@@ -142,8 +143,6 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [Show HN: Gradient – a web API for fine-tuning and deploying Llama2](https://gradient.ai/) (gradient.ai, via hackernews, score 2: launch, api)
 
-- [[TG:AI_Deals] MediBuddy Loot : Flat ₹5151 Off on Full Body Health Check-Up + FREE Vitamin Tests   🔥    🔥      👉   63+ Lab Tests (Vitam](https://bilty.co/l0W6Cn) (bilty.co, via telegram, score 2: free, deal)
-
 ### Source status
 
 - bing: 12/12 queries returned results
@@ -153,12 +152,13 @@ Auto-discovered providers are community finds, not endorsements.
 - github: 5/5 queries returned results
 - google-news: 8/8 queries returned results
 - x-twitter: 0/2 queries returned results
-- telegram: 2 posts matched
+- telegram: 0 posts matched
 - lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-11T10:36:48Z. Offers change fast - verify links before relying on them._
+_Last verified: 2026-09-11T20:26:18Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
 
 
 
