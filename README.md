@@ -76,11 +76,12 @@ Auto-discovered providers are community finds, not endorsements.
 
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Third-Party Offers - 2026-09-12T10:05:48Z
+## Latest Third-Party Offers - 2026-09-12T20:10:58Z
 
-> 8 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-12T10:05:48Z
+> 8 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-12T20:10:58Z
 
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
@@ -118,6 +119,8 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [Show HN: LobsterLair – OpenClaw hosting with AI included ($19/mo)](https://lobsterlair.xyz) (lobsterlair.xyz, via hackernews, score 3: api key, key, api)
 
+- [[TG:AI_Deals] FREE ₹1000 GIFT CARD OF MOVIE TICKET YEARLY   🎬    BEST: Lifetime Free IndusInd Tiger Credit Card  Apply Now   👉🏻  :  ht](https://bilty.co/xAY6uk) (bilty.co, via telegram, score 3: free, credit, deal)
+
 - [Launch HN: Speko (YC S26) – OpenRouter for Voice AI](https://speko.ai/) (speko.ai, via hackernews, score 2: router, launch)
 
 - [Show HN: LaunchPad – Job aggregator I built overnight after Amazon layoffs](https://launchpad-kappa-ashy.vercel.app/) (launchpad-kappa-ashy.vercel.app, via hackernews, score 2: aggregator, launch)
@@ -153,12 +156,13 @@ Auto-discovered providers are community finds, not endorsements.
 - github: 5/5 queries returned results
 - google-news: 8/8 queries returned results
 - x-twitter: 0/2 queries returned results
-- telegram: 0 posts matched
+- telegram: 1 posts matched
 - lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-12T10:05:48Z. Offers change fast - verify links before relying on them._
+_Last verified: 2026-09-12T20:10:58Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
 
 
 

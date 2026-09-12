@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-09-12T10:05:48Z",
+  "last_updated": "2026-09-12T20:10:58Z",
   "summary": {
     "ok_count": 8,
     "dead_count": 0,
     "auto_added_count": 0,
-    "leads_count": 24,
-    "total_results": 362
+    "leads_count": 25,
+    "total_results": 363
   },
   "sources": {
     "bing": "12/12 queries returned results",
@@ -15,7 +15,7 @@
     "github": "5/5 queries returned results",
     "google-news": "8/8 queries returned results",
     "x-twitter": "0/2 queries returned results",
-    "telegram": "0 posts matched",
+    "telegram": "1 posts matched",
     "lobsters": "25 newest stories scanned"
   },
   "offers": [
@@ -44,7 +44,7 @@
       "auto": false,
       "discovered_at": "",
       "discovery_signals": [],
-      "verified_at": "2026-09-12T10:05:48Z",
+      "verified_at": "2026-09-12T20:10:58Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -83,7 +83,7 @@
       "auto": false,
       "discovered_at": "",
       "discovery_signals": [],
-      "verified_at": "2026-09-12T10:05:48Z",
+      "verified_at": "2026-09-12T20:10:58Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -122,7 +122,7 @@
       "auto": true,
       "discovered_at": "2026-09-07T07:06:14Z",
       "discovery_signals": [],
-      "verified_at": "2026-09-12T10:05:48Z",
+      "verified_at": "2026-09-12T20:10:58Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -161,7 +161,7 @@
       "auto": true,
       "discovered_at": "2026-09-07T07:06:14Z",
       "discovery_signals": [],
-      "verified_at": "2026-09-12T10:05:48Z",
+      "verified_at": "2026-09-12T20:10:58Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -200,7 +200,7 @@
       "auto": true,
       "discovered_at": "2026-09-07T07:06:14Z",
       "discovery_signals": [],
-      "verified_at": "2026-09-12T10:05:48Z",
+      "verified_at": "2026-09-12T20:10:58Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -244,7 +244,7 @@
         "llm/model signal",
         "homepage reachable (200)"
       ],
-      "verified_at": "2026-09-12T10:05:48Z",
+      "verified_at": "2026-09-12T20:10:58Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -288,7 +288,7 @@
         "llm/model signal",
         "homepage reachable (200)"
       ],
-      "verified_at": "2026-09-12T10:05:48Z",
+      "verified_at": "2026-09-12T20:10:58Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -333,7 +333,7 @@
         "llm/model signal",
         "homepage reachable (200)"
       ],
-      "verified_at": "2026-09-12T10:05:48Z",
+      "verified_at": "2026-09-12T20:10:58Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -504,6 +504,19 @@
         "api key",
         "key",
         "api"
+      ]
+    },
+    {
+      "title": "[TG:AI_Deals] FREE ₹1000 GIFT CARD OF MOVIE TICKET YEARLY   🎬    BEST: Lifetime Free IndusInd Tiger Credit Card  Apply Now   👉🏻  :  ht",
+      "url": "https://bilty.co/xAY6uk",
+      "domain": "bilty.co",
+      "snippet": "FREE ₹1000 GIFT CARD OF MOVIE TICKET YEARLY   🎬    BEST: Lifetime Free IndusInd Tiger Credit Card  Apply Now   👉🏻  :  https://bilty.co/xAY6uk   Benefits:   ➜ ₹0 Joining & Annual Fe",
+      "source": "telegram",
+      "score": 3,
+      "hits": [
+        "free",
+        "credit",
+        "deal"
       ]
     },
     {
