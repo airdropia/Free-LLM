@@ -79,11 +79,12 @@ Auto-discovered providers are community finds, not endorsements.
 
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Third-Party Offers - 2026-09-13T20:19:06Z
+## Latest Third-Party Offers - 2026-09-14T11:48:02Z
 
-> 8 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-13T20:19:06Z
+> 8 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-14T11:48:02Z
 
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
@@ -159,9 +160,10 @@ Auto-discovered providers are community finds, not endorsements.
 - telegram: 0 posts matched
 - lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-13T20:19:06Z. Offers change fast - verify links before relying on them._
+_Last verified: 2026-09-14T11:48:02Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
 
 
 
