@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-14T21:28:43Z",
-  "count": 24,
+  "last_updated": "2026-09-15T11:04:28Z",
+  "count": 25,
   "leads": [
     {
       "title": "Free models you can use with your OpenClaw (no credit card needed)",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "title": "Google and OpenAI offer free API credits—but there's one catch - How-To Geek",
+      "title": "Google and OpenAI offer free API credits—but there's one catch - howtogeek.com",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEttNldEemZuTHJ3clRMblBLYWVobl9MZnN5NzRUMnAxOTZaYWZPVUZRcUxNZl96TnN3ekZ4T05UZWUyQXlWdE5YbVBQblRHcWp5SEF2VURra0EwZkRIbG1Od21KWGdMU0lkRHk2WXRhdHJuZ1NHTWlWaklRSFh0RGRDd1Z0MHMzS0xYWVQyYXE?oc=5",
       "domain": "news.google.com",
       "snippet": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEttNldEemZuTHJ3clRMblBLYWVobl9MZnN5NzRUMnAxOTZaYWZPVUZRcUxNZl96TnN3ekZ4T05UZWUyQXlWdE5YbVBQblRHcWp5SEF2VURra0EwZkRIbG",
@@ -311,6 +311,18 @@
       "score": 2,
       "hits": [
         "launch",
+        "api"
+      ]
+    },
+    {
+      "title": "[TG:AI_Deals] Loot: Kapiva Gym Foods Kesar Shilajit Gold Resin 25g @ ₹939   https://fkrt.co/gqRO75",
+      "url": "https://fkrt.co/gqRO75",
+      "domain": "fkrt.co",
+      "snippet": "Loot: Kapiva Gym Foods Kesar Shilajit Gold Resin 25g @ ₹939   https://fkrt.co/gqRO75",
+      "source": "telegram",
+      "score": 2,
+      "hits": [
+        "deal",
         "api"
       ]
     }
