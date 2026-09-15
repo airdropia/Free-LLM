@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-09-15T11:04:28Z",
+  "last_updated": "2026-09-15T20:52:05Z",
   "summary": {
     "ok_count": 8,
     "dead_count": 0,
     "auto_added_count": 0,
-    "leads_count": 25,
-    "total_results": 365
+    "leads_count": 24,
+    "total_results": 361
   },
   "sources": {
     "bing": "12/12 queries returned results",
@@ -15,7 +15,7 @@
     "github": "5/5 queries returned results",
     "google-news": "8/8 queries returned results",
     "x-twitter": "0/2 queries returned results",
-    "telegram": "3 posts matched",
+    "telegram": "0 posts matched",
     "lobsters": "25 newest stories scanned"
   },
   "offers": [
@@ -44,7 +44,7 @@
       "auto": false,
       "discovered_at": "",
       "discovery_signals": [],
-      "verified_at": "2026-09-15T11:04:28Z",
+      "verified_at": "2026-09-15T20:52:05Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -83,7 +83,7 @@
       "auto": false,
       "discovered_at": "",
       "discovery_signals": [],
-      "verified_at": "2026-09-15T11:04:28Z",
+      "verified_at": "2026-09-15T20:52:05Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -122,7 +122,7 @@
       "auto": true,
       "discovered_at": "2026-09-07T07:06:14Z",
       "discovery_signals": [],
-      "verified_at": "2026-09-15T11:04:28Z",
+      "verified_at": "2026-09-15T20:52:05Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -161,7 +161,7 @@
       "auto": true,
       "discovered_at": "2026-09-07T07:06:14Z",
       "discovery_signals": [],
-      "verified_at": "2026-09-15T11:04:28Z",
+      "verified_at": "2026-09-15T20:52:05Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -200,7 +200,7 @@
       "auto": true,
       "discovered_at": "2026-09-07T07:06:14Z",
       "discovery_signals": [],
-      "verified_at": "2026-09-15T11:04:28Z",
+      "verified_at": "2026-09-15T20:52:05Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -244,7 +244,7 @@
         "llm/model signal",
         "homepage reachable (200)"
       ],
-      "verified_at": "2026-09-15T11:04:28Z",
+      "verified_at": "2026-09-15T20:52:05Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -288,7 +288,7 @@
         "llm/model signal",
         "homepage reachable (200)"
       ],
-      "verified_at": "2026-09-15T11:04:28Z",
+      "verified_at": "2026-09-15T20:52:05Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -333,7 +333,7 @@
         "llm/model signal",
         "homepage reachable (200)"
       ],
-      "verified_at": "2026-09-15T11:04:28Z",
+      "verified_at": "2026-09-15T20:52:05Z",
       "links_verified": {
         "website": true,
         "free": true,
@@ -400,7 +400,7 @@
       ]
     },
     {
-      "title": "Google and OpenAI offer free API credits—but there's one catch - howtogeek.com",
+      "title": "Google and OpenAI offer free API credits—but there's one catch - How-To Geek",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEttNldEemZuTHJ3clRMblBLYWVobl9MZnN5NzRUMnAxOTZaYWZPVUZRcUxNZl96TnN3ekZ4T05UZWUyQXlWdE5YbVBQblRHcWp5SEF2VURra0EwZkRIbG1Od21KWGdMU0lkRHk2WXRhdHJuZ1NHTWlWaklRSFh0RGRDd1Z0MHMzS0xYWVQyYXE?oc=5",
       "domain": "news.google.com",
       "snippet": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEttNldEemZuTHJ3clRMblBLYWVobl9MZnN5NzRUMnAxOTZaYWZPVUZRcUxNZl96TnN3ekZ4T05UZWUyQXlWdE5YbVBQblRHcWp5SEF2VURra0EwZkRIbG",
@@ -659,18 +659,6 @@
       "score": 2,
       "hits": [
         "launch",
-        "api"
-      ]
-    },
-    {
-      "title": "[TG:AI_Deals] Loot: Kapiva Gym Foods Kesar Shilajit Gold Resin 25g @ ₹939   https://fkrt.co/gqRO75",
-      "url": "https://fkrt.co/gqRO75",
-      "domain": "fkrt.co",
-      "snippet": "Loot: Kapiva Gym Foods Kesar Shilajit Gold Resin 25g @ ₹939   https://fkrt.co/gqRO75",
-      "source": "telegram",
-      "score": 2,
-      "hits": [
-        "deal",
         "api"
       ]
     }
