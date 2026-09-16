@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-16T10:50:49Z",
-  "count": 25,
+  "last_updated": "2026-09-16T20:52:19Z",
+  "count": 24,
   "leads": [
     {
       "title": "Free models you can use with your OpenClaw (no credit card needed)",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "title": "Google and OpenAI offer free API credits—but there's one catch - howtogeek.com",
+      "title": "Google and OpenAI offer free API credits—but there's one catch - How-To Geek",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEttNldEemZuTHJ3clRMblBLYWVobl9MZnN5NzRUMnAxOTZaYWZPVUZRcUxNZl96TnN3ekZ4T05UZWUyQXlWdE5YbVBQblRHcWp5SEF2VURra0EwZkRIbG1Od21KWGdMU0lkRHk2WXRhdHJuZ1NHTWlWaklRSFh0RGRDd1Z0MHMzS0xYWVQyYXE?oc=5",
       "domain": "news.google.com",
       "snippet": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEttNldEemZuTHJ3clRMblBLYWVobl9MZnN5NzRUMnAxOTZaYWZPVUZRcUxNZl96TnN3ekZ4T05UZWUyQXlWdE5YbVBQblRHcWp5SEF2VURra0EwZkRIbG",
@@ -312,18 +312,6 @@
       "hits": [
         "launch",
         "api"
-      ]
-    },
-    {
-      "title": "[TG:AI_Deals] 🍬  HAMARAMALL LOOT ALERT : RENEE NAIL PAINT REMOVER WIPES @ ₹29!   🔥      💅   RENEE Nail Paint Remover Wipes   ✨   Easy ",
-      "url": "https://bilty.co/bb5wU2",
-      "domain": "bilty.co",
-      "snippet": "🍬  HAMARAMALL LOOT ALERT : RENEE NAIL PAINT REMOVER WIPES @ ₹29!   🔥      💅   RENEE Nail Paint Remover Wipes   ✨   Easy & Convenient   💰   Only ₹29   🚚   FREE SHIPPING   😍      🎟  ",
-      "source": "telegram",
-      "score": 2,
-      "hits": [
-        "free",
-        "deal"
       ]
     }
   ]
