@@ -88,11 +88,12 @@ Auto-discovered providers are community finds, not endorsements.
 
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Third-Party Offers - 2026-09-18T10:34:28Z
+## Latest Third-Party Offers - 2026-09-18T20:24:22Z
 
-> 8 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-18T10:34:28Z
+> 8 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-18T20:24:22Z
 
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
@@ -114,7 +115,7 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [Show HN: Private AI assistant for $1.99 -Free AI](https://personalassistantdeploy.com/) (personalassistantdeploy.com, via hackernews, score 6: free, api key, api keys, month, key, api)
 
-- [Google and OpenAI offer free API credits—but there's one catch - How-To Geek](https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEttNldEemZuTHJ3clRMblBLYWVobl9MZnN5NzRUMnAxOTZaYWZPVUZRcUxNZl96TnN3ekZ4T05UZWUyQXlWdE5YbVBQblRHcWp5SEF2VURra0EwZkRIbG1Od21KWGdMU0lkRHk2WXRhdHJuZ1NHTWlWaklRSFh0RGRDd1Z0MHMzS0xYWVQyYXE?oc=5) (news.google.com, via google-news, score 6: free, credits, credit, offer, new, api)
+- [Google and OpenAI offer free API credits—but there's one catch - howtogeek.com](https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEttNldEemZuTHJ3clRMblBLYWVobl9MZnN5NzRUMnAxOTZaYWZPVUZRcUxNZl96TnN3ekZ4T05UZWUyQXlWdE5YbVBQblRHcWp5SEF2VURra0EwZkRIbG1Od21KWGdMU0lkRHk2WXRhdHJuZ1NHTWlWaklRSFh0RGRDd1Z0MHMzS0xYWVQyYXE?oc=5) (news.google.com, via google-news, score 6: free, credits, credit, offer, new, api)
 
 - [Show HN: One API for GPT-5, Claude-Sonnet-4, DeepSeek, Gemini](https://wisdom-gate.juheapi.com/studio/chat) (wisdom-gate.juheapi.com, via hackernews, score 3: aggregator, access, api)
 
@@ -129,6 +130,8 @@ Auto-discovered providers are community finds, not endorsements.
 - [Show HN: Pomo – Manage your Stripe promo codes without code](https://usecopi.com/69fb5996) (usecopi.com, via hackernews, score 3: free, promo, launch)
 
 - [Show HN: LobsterLair – OpenClaw hosting with AI included ($19/mo)](https://lobsterlair.xyz) (lobsterlair.xyz, via hackernews, score 3: api key, key, api)
+
+- [[TG:AI_Deals] 🌿   Kerala Ayurveda Wellness   🌿     🍶   Nisakathakadi Kwath (200 Ml)    📝   Ayurvedic decoction for metabolic wellness ](https://bilty.co/sQ67fn) (bilty.co, via telegram, score 3: free, offer, deal)
 
 - [Launch HN: Speko (YC S26) – OpenRouter for Voice AI](https://speko.ai/) (speko.ai, via hackernews, score 2: router, launch)
 
@@ -156,8 +159,6 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [Show HN: Gradient – a web API for fine-tuning and deploying Llama2](https://gradient.ai/) (gradient.ai, via hackernews, score 2: launch, api)
 
-- [[TG:AI_Deals] 📈   BAJAJ FINSERV DEMAT ACCOUNT!   🚀      💥   Start Trading in Just 15 Minutes!    ✅   FREE Demat A/c   💰   Open Demat &](https://bilty.co/hoUZ03) (bilty.co, via telegram, score 2: free, deal)
-
 ### Source status
 
 - bing: 12/12 queries returned results
@@ -167,12 +168,13 @@ Auto-discovered providers are community finds, not endorsements.
 - github: 5/5 queries returned results
 - google-news: 8/8 queries returned results
 - x-twitter: 0/2 queries returned results
-- telegram: 2 posts matched
+- telegram: 4 posts matched
 - lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-18T10:34:28Z. Offers change fast - verify links before relying on them._
+_Last verified: 2026-09-18T20:24:22Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
 
 
 

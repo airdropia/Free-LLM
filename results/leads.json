@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-18T10:34:28Z",
+  "last_updated": "2026-09-18T20:24:22Z",
   "count": 25,
   "leads": [
     {
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "title": "Google and OpenAI offer free API credits—but there's one catch - How-To Geek",
+      "title": "Google and OpenAI offer free API credits—but there's one catch - howtogeek.com",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEttNldEemZuTHJ3clRMblBLYWVobl9MZnN5NzRUMnAxOTZaYWZPVUZRcUxNZl96TnN3ekZ4T05UZWUyQXlWdE5YbVBQblRHcWp5SEF2VURra0EwZkRIbG1Od21KWGdMU0lkRHk2WXRhdHJuZ1NHTWlWaklRSFh0RGRDd1Z0MHMzS0xYWVQyYXE?oc=5",
       "domain": "news.google.com",
       "snippet": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxQTEttNldEemZuTHJ3clRMblBLYWVobl9MZnN5NzRUMnAxOTZaYWZPVUZRcUxNZl96TnN3ekZ4T05UZWUyQXlWdE5YbVBQblRHcWp5SEF2VURra0EwZkRIbG",
@@ -156,6 +156,19 @@
         "api key",
         "key",
         "api"
+      ]
+    },
+    {
+      "title": "[TG:AI_Deals] 🌿   Kerala Ayurveda Wellness   🌿     🍶   Nisakathakadi Kwath (200 Ml)    📝   Ayurvedic decoction for metabolic wellness ",
+      "url": "https://bilty.co/sQ67fn",
+      "domain": "bilty.co",
+      "snippet": "🌿   Kerala Ayurveda Wellness   🌿     🍶   Nisakathakadi Kwath (200 Ml)    📝   Ayurvedic decoction for metabolic wellness and energy balance.   💰   Price: ₹175    🚚   Offer: Free del",
+      "source": "telegram",
+      "score": 3,
+      "hits": [
+        "free",
+        "offer",
+        "deal"
       ]
     },
     {
@@ -312,18 +325,6 @@
       "hits": [
         "launch",
         "api"
-      ]
-    },
-    {
-      "title": "[TG:AI_Deals] 📈   BAJAJ FINSERV DEMAT ACCOUNT!   🚀      💥   Start Trading in Just 15 Minutes!    ✅   FREE Demat A/c   💰   Open Demat &",
-      "url": "https://bilty.co/hoUZ03",
-      "domain": "bilty.co",
-      "snippet": "📈   BAJAJ FINSERV DEMAT ACCOUNT!   🚀      💥   Start Trading in Just 15 Minutes!    ✅   FREE Demat A/c   💰   Open Demat & Trading Account at Nil Charges   📉   Lowest MTF (Margin Tra",
-      "source": "telegram",
-      "score": 2,
-      "hits": [
-        "free",
-        "deal"
       ]
     }
   ]
