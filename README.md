@@ -87,11 +87,12 @@ Auto-discovered providers are community finds, not endorsements.
 
 
 
+
 <!-- OFFERS-START -->
 
-## Latest Third-Party Offers - 2026-09-17T20:56:50Z
+## Latest Third-Party Offers - 2026-09-18T10:34:28Z
 
-> 8 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-17T20:56:50Z
+> 8 providers verified OK | 0 flagged | 0 auto-discovered this run | last full run: 2026-09-18T10:34:28Z
 
 
 | Provider | Client API | Models | Limits | Signup | Expiry | Links |
@@ -155,7 +156,7 @@ Auto-discovered providers are community finds, not endorsements.
 
 - [Show HN: Gradient – a web API for fine-tuning and deploying Llama2](https://gradient.ai/) (gradient.ai, via hackernews, score 2: launch, api)
 
-- [[TG:AI_Deals] MediBuddy Maha Loot : Flat ₹5201 Off on Full Body Health Check-Up + Free VitaminD & Calcium Tests   🔥    🔥      👉   63+ ](https://bilty.co/ccDyK1) (bilty.co, via telegram, score 2: free, deal)
+- [[TG:AI_Deals] 📈   BAJAJ FINSERV DEMAT ACCOUNT!   🚀      💥   Start Trading in Just 15 Minutes!    ✅   FREE Demat A/c   💰   Open Demat &](https://bilty.co/hoUZ03) (bilty.co, via telegram, score 2: free, deal)
 
 ### Source status
 
@@ -166,12 +167,13 @@ Auto-discovered providers are community finds, not endorsements.
 - github: 5/5 queries returned results
 - google-news: 8/8 queries returned results
 - x-twitter: 0/2 queries returned results
-- telegram: 1 posts matched
+- telegram: 2 posts matched
 - lobsters: 25 newest stories scanned
 
-_Last verified: 2026-09-17T20:56:50Z. Offers change fast - verify links before relying on them._
+_Last verified: 2026-09-18T10:34:28Z. Offers change fast - verify links before relying on them._
 
 <!-- OFFERS-END -->
+
 
 
 
